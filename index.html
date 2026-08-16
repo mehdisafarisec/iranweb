@@ -4,18 +4,21 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
 
 <meta name="description"
 content="طراحی UI/UX، پیاده‌سازی فروشگاه، سئو، Performance، امنیت و زیرساخت فروشگاه اینترنتی">
 
+<!-- Vazir -->
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
 
+<!-- Font Awesome -->
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+referrerpolicy="no-referrer">
 
 <style>
 
@@ -24,7 +27,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 ========================================================= */
 
 :root{
-
     --bg:#f6f7f9;
     --white:#fff;
 
@@ -61,23 +63,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 /* =========================================================
-   RESET
+   RESET + MOBILE WIDTH FIX
 ========================================================= */
 
-*{
+*,
+*::before,
+*::after{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
     width:100%;
     max-width:100%;
     overflow-x:hidden;
+    scroll-behavior:smooth;
 }
 
 body{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0;
+    padding:0;
 
     font-family:Vazir,Tahoma,sans-serif;
 
@@ -93,12 +103,14 @@ body{
 
     line-height:1.8;
 
-    width:100%;
-    max-width:100%;
-
-    min-width:0;
-
     overflow-x:hidden;
+}
+
+img,
+svg,
+video,
+iframe{
+    max-width:100%;
 }
 
 a{
@@ -110,11 +122,37 @@ button{
     font-family:inherit;
 }
 
-img,
-svg,
-video,
-iframe{
-    max-width:100%;
+
+/* =========================================================
+   FONT AWESOME FIX
+========================================================= */
+
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-duotone,
+.fa-brands{
+    display:inline-block;
+    font-style:normal;
+    line-height:1;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+}
+
+.fa-solid{
+    font-family:"Font Awesome 6 Free" !important;
+    font-weight:900 !important;
+}
+
+.fa-brands{
+    font-family:"Font Awesome 6 Brands" !important;
+    font-weight:400 !important;
 }
 
 
@@ -123,12 +161,9 @@ iframe{
 ========================================================= */
 
 .container{
-
-    width:min(1180px,calc(100% - 36px));
-
+    width:min(1180px, calc(100% - 36px));
+    max-width:1180px;
     margin-inline:auto;
-
-    min-width:0;
 }
 
 
@@ -137,11 +172,8 @@ iframe{
 ========================================================= */
 
 .header{
-
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
     width:100%;
@@ -156,13 +188,10 @@ iframe{
 }
 
 .header-inner{
-
     min-height:72px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     gap:20px;
@@ -171,11 +200,8 @@ iframe{
 }
 
 .logo{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     font-weight:900;
@@ -184,7 +210,6 @@ iframe{
 }
 
 .logo-icon{
-
     width:40px;
     height:40px;
 
@@ -194,7 +219,6 @@ iframe{
     border-radius:13px;
 
     color:white;
-
     background:var(--black);
 
     box-shadow:0 8px 25px rgba(16,17,20,.18);
@@ -203,60 +227,43 @@ iframe{
 }
 
 .logo-text{
-
     font-size:14px;
-
     min-width:0;
 }
 
 .logo-text small{
-
     display:block;
-
     font-size:9px;
-
     color:var(--muted);
-
     font-weight:500;
 }
 
 .nav{
-
     display:flex;
-
     align-items:center;
-
     gap:7px;
 
     min-width:0;
 }
 
 .nav a{
-
     padding:8px 13px;
-
     border-radius:10px;
 
     color:var(--text-soft);
-
     font-size:11px;
 
     transition:.2s;
 }
 
 .nav a:hover{
-
     background:#f2f3f5;
-
     color:var(--black);
 }
 
 .header-button{
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     gap:7px;
@@ -266,11 +273,9 @@ iframe{
     border-radius:11px;
 
     background:var(--black);
-
     color:white;
 
     font-size:11px;
-
     font-weight:800;
 
     transition:.2s;
@@ -281,9 +286,7 @@ iframe{
 }
 
 .header-button:hover{
-
     transform:translateY(-2px);
-
     background:#25272d;
 }
 
@@ -293,20 +296,16 @@ iframe{
 ========================================================= */
 
 .hero{
-
     position:relative;
-
     padding:95px 0 80px;
 
     text-align:center;
 
     width:100%;
     max-width:100%;
-    overflow:hidden;
 }
 
 .hero::before{
-
     content:"";
 
     position:absolute;
@@ -329,28 +328,23 @@ iframe{
 }
 
 .hero-content{
-
     position:relative;
 
     max-width:850px;
 
     margin-inline:auto;
-
-    min-width:0;
 }
 
 .badge{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
+
+    max-width:100%;
 
     padding:7px 13px;
 
     background:var(--gold-light);
-
     border:1px solid #f0dfb9;
 
     color:var(--gold-dark);
@@ -358,16 +352,12 @@ iframe{
     border-radius:50px;
 
     font-size:10px;
-
     font-weight:800;
 
     margin-bottom:20px;
-
-    max-width:100%;
 }
 
 .badge-dot{
-
     width:7px;
     height:7px;
 
@@ -381,7 +371,6 @@ iframe{
 }
 
 .hero h1{
-
     font-size:clamp(35px,6vw,67px);
 
     line-height:1.18;
@@ -392,20 +381,15 @@ iframe{
 
     margin-bottom:22px;
 
-    max-width:100%;
-
     overflow-wrap:anywhere;
 }
 
 .hero h1 span{
-
     position:relative;
-
     z-index:1;
 }
 
 .hero h1 span::after{
-
     content:"";
 
     position:absolute;
@@ -425,7 +409,6 @@ iframe{
 }
 
 .hero-description{
-
     max-width:690px;
 
     margin-inline:auto;
@@ -435,12 +418,12 @@ iframe{
     font-size:15px;
 
     line-height:2;
+
+    overflow-wrap:anywhere;
 }
 
 .hero-actions{
-
     display:flex;
-
     justify-content:center;
 
     gap:10px;
@@ -448,18 +431,13 @@ iframe{
     margin-top:30px;
 
     flex-wrap:wrap;
-
-    min-width:0;
 }
 
 .btn{
-
     min-height:48px;
 
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
     gap:8px;
@@ -469,7 +447,6 @@ iframe{
     border-radius:13px;
 
     font-size:11px;
-
     font-weight:800;
 
     transition:.25s;
@@ -480,23 +457,18 @@ iframe{
 }
 
 .btn-primary{
-
     background:var(--black);
-
     color:white;
 
     box-shadow:0 10px 25px rgba(16,17,20,.16);
 }
 
 .btn-primary:hover{
-
     transform:translateY(-3px);
-
     box-shadow:0 16px 35px rgba(16,17,20,.20);
 }
 
 .btn-secondary{
-
     background:white;
 
     border:1px solid var(--border);
@@ -505,9 +477,7 @@ iframe{
 }
 
 .btn-secondary:hover{
-
     border-color:#cfd3da;
-
     transform:translateY(-2px);
 }
 
@@ -517,7 +487,6 @@ iframe{
 ========================================================= */
 
 .hero-stats{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -534,11 +503,10 @@ iframe{
 
     overflow:hidden;
 
-    min-width:0;
+    width:100%;
 }
 
 .stat{
-
     padding:22px;
 
     text-align:center;
@@ -549,23 +517,18 @@ iframe{
 }
 
 .stat:last-child{
-
     border-left:none;
 }
 
 .stat strong{
-
     display:block;
 
     font-size:19px;
-
     font-weight:900;
 }
 
 .stat span{
-
     color:var(--muted);
-
     font-size:10px;
 }
 
@@ -575,38 +538,29 @@ iframe{
 ========================================================= */
 
 .section{
-
     padding:85px 0;
-
     width:100%;
     max-width:100%;
-    overflow:hidden;
 }
 
 .section-header{
-
     max-width:700px;
 
     margin:0 auto 38px;
 
     text-align:center;
-
-    min-width:0;
 }
 
 .section-kicker{
-
     color:var(--gold-dark);
 
     font-size:10px;
-
     font-weight:900;
 
     margin-bottom:8px;
 }
 
 .section-header h2{
-
     font-size:clamp(27px,4vw,39px);
 
     line-height:1.35;
@@ -619,12 +573,13 @@ iframe{
 }
 
 .section-header p{
-
     color:var(--text-soft);
 
     font-size:12px;
 
     margin-top:9px;
+
+    overflow-wrap:anywhere;
 }
 
 
@@ -633,18 +588,16 @@ iframe{
 ========================================================= */
 
 .service-grid{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
     gap:14px;
 
-    min-width:0;
+    width:100%;
 }
 
 .service-card{
-
     padding:24px;
 
     background:white;
@@ -661,19 +614,15 @@ iframe{
 }
 
 .service-card:hover{
-
     transform:translateY(-5px);
-
     box-shadow:var(--shadow-hover);
 }
 
 .service-icon{
-
     width:45px;
     height:45px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:14px;
@@ -684,49 +633,38 @@ iframe{
 }
 
 .service-card:nth-child(1) .service-icon{
-
     color:var(--gold-dark);
-
     background:var(--gold-light);
 }
 
 .service-card:nth-child(2) .service-icon{
-
     color:var(--blue);
-
     background:var(--blue-light);
 }
 
 .service-card:nth-child(3) .service-icon{
-
     color:var(--purple);
-
     background:var(--purple-light);
 }
 
 .service-card:nth-child(4) .service-icon{
-
     color:var(--green);
-
     background:var(--green-light);
 }
 
 .service-card h3{
-
     font-size:15px;
-
     font-weight:900;
-
     margin-bottom:6px;
 }
 
 .service-card p{
-
     color:var(--text-soft);
 
     font-size:10px;
-
     line-height:1.9;
+
+    overflow-wrap:anywhere;
 }
 
 
@@ -735,9 +673,7 @@ iframe{
 ========================================================= */
 
 .pricing{
-
     background:#101114;
-
     color:white;
 
     padding:95px 0;
@@ -749,17 +685,14 @@ iframe{
 }
 
 .pricing .section-header p{
-
     color:#a4a8b1;
 }
 
 .pricing .section-kicker{
-
     color:#e9b74e;
 }
 
 .pricing-grid{
-
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
@@ -768,11 +701,10 @@ iframe{
 
     align-items:start;
 
-    min-width:0;
+    width:100%;
 }
 
 .plan{
-
     position:relative;
 
     background:#181a1f;
@@ -786,19 +718,14 @@ iframe{
     transition:.3s;
 
     min-width:0;
-
-    max-width:100%;
 }
 
 .plan:hover{
-
     transform:translateY(-5px);
-
     border-color:#3a3d45;
 }
 
 .plan.featured{
-
     background:white;
 
     color:var(--text);
@@ -811,16 +738,13 @@ iframe{
 }
 
 .plan.featured:hover{
-
     transform:translateY(-16px);
 }
 
 .featured-label{
-
     position:absolute;
 
     top:-13px;
-
     right:22px;
 
     background:var(--gold);
@@ -832,16 +756,13 @@ iframe{
     border-radius:50px;
 
     font-size:9px;
-
     font-weight:900;
 }
 
 .plan-top{
-
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:15px;
@@ -854,38 +775,30 @@ iframe{
 }
 
 .featured .plan-top{
-
     border-color:var(--border);
 }
 
 .plan h3{
-
     font-size:20px;
-
     font-weight:900;
 }
 
 .plan-subtitle{
-
     color:#969ba5;
 
     font-size:9px;
-
     margin-top:2px;
 }
 
 .featured .plan-subtitle{
-
     color:var(--muted);
 }
 
 .plan-icon{
-
     width:42px;
     height:42px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:13px;
@@ -898,30 +811,23 @@ iframe{
 }
 
 .featured .plan-icon{
-
     background:var(--gold-light);
-
     color:var(--gold-dark);
 }
 
 .price{
-
     padding:24px 0 20px;
 }
 
 .price-number{
-
     display:flex;
-
     align-items:baseline;
-
     gap:6px;
 
-    flex-wrap:wrap;
+    min-width:0;
 }
 
 .price-number strong{
-
     font-size:42px;
 
     line-height:1;
@@ -932,28 +838,25 @@ iframe{
 }
 
 .price-number span{
-
     color:#9297a0;
-
     font-size:10px;
 }
 
 .featured .price-number span{
-
     color:var(--muted);
 }
 
 .price-description{
-
     color:#9297a0;
 
     font-size:9px;
 
     margin-top:7px;
+
+    overflow-wrap:anywhere;
 }
 
 .featured .price-description{
-
     color:var(--muted);
 }
 
@@ -963,7 +866,6 @@ iframe{
 ========================================================= */
 
 .plan-button{
-
     width:100%;
 
     min-height:47px;
@@ -971,7 +873,6 @@ iframe{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:7px;
@@ -983,7 +884,6 @@ iframe{
     color:var(--black);
 
     font-size:10px;
-
     font-weight:900;
 
     transition:.2s;
@@ -992,27 +892,21 @@ iframe{
 
     border:0;
 
-    max-width:100%;
+    text-align:center;
 }
 
 .plan-button:hover{
-
     transform:translateY(-2px);
-
     background:#f0f1f3;
 }
 
 .featured .plan-button{
-
     background:var(--black);
-
     color:white;
 }
 
 .plan-button.selected{
-
     background:var(--green)!important;
-
     color:white!important;
 
     box-shadow:0 8px 25px rgba(24,169,87,.22);
@@ -1024,32 +918,22 @@ iframe{
 ========================================================= */
 
 .feature-groups{
-
     margin-top:22px;
-
-    min-width:0;
 }
 
 .feature-group{
-
     border-top:1px solid #292c32;
-
     padding:15px 0;
-
-    min-width:0;
 }
 
 .featured .feature-group{
-
     border-color:var(--border);
 }
 
 .feature-group summary{
-
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     cursor:pointer;
@@ -1057,19 +941,18 @@ iframe{
     list-style:none;
 
     font-size:11px;
-
     font-weight:900;
+
+    gap:10px;
 
     min-width:0;
 }
 
 .feature-group summary::-webkit-details-marker{
-
     display:none;
 }
 
 .summary-left{
-
     display:flex;
 
     align-items:center;
@@ -1080,12 +963,10 @@ iframe{
 }
 
 .summary-icon{
-
     width:26px;
     height:26px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:8px;
@@ -1100,30 +981,23 @@ iframe{
 }
 
 .featured .summary-icon{
-
     background:#f4f4f5;
-
     color:#555b66;
 }
 
 .feature-group summary i{
-
     color:#777c85;
-
     font-size:9px;
-
     transition:.2s;
 
     flex-shrink:0;
 }
 
 .feature-group[open] summary i{
-
     transform:rotate(180deg);
 }
 
 .feature-list{
-
     list-style:none;
 
     margin-top:13px;
@@ -1133,12 +1007,9 @@ iframe{
     flex-direction:column;
 
     gap:7px;
-
-    min-width:0;
 }
 
 .feature-list li{
-
     position:relative;
 
     padding-right:17px;
@@ -1153,12 +1024,10 @@ iframe{
 }
 
 .featured .feature-list li{
-
     color:#626873;
 }
 
 .feature-list li::before{
-
     content:"✓";
 
     position:absolute;
@@ -1176,16 +1045,13 @@ iframe{
 ========================================================= */
 
 .ux-section{
-
     padding:100px 0;
 
     width:100%;
     max-width:100%;
-    overflow:hidden;
 }
 
 .ux-card{
-
     position:relative;
 
     overflow:hidden;
@@ -1205,14 +1071,9 @@ iframe{
     box-shadow:0 35px 90px rgba(16,17,20,.18);
 
     width:100%;
-
-    max-width:100%;
-
-    min-width:0;
 }
 
 .ux-card::before{
-
     content:"";
 
     position:absolute;
@@ -1231,7 +1092,6 @@ iframe{
 }
 
 .ux-grid{
-
     position:relative;
 
     z-index:2;
@@ -1248,7 +1108,6 @@ iframe{
 }
 
 .ux-label{
-
     display:inline-flex;
 
     align-items:center;
@@ -1265,7 +1124,6 @@ iframe{
 }
 
 .ux-title{
-
     font-size:clamp(27px,4vw,42px);
 
     line-height:1.35;
@@ -1278,7 +1136,6 @@ iframe{
 }
 
 .ux-description{
-
     max-width:600px;
 
     color:#aeb3bc;
@@ -1291,7 +1148,6 @@ iframe{
 }
 
 .ux-output{
-
     margin-top:22px;
 
     display:grid;
@@ -1299,12 +1155,9 @@ iframe{
     grid-template-columns:repeat(2,1fr);
 
     gap:9px;
-
-    min-width:0;
 }
 
 .ux-output div{
-
     display:flex;
 
     align-items:center;
@@ -1319,14 +1172,11 @@ iframe{
 }
 
 .ux-output i{
-
     color:var(--gold);
-
     flex-shrink:0;
 }
 
 .ux-price{
-
     background:rgba(255,255,255,.06);
 
     border:1px solid rgba(255,255,255,.1);
@@ -1338,19 +1188,14 @@ iframe{
     backdrop-filter:blur(10px);
 
     min-width:0;
-
-    max-width:100%;
 }
 
 .ux-price-label{
-
     color:#9096a0;
-
     font-size:10px;
 }
 
 .ux-price strong{
-
     display:block;
 
     font-size:43px;
@@ -1363,7 +1208,6 @@ iframe{
 }
 
 .ux-price strong small{
-
     font-size:11px;
 
     color:#9ca2ac;
@@ -1372,7 +1216,6 @@ iframe{
 }
 
 .ux-price-description{
-
     color:#9298a2;
 
     font-size:9px;
@@ -1383,7 +1226,6 @@ iframe{
 }
 
 .ux-button{
-
     width:100%;
 
     min-height:46px;
@@ -1391,7 +1233,6 @@ iframe{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:8px;
@@ -1410,13 +1251,11 @@ iframe{
 
     cursor:pointer;
 
-    max-width:100%;
+    text-align:center;
 }
 
 .ux-button:hover{
-
     transform:translateY(-2px);
-
     background:#f2b53d;
 }
 
@@ -1426,7 +1265,6 @@ iframe{
 ========================================================= */
 
 .steps{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -1435,11 +1273,10 @@ iframe{
 
     margin-top:35px;
 
-    min-width:0;
+    width:100%;
 }
 
 .step{
-
     background:white;
 
     border:1px solid var(--border);
@@ -1454,12 +1291,10 @@ iframe{
 }
 
 .step-number{
-
     width:31px;
     height:31px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:10px;
@@ -1476,16 +1311,13 @@ iframe{
 }
 
 .step h3{
-
     font-size:13px;
-
     font-weight:900;
 
     margin-bottom:5px;
 }
 
 .step p{
-
     color:var(--text-soft);
 
     font-size:9px;
@@ -1501,61 +1333,52 @@ iframe{
 ========================================================= */
 
 .comparison-section{
-
     padding:85px 0;
 
     width:100%;
     max-width:100%;
-    overflow:hidden;
 }
 
 .comparison{
-
     background:white;
 
     border:1px solid var(--border);
 
     border-radius:25px;
 
-    overflow-x:auto;
-
-    overflow-y:hidden;
+    overflow:hidden;
 
     box-shadow:var(--shadow);
 
     width:100%;
+}
 
-    max-width:100%;
-
+.comparison-scroll{
+    width:100%;
+    overflow-x:auto;
     -webkit-overflow-scrolling:touch;
-
-    overscroll-behavior-x:contain;
 }
 
 .comparison-row{
-
     display:grid;
 
     grid-template-columns:1.7fr repeat(3,1fr);
 
     min-height:58px;
 
-    min-width:570px;
-
     border-bottom:1px solid var(--border);
+
+    min-width:620px;
 }
 
 .comparison-row:last-child{
-
     border-bottom:none;
 }
 
 .comparison-row>div{
-
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     padding:10px;
@@ -1568,33 +1391,28 @@ iframe{
 }
 
 .comparison-row>div:last-child{
-
     border-left:none;
 }
 
 .comparison-row>div:first-child{
-
     justify-content:flex-start;
 
     color:var(--text-soft);
+
+    white-space:nowrap;
 }
 
 .comparison-head{
-
     background:#f8f9fa;
-
     font-weight:900;
 }
 
 .comparison-head>div:first-child{
-
     color:var(--text);
 }
 
 .check{
-
     color:var(--green);
-
     font-size:13px;
 }
 
@@ -1604,22 +1422,19 @@ iframe{
 ========================================================= */
 
 .faq-grid{
-
     max-width:850px;
 
     margin-inline:auto;
 
     display:flex;
-
     flex-direction:column;
 
     gap:9px;
 
-    min-width:0;
+    width:100%;
 }
 
 .faq-item{
-
     background:white;
 
     border:1px solid var(--border);
@@ -1634,13 +1449,11 @@ iframe{
 }
 
 .faq-item summary{
-
     min-height:58px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:15px;
@@ -1657,12 +1470,10 @@ iframe{
 }
 
 .faq-item summary::-webkit-details-marker{
-
     display:none;
 }
 
 .faq-item summary i{
-
     color:var(--muted);
 
     transition:.2s;
@@ -1671,12 +1482,10 @@ iframe{
 }
 
 .faq-item[open] summary i{
-
     transform:rotate(180deg);
 }
 
 .faq-answer{
-
     color:var(--text-soft);
 
     font-size:10px;
@@ -1694,16 +1503,13 @@ iframe{
 ========================================================= */
 
 .final-cta{
-
     padding:85px 0 100px;
 
     width:100%;
     max-width:100%;
-    overflow:hidden;
 }
 
 .cta-box{
-
     background:var(--black);
 
     color:white;
@@ -1719,14 +1525,9 @@ iframe{
     overflow:hidden;
 
     width:100%;
-
-    max-width:100%;
-
-    min-width:0;
 }
 
 .cta-box::before{
-
     content:"";
 
     position:absolute;
@@ -1745,16 +1546,11 @@ iframe{
 }
 
 .cta-box>*{
-
     position:relative;
-
     z-index:2;
-
-    max-width:100%;
 }
 
 .cta-box h2{
-
     font-size:clamp(26px,4vw,40px);
 
     font-weight:900;
@@ -1765,7 +1561,6 @@ iframe{
 }
 
 .cta-box p{
-
     max-width:600px;
 
     margin:auto;
@@ -1778,7 +1573,6 @@ iframe{
 }
 
 .selected-package{
-
     display:none;
 
     width:max-content;
@@ -1798,26 +1592,20 @@ iframe{
     color:#dfe2e6;
 
     font-size:10px;
-
-    overflow:hidden;
 }
 
 .selected-package.show{
-
     display:block;
 }
 
 .selected-package strong{
-
     color:var(--gold);
 }
 
 .cta-button{
-
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:8px;
@@ -1848,14 +1636,11 @@ iframe{
 }
 
 .cta-button:hover{
-
     transform:translateY(-3px);
-
     background:#f2b53d;
 }
 
 .cta-button i{
-
     font-size:13px;
 }
 
@@ -1865,7 +1650,6 @@ iframe{
 ========================================================= */
 
 footer{
-
     padding:25px 0 35px;
 
     text-align:center;
@@ -1877,31 +1661,24 @@ footer{
     border-top:1px solid var(--border);
 
     width:100%;
-
-    max-width:100%;
-
-    overflow:hidden;
 }
 
 footer strong{
-
     color:var(--text);
 }
 
 
 /* =========================================================
-   RESPONSIVE 1000
+   1000px
 ========================================================= */
 
 @media(max-width:1000px){
 
     .service-grid{
-
         grid-template-columns:repeat(2,1fr);
     }
 
     .pricing-grid{
-
         grid-template-columns:1fr;
 
         max-width:680px;
@@ -1912,95 +1689,75 @@ footer strong{
     }
 
     .plan.featured{
-
         order:-1;
-
         transform:none;
     }
 
     .plan.featured:hover{
-
         transform:translateY(-5px);
     }
 
     .ux-grid{
-
         grid-template-columns:1fr;
     }
 
     .ux-price{
-
         max-width:520px;
     }
 
     .steps{
-
         grid-template-columns:repeat(2,1fr);
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE MOBILE
+   MOBILE
 ========================================================= */
 
 @media(max-width:700px){
 
     html,
     body{
-
-        width:100%;
-
-        max-width:100%;
-
-        min-width:0;
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
 
         overflow-x:hidden !important;
+
+        overscroll-behavior-x:none;
     }
 
     .container{
+        width:calc(100% - 28px) !important;
+        max-width:560px !important;
 
-        width:calc(100% - 28px);
-
-        max-width:100%;
-
-        min-width:0;
+        margin-left:auto !important;
+        margin-right:auto !important;
     }
 
 
     /* HEADER */
 
     .header{
-
         width:100%;
-
-        max-width:100%;
-
         overflow:hidden;
     }
 
     .header-inner{
-
         min-height:62px;
 
         gap:8px;
 
         width:100%;
-
-        min-width:0;
     }
 
     .logo{
-
+        flex:1 1 auto;
         min-width:0;
-
-        max-width:calc(100% - 105px);
-
-        gap:8px;
     }
 
     .logo-icon{
-
         width:36px;
         height:36px;
 
@@ -2008,7 +1765,6 @@ footer strong{
     }
 
     .logo-text{
-
         font-size:11px;
 
         line-height:1.4;
@@ -2016,22 +1772,18 @@ footer strong{
         white-space:nowrap;
 
         overflow:hidden;
-
         text-overflow:ellipsis;
     }
 
     .logo-text small{
-
         font-size:7px;
     }
 
     .nav{
-
         display:none;
     }
 
     .header-button{
-
         padding:9px 11px;
 
         min-height:38px;
@@ -2042,7 +1794,6 @@ footer strong{
     }
 
     .header-button i{
-
         font-size:9px;
     }
 
@@ -2050,24 +1801,30 @@ footer strong{
     /* HERO */
 
     .hero{
-
         padding:55px 0 48px;
 
+        width:100%;
         overflow:hidden;
     }
 
+    .hero-content{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+    }
+
     .badge{
+        max-width:100%;
 
         font-size:8px;
 
         padding:6px 10px;
 
         margin-bottom:16px;
-
-        max-width:100%;
     }
 
     .hero h1{
+        width:100%;
 
         font-size:clamp(31px,9vw,43px);
 
@@ -2081,13 +1838,12 @@ footer strong{
     }
 
     .hero h1 span::after{
-
         height:7px;
-
         bottom:2px;
     }
 
     .hero-description{
+        width:100%;
 
         font-size:11px;
 
@@ -2095,11 +1851,10 @@ footer strong{
 
         padding:0 3px;
 
-        max-width:100%;
+        overflow-wrap:anywhere;
     }
 
     .hero-actions{
-
         flex-direction:column;
 
         width:100%;
@@ -2110,7 +1865,6 @@ footer strong{
     }
 
     .btn{
-
         width:100%;
 
         min-height:46px;
@@ -2122,20 +1876,16 @@ footer strong{
     /* STATS */
 
     .hero-stats{
+        width:100%;
 
         grid-template-columns:repeat(2,1fr);
 
         margin-top:35px;
 
         border-radius:17px;
-
-        width:100%;
-
-        max-width:100%;
     }
 
     .stat{
-
         min-height:78px;
 
         display:flex;
@@ -2152,22 +1902,18 @@ footer strong{
     }
 
     .stat:nth-child(2){
-
         border-left:none;
     }
 
     .stat:nth-child(-n+2){
-
         border-bottom:1px solid var(--border);
     }
 
     .stat strong{
-
         font-size:16px;
     }
 
     .stat span{
-
         font-size:8px;
     }
 
@@ -2175,45 +1921,42 @@ footer strong{
     /* SECTION */
 
     .section{
-
         padding:60px 0;
-
+        width:100%;
         overflow:hidden;
     }
 
     .section-header{
-
         margin-bottom:28px;
-
-        max-width:100%;
+        width:100%;
     }
 
     .section-kicker{
-
         font-size:8px;
     }
 
     .section-header h2{
-
         font-size:25px;
 
         line-height:1.45;
 
         letter-spacing:-.5px;
+
+        overflow-wrap:anywhere;
     }
 
     .section-header p{
-
         font-size:10px;
 
         line-height:1.9;
+
+        overflow-wrap:anywhere;
     }
 
 
     /* SERVICES */
 
     .service-grid{
-
         grid-template-columns:1fr;
 
         gap:10px;
@@ -2222,18 +1965,14 @@ footer strong{
     }
 
     .service-card{
+        width:100%;
 
         padding:19px;
 
         border-radius:17px;
-
-        width:100%;
-
-        max-width:100%;
     }
 
     .service-icon{
-
         width:40px;
         height:40px;
 
@@ -2243,12 +1982,10 @@ footer strong{
     }
 
     .service-card h3{
-
         font-size:13px;
     }
 
     .service-card p{
-
         font-size:9px;
 
         line-height:2;
@@ -2258,17 +1995,15 @@ footer strong{
     /* PRICING */
 
     .pricing{
-
         padding:65px 0;
+
+        width:100%;
 
         overflow:hidden;
     }
 
     .pricing-grid{
-
         width:100%;
-
-        max-width:100%;
 
         display:flex;
 
@@ -2280,7 +2015,6 @@ footer strong{
     }
 
     .plan{
-
         width:100%;
 
         max-width:100%;
@@ -2293,19 +2027,15 @@ footer strong{
     }
 
     .plan.featured{
-
         transform:none;
-
         order:-1;
     }
 
     .plan.featured:hover{
-
         transform:none;
     }
 
     .featured-label{
-
         top:-11px;
 
         right:17px;
@@ -2316,26 +2046,19 @@ footer strong{
     }
 
     .plan-top{
-
         padding-bottom:16px;
-
-        min-width:0;
     }
 
     .plan h3{
-
         font-size:17px;
     }
 
     .plan-subtitle{
-
         font-size:8px;
-
         line-height:1.8;
     }
 
     .plan-icon{
-
         width:38px;
         height:38px;
 
@@ -2343,29 +2066,24 @@ footer strong{
     }
 
     .price{
-
         padding:20px 0 17px;
     }
 
     .price-number strong{
-
         font-size:35px;
     }
 
     .price-number span{
-
         font-size:9px;
     }
 
     .price-description{
-
         font-size:8px;
 
         line-height:1.8;
     }
 
     .plan-button{
-
         min-height:46px;
 
         font-size:9px;
@@ -2374,24 +2092,19 @@ footer strong{
     }
 
     .feature-groups{
-
         margin-top:17px;
     }
 
     .feature-group{
-
         padding:13px 0;
     }
 
     .feature-group summary{
-
         font-size:9px;
-
         gap:8px;
     }
 
     .summary-icon{
-
         width:25px;
         height:25px;
 
@@ -2399,131 +2112,101 @@ footer strong{
     }
 
     .feature-list{
-
         gap:6px;
 
         margin-top:11px;
     }
 
     .feature-list li{
-
         font-size:8px;
 
         line-height:1.9;
 
         padding-right:15px;
-
-        overflow-wrap:anywhere;
     }
 
 
     /* UX */
 
     .ux-section{
-
         padding:65px 0;
 
+        width:100%;
         overflow:hidden;
     }
 
     .ux-card{
+        width:100%;
 
         padding:28px 18px;
 
         border-radius:23px;
-
-        width:100%;
-
-        max-width:100%;
-
-        overflow:hidden;
     }
 
     .ux-grid{
-
         gap:27px;
 
         width:100%;
-
-        max-width:100%;
-
-        min-width:0;
     }
 
     .ux-label{
-
         font-size:8px;
 
         margin-bottom:11px;
     }
 
     .ux-title{
-
         font-size:25px;
 
         line-height:1.45;
     }
 
     .ux-description{
-
         font-size:10px;
 
         line-height:2;
     }
 
     .ux-output{
-
         grid-template-columns:1fr;
 
         gap:8px;
 
         margin-top:18px;
-
-        width:100%;
     }
 
     .ux-output div{
-
         font-size:9px;
-
-        min-width:0;
     }
 
     .ux-price{
-
         padding:22px 18px;
 
         border-radius:19px;
 
         width:100%;
-
         max-width:100%;
     }
 
     .ux-price-label{
-
         font-size:8px;
     }
 
     .ux-price strong{
-
         font-size:36px;
     }
 
     .ux-price strong small{
-
         font-size:9px;
     }
 
     .ux-price-description{
-
         font-size:8px;
 
         line-height:2;
     }
 
     .ux-button{
-
         min-height:45px;
 
         font-size:9px;
@@ -2533,7 +2216,6 @@ footer strong{
     /* STEPS */
 
     .steps{
-
         grid-template-columns:1fr;
 
         gap:9px;
@@ -2544,18 +2226,14 @@ footer strong{
     }
 
     .step{
+        width:100%;
 
         padding:18px;
 
         border-radius:16px;
-
-        width:100%;
-
-        max-width:100%;
     }
 
     .step-number{
-
         width:29px;
         height:29px;
 
@@ -2563,74 +2241,58 @@ footer strong{
     }
 
     .step h3{
-
         font-size:12px;
     }
 
     .step p{
-
         font-size:8px;
     }
 
 
-    /* =====================================================
-       COMPARISON MOBILE
-       فقط خود جدول اسکرول افقی دارد
-    ===================================================== */
+    /* COMPARISON */
 
     .comparison-section{
-
         padding:60px 0;
 
         width:100%;
-
-        max-width:100%;
 
         overflow:hidden;
     }
 
     .comparison{
-
         width:100%;
 
-        max-width:100%;
+        border-radius:18px;
+
+        overflow:hidden;
+    }
+
+    .comparison-scroll{
+        width:100%;
 
         overflow-x:auto;
-
         overflow-y:hidden;
 
-        -webkit-overflow-scrolling:touch;
-
-        overscroll-behavior-x:contain;
-
-        touch-action:pan-x;
-
-        border-radius:18px;
+        scrollbar-width:thin;
     }
 
     .comparison-row{
-
         min-width:570px;
-
-        width:570px;
 
         min-height:51px;
     }
 
     .comparison-row>div{
-
         font-size:8px;
 
         padding:8px;
     }
 
     .comparison-head>div{
-
         font-size:8px;
     }
 
     .check{
-
         font-size:11px;
     }
 
@@ -2638,27 +2300,20 @@ footer strong{
     /* FAQ */
 
     .faq-grid{
-
         gap:8px;
 
         width:100%;
-
-        max-width:100%;
     }
 
     .faq-item{
+        width:100%;
 
         padding:0 14px;
 
         border-radius:14px;
-
-        width:100%;
-
-        max-width:100%;
     }
 
     .faq-item summary{
-
         min-height:53px;
 
         font-size:9px;
@@ -2667,7 +2322,6 @@ footer strong{
     }
 
     .faq-answer{
-
         font-size:8px;
 
         line-height:2;
@@ -2677,57 +2331,45 @@ footer strong{
     /* CTA */
 
     .final-cta{
-
         padding:60px 0 70px;
+
+        width:100%;
 
         overflow:hidden;
     }
 
     .cta-box{
+        width:100%;
 
         padding:38px 18px;
 
         border-radius:23px;
-
-        width:100%;
-
-        max-width:100%;
     }
 
     .cta-box h2{
-
         font-size:25px;
 
         line-height:1.5;
     }
 
     .cta-box p{
-
         font-size:9px;
 
         line-height:2;
     }
 
     .selected-package{
-
         width:100%;
-
-        max-width:100%;
 
         font-size:8px;
 
         line-height:1.8;
 
         padding:8px 11px;
-
-        overflow:hidden;
     }
 
     .cta-button{
-
         width:100%;
-
-        max-width:100%;
 
         min-height:47px;
 
@@ -2740,12 +2382,11 @@ footer strong{
     /* FOOTER */
 
     footer{
-
         font-size:8px;
 
         line-height:2;
 
-        overflow:hidden;
+        width:100%;
     }
 }
 
@@ -2757,41 +2398,31 @@ footer strong{
 @media(max-width:380px){
 
     .container{
-
-        width:calc(100% - 22px);
-
-        max-width:100%;
+        width:calc(100% - 22px) !important;
     }
 
     .logo-text{
-
         font-size:10px;
     }
 
     .header-button{
-
         padding:8px 9px;
-
         font-size:8px;
     }
 
     .hero h1{
-
         font-size:29px;
     }
 
     .hero-description{
-
         font-size:10px;
     }
 
     .price-number strong{
-
         font-size:32px;
     }
 
     .plan{
-
         padding:19px 15px;
     }
 }
@@ -2806,9 +2437,7 @@ footer strong{
     *,
     *::before,
     *::after{
-
         scroll-behavior:auto!important;
-
         transition:none!important;
     }
 }
@@ -2822,7 +2451,7 @@ footer strong{
 
 
 <!-- =========================================================
-     HEADER
+HEADER
 ========================================================= -->
 
 <header class="header">
@@ -2851,11 +2480,8 @@ UI/UX • Development • SEO
 <nav class="nav">
 
 <a href="#services">خدمات</a>
-
 <a href="#pricing">پکیج‌ها</a>
-
 <a href="#uiux">طراحی UI/UX</a>
-
 <a href="#faq">سوالات متداول</a>
 
 </nav>
@@ -2877,9 +2503,8 @@ class="header-button">
 </header>
 
 
-
 <!-- =========================================================
-     HERO
+HERO
 ========================================================= -->
 
 <section class="hero">
@@ -2940,35 +2565,23 @@ class="header-button">
 <div class="hero-stats">
 
 <div class="stat">
-
 <strong>۴۰M+</strong>
-
 <span>شروع پکیج‌ها</span>
-
 </div>
 
 <div class="stat">
-
 <strong>۳</strong>
-
 <span>سطح خدمات</span>
-
 </div>
 
 <div class="stat">
-
 <strong>۲۰M</strong>
-
 <span>طراحی UI/UX</span>
-
 </div>
 
 <div class="stat">
-
 <strong>۱۰۰٪</strong>
-
 <span>ریسپانسیو</span>
-
 </div>
 
 </div>
@@ -2978,9 +2591,8 @@ class="header-button">
 </section>
 
 
-
 <!-- =========================================================
-     SERVICES
+SERVICES
 ========================================================= -->
 
 <section class="section" id="services">
@@ -3087,9 +2699,8 @@ Hardening، Firewall، Backup،
 </section>
 
 
-
 <!-- =========================================================
-     PRICING
+PRICING
 ========================================================= -->
 
 <section class="pricing" id="pricing">
@@ -3133,9 +2744,7 @@ PRICING
 </div>
 
 <div class="plan-icon">
-
 <i class="fa-solid fa-rocket"></i>
-
 </div>
 
 </div>
@@ -3195,15 +2804,10 @@ data-price="۴۰ میلیون تومان">
 <ul class="feature-list">
 
 <li>پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده</li>
-
 <li>پیکربندی کامل ووکامرس</li>
-
 <li>راه‌اندازی محصولات و دسته‌بندی‌ها</li>
-
 <li>اتصال و پیکربندی پنل پیامکی</li>
-
 <li>اتصال درگاه پرداخت</li>
-
 <li>ریسپانسیو موبایل، تبلت و دسکتاپ</li>
 
 </ul>
@@ -3233,13 +2837,9 @@ data-price="۴۰ میلیون تومان">
 <ul class="feature-list">
 
 <li>تنظیم صفحات اصلی فروشگاه</li>
-
 <li>تنظیم منو و ساختار ناوبری</li>
-
 <li>تنظیم ثبت‌نام و ورود کاربران</li>
-
 <li>تنظیم سبد خرید و تسویه‌حساب</li>
-
 <li>تست فرآیند خرید و ثبت سفارش</li>
 
 </ul>
@@ -3249,7 +2849,6 @@ data-price="۴۰ میلیون تومان">
 </div>
 
 </article>
-
 
 
 <!-- PROFESSIONAL -->
@@ -3274,9 +2873,7 @@ data-price="۴۰ میلیون تومان">
 </div>
 
 <div class="plan-icon">
-
 <i class="fa-solid fa-chart-line"></i>
-
 </div>
 
 </div>
@@ -3334,9 +2931,7 @@ data-price="۶۵ میلیون تومان">
 </summary>
 
 <ul class="feature-list">
-
 <li>تمام امکانات پکیج پایه</li>
-
 </ul>
 
 </details>
@@ -3482,7 +3077,6 @@ Performance
 </article>
 
 
-
 <!-- ENTERPRISE -->
 
 <article class="plan">
@@ -3500,9 +3094,7 @@ Performance
 </div>
 
 <div class="plan-icon">
-
 <i class="fa-solid fa-shield-halved"></i>
-
 </div>
 
 </div>
@@ -3674,7 +3266,6 @@ data-price="۸۰ میلیون تومان">
 
 </article>
 
-
 </div>
 
 
@@ -3695,9 +3286,8 @@ margin-top:28px;
 </section>
 
 
-
 <!-- =========================================================
-     UI UX
+UI UX
 ========================================================= -->
 
 <section class="ux-section" id="uiux">
@@ -3707,7 +3297,6 @@ margin-top:28px;
 <div class="ux-card">
 
 <div class="ux-grid">
-
 
 <div>
 
@@ -3804,13 +3393,8 @@ Prototype در Figma
 </div>
 
 <strong>
-
 ۲۰
-
-<small>
-میلیون تومان
-</small>
-
+<small>میلیون تومان</small>
 </strong>
 
 <div class="ux-price-description">
@@ -3837,14 +3421,12 @@ data-price="۲۰ میلیون تومان">
 
 </div>
 
-
 </div>
 
 </div>
 
 
 <div class="steps">
-
 
 <div class="step">
 
@@ -3897,7 +3479,6 @@ data-price="۲۰ میلیون تومان">
 
 </div>
 
-
 </div>
 
 </div>
@@ -3905,9 +3486,8 @@ data-price="۲۰ میلیون تومان">
 </section>
 
 
-
 <!-- =========================================================
-     COMPARISON
+COMPARISON
 ========================================================= -->
 
 <section class="comparison-section">
@@ -3932,6 +3512,8 @@ COMPARE
 
 
 <div class="comparison">
+
+<div class="comparison-scroll">
 
 <div class="comparison-row comparison-head">
 
@@ -4030,6 +3612,7 @@ COMPARE
 
 </div>
 
+</div>
 
 </div>
 
@@ -4038,9 +3621,8 @@ COMPARE
 </section>
 
 
-
 <!-- =========================================================
-     FAQ
+FAQ
 ========================================================= -->
 
 <section class="section" id="faq">
@@ -4180,9 +3762,8 @@ Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
 </section>
 
 
-
 <!-- =========================================================
-     FINAL CTA
+FINAL CTA
 ========================================================= -->
 
 <section class="final-cta" id="contact">
@@ -4234,9 +3815,8 @@ id="whatsappCta">
 </section>
 
 
-
 <!-- =========================================================
-     FOOTER
+FOOTER
 ========================================================= -->
 
 <footer>
@@ -4258,9 +3838,8 @@ id="whatsappCta">
 </footer>
 
 
-
 <!-- =========================================================
-     WHATSAPP PACKAGE SYSTEM
+WHATSAPP PACKAGE SYSTEM
 ========================================================= -->
 
 <script>
@@ -4288,13 +3867,11 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("whatsappCta");
 
 
-    /* =====================================================
-       PACKAGE SELECT
-    ===================================================== */
-
     packageButtons.forEach(function(button){
 
-        button.addEventListener("click", function(){
+        button.addEventListener("click", function(e){
+
+            e.preventDefault();
 
             selectedPackage =
                 button.getAttribute("data-package") || "";
@@ -4307,13 +3884,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 item.classList.remove("selected");
 
-                const icon =
+                const oldIcon =
                     item.querySelector("i");
 
-                if(icon){
+                if(oldIcon){
 
-                    icon.className =
+                    oldIcon.className =
                         "fa-solid fa-arrow-left";
+
+                }
+
+                const packageName =
+                    item.getAttribute("data-package");
+
+                if(packageName){
+
+                    item.firstChild.textContent =
+                        "انتخاب " + packageName + " ";
+
                 }
 
             });
@@ -4336,12 +3924,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
             setTimeout(function(){
 
-                document
-                    .getElementById("contact")
-                    .scrollIntoView({
+                const contact =
+                    document.getElementById("contact");
+
+                if(contact){
+
+                    contact.scrollIntoView({
                         behavior:"smooth",
                         block:"center"
                     });
+
+                }
 
             },120);
 
@@ -4350,16 +3943,11 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    /* =====================================================
-       WHATSAPP CTA
-    ===================================================== */
-
     whatsappButton.addEventListener("click", function(e){
 
         e.preventDefault();
 
         let message = "";
-
 
         if(selectedPackage){
 
@@ -4404,11 +3992,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     });
 
-
 });
 
 </script>
-
 
 </body>
 </html>
