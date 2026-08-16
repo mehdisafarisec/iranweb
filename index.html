@@ -3,1845 +3,2492 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
+<title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
 
-    <meta
-        name="description"
-        content="طراحی UI/UX، پیاده‌سازی فروشگاه، سئو، Performance، امنیت و زیرساخت فروشگاه اینترنتی"
-    >
+<meta name="description"
+content="طراحی UI/UX، پیاده‌سازی فروشگاه، سئو، Performance، امنیت و زیرساخت فروشگاه اینترنتی">
 
-    <!-- Vazir -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
-    >
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <style>
+<style>
 
-        /* =========================================================
-           ROOT
-        ========================================================= */
+/* =========================================================
+   ROOT
+========================================================= */
 
-        :root {
+:root{
 
-            --bg: #f6f7f9;
-            --white: #ffffff;
+    --bg:#f6f7f9;
+    --white:#fff;
 
-            --black: #101114;
-            --black-2: #17191e;
+    --black:#101114;
+    --black-2:#17191e;
 
-            --text: #16181d;
-            --text-soft: #535964;
-            --muted: #858b96;
+    --text:#16181d;
+    --text-soft:#535964;
+    --muted:#858b96;
 
-            --border: #e7e9ed;
+    --border:#e7e9ed;
 
-            --gold: #e6a52b;
-            --gold-light: #fff6df;
-            --gold-dark: #9c6810;
+    --gold:#e6a52b;
+    --gold-light:#fff6df;
+    --gold-dark:#9c6810;
 
-            --green: #18a957;
-            --green-light: #ecfbf2;
+    --green:#18a957;
+    --green-light:#ecfbf2;
 
-            --blue: #3b82f6;
-            --blue-light: #eff6ff;
+    --blue:#3b82f6;
+    --blue-light:#eff6ff;
 
-            --purple: #7c5cff;
-            --purple-light: #f2efff;
+    --purple:#7c5cff;
+    --purple-light:#f2efff;
 
-            --radius-xl: 30px;
-            --radius-lg: 22px;
-            --radius-md: 16px;
-            --radius-sm: 12px;
+    --radius-xl:30px;
+    --radius-lg:22px;
+    --radius-md:16px;
+    --radius-sm:12px;
 
-            --shadow:
-                0 10px 35px rgba(16, 17, 20, .06);
+    --shadow:0 10px 35px rgba(16,17,20,.06);
+    --shadow-hover:0 25px 65px rgba(16,17,20,.11);
+}
 
-            --shadow-hover:
-                0 25px 65px rgba(16, 17, 20, .11);
 
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+html{
+    scroll-behavior:smooth;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body{
 
-        html {
-            scroll-behavior: smooth;
-        }
+    font-family:Vazir,Tahoma,sans-serif;
 
-        body {
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(230,165,43,.11),
+            transparent 32%
+        ),
+        var(--bg);
 
-            font-family: Vazir, Tahoma, sans-serif;
+    color:var(--text);
 
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    rgba(230,165,43,.11),
-                    transparent 32%
-                ),
-                var(--bg);
+    line-height:1.8;
 
-            color: var(--text);
+    overflow-x:hidden;
+}
 
-            line-height: 1.8;
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-            overflow-x: hidden;
-        }
+button{
+    font-family:inherit;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
 
-        button {
-            font-family: inherit;
-        }
+/* =========================================================
+   GLOBAL
+========================================================= */
 
+.container{
 
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
+    width:min(1180px,calc(100% - 36px));
 
-        .container {
+    margin-inline:auto;
+}
 
-            width: min(1180px, calc(100% - 36px));
 
-            margin-inline: auto;
-        }
+/* =========================================================
+   HEADER
+========================================================= */
 
+.header{
 
-        /* =========================================================
-           HEADER
-        ========================================================= */
+    position:sticky;
 
-        .header {
+    top:0;
 
-            position: sticky;
+    z-index:1000;
 
-            top: 0;
+    border-bottom:1px solid rgba(231,233,237,.8);
 
-            z-index: 1000;
+    background:rgba(255,255,255,.82);
 
-            border-bottom: 1px solid rgba(231,233,237,.8);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
 
-            background: rgba(255,255,255,.78);
+.header-inner{
 
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-        }
+    min-height:72px;
 
-        .header-inner {
+    display:flex;
 
-            min-height: 72px;
+    align-items:center;
 
-            display: flex;
+    justify-content:space-between;
 
-            align-items: center;
+    gap:20px;
+}
 
-            justify-content: space-between;
+.logo{
 
-            gap: 20px;
-        }
+    display:flex;
 
-        .logo {
+    align-items:center;
 
-            display: flex;
+    gap:12px;
 
-            align-items: center;
+    font-weight:900;
+}
 
-            gap: 12px;
+.logo-icon{
 
-            font-weight: 900;
-        }
+    width:40px;
+    height:40px;
 
-        .logo-icon {
+    display:grid;
+    place-items:center;
 
-            width: 40px;
-            height: 40px;
+    border-radius:13px;
 
-            display: grid;
+    color:white;
 
-            place-items: center;
+    background:var(--black);
 
-            border-radius: 13px;
+    box-shadow:0 8px 25px rgba(16,17,20,.18);
 
-            color: white;
+    flex-shrink:0;
+}
 
-            background: var(--black);
+.logo-text{
 
-            box-shadow:
-                0 8px 25px rgba(16,17,20,.18);
-        }
+    font-size:14px;
+}
 
-        .logo-text {
+.logo-text small{
 
-            font-size: 14px;
-        }
+    display:block;
 
-        .logo-text small {
+    font-size:9px;
 
-            display: block;
+    color:var(--muted);
 
-            font-size: 9px;
+    font-weight:500;
+}
 
-            color: var(--muted);
+.nav{
 
-            font-weight: 500;
-        }
+    display:flex;
 
-        .nav {
+    align-items:center;
 
-            display: flex;
+    gap:7px;
+}
 
-            align-items: center;
+.nav a{
 
-            gap: 7px;
-        }
+    padding:8px 13px;
 
-        .nav a {
+    border-radius:10px;
 
-            padding: 8px 13px;
+    color:var(--text-soft);
 
-            border-radius: 10px;
+    font-size:11px;
 
-            color: var(--text-soft);
+    transition:.2s;
+}
 
-            font-size: 11px;
+.nav a:hover{
 
-            transition: .2s;
-        }
+    background:#f2f3f5;
 
-        .nav a:hover {
+    color:var(--black);
+}
 
-            background: #f2f3f5;
+.header-button{
 
-            color: var(--black);
-        }
+    display:flex;
 
-        .header-button {
+    align-items:center;
 
-            display: flex;
+    justify-content:center;
 
-            align-items: center;
+    gap:7px;
 
-            gap: 7px;
+    padding:10px 15px;
 
-            padding: 10px 15px;
+    border-radius:11px;
 
-            border-radius: 11px;
+    background:var(--black);
 
-            background: var(--black);
+    color:white;
 
-            color: white;
+    font-size:11px;
 
-            font-size: 11px;
+    font-weight:800;
 
-            font-weight: 800;
+    transition:.2s;
 
-            transition: .2s;
-        }
+    white-space:nowrap;
+}
 
-        .header-button:hover {
+.header-button:hover{
 
-            transform: translateY(-2px);
+    transform:translateY(-2px);
 
-            background: #25272d;
-        }
+    background:#25272d;
+}
 
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+/* =========================================================
+   HERO
+========================================================= */
 
-        .hero {
+.hero{
 
-            position: relative;
+    position:relative;
 
-            padding: 95px 0 80px;
+    padding:95px 0 80px;
 
-            text-align: center;
-        }
+    text-align:center;
+}
 
-        .hero::before {
+.hero::before{
 
-            content: "";
+    content:"";
 
-            position: absolute;
+    position:absolute;
 
-            width: 480px;
-            height: 480px;
+    width:480px;
+    height:480px;
 
-            border-radius: 50%;
+    border-radius:50%;
 
-            background: rgba(230,165,43,.08);
+    background:rgba(230,165,43,.08);
 
-            filter: blur(60px);
+    filter:blur(60px);
 
-            top: -180px;
-            left: 50%;
+    top:-180px;
+    left:50%;
 
-            transform: translateX(-50%);
+    transform:translateX(-50%);
 
-            pointer-events: none;
-        }
+    pointer-events:none;
+}
 
-        .hero-content {
+.hero-content{
 
-            position: relative;
+    position:relative;
 
-            max-width: 850px;
+    max-width:850px;
 
-            margin-inline: auto;
-        }
+    margin-inline:auto;
+}
 
-        .badge {
+.badge{
 
-            display: inline-flex;
+    display:inline-flex;
 
-            align-items: center;
+    align-items:center;
 
-            gap: 8px;
+    gap:8px;
 
-            padding: 7px 13px;
+    padding:7px 13px;
 
-            background: var(--gold-light);
+    background:var(--gold-light);
 
-            border: 1px solid #f0dfb9;
+    border:1px solid #f0dfb9;
 
-            color: var(--gold-dark);
+    color:var(--gold-dark);
 
-            border-radius: 50px;
+    border-radius:50px;
 
-            font-size: 10px;
+    font-size:10px;
 
-            font-weight: 800;
+    font-weight:800;
 
-            margin-bottom: 20px;
-        }
+    margin-bottom:20px;
+}
 
-        .badge-dot {
+.badge-dot{
 
-            width: 7px;
-            height: 7px;
+    width:7px;
+    height:7px;
 
-            border-radius: 50%;
+    border-radius:50%;
 
-            background: var(--gold);
+    background:var(--gold);
 
-            box-shadow:
-                0 0 0 4px rgba(230,165,43,.13);
-        }
+    box-shadow:0 0 0 4px rgba(230,165,43,.13);
+}
 
-        .hero h1 {
+.hero h1{
 
-            font-size: clamp(35px, 6vw, 67px);
+    font-size:clamp(35px,6vw,67px);
 
-            line-height: 1.18;
+    line-height:1.18;
 
-            letter-spacing: -2.2px;
+    letter-spacing:-2.2px;
 
-            font-weight: 900;
+    font-weight:900;
 
-            margin-bottom: 22px;
-        }
+    margin-bottom:22px;
+}
 
-        .hero h1 span {
+.hero h1 span{
 
-            position: relative;
+    position:relative;
 
-            z-index: 1;
-        }
+    z-index:1;
+}
 
-        .hero h1 span::after {
+.hero h1 span::after{
 
-            content: "";
+    content:"";
 
-            position: absolute;
+    position:absolute;
 
-            right: 0;
-            left: 0;
+    right:0;
+    left:0;
 
-            height: 10px;
+    height:10px;
 
-            bottom: 3px;
+    bottom:3px;
 
-            background: rgba(230,165,43,.28);
+    background:rgba(230,165,43,.28);
 
-            border-radius: 20px;
+    border-radius:20px;
 
-            z-index: -1;
-        }
+    z-index:-1;
+}
 
-        .hero-description {
+.hero-description{
 
-            max-width: 690px;
+    max-width:690px;
 
-            margin-inline: auto;
+    margin-inline:auto;
 
-            color: var(--text-soft);
+    color:var(--text-soft);
 
-            font-size: 15px;
+    font-size:15px;
 
-            line-height: 2;
-        }
+    line-height:2;
+}
 
-        .hero-actions {
+.hero-actions{
 
-            display: flex;
+    display:flex;
 
-            justify-content: center;
+    justify-content:center;
 
-            gap: 10px;
+    gap:10px;
 
-            margin-top: 30px;
+    margin-top:30px;
 
-            flex-wrap: wrap;
-        }
+    flex-wrap:wrap;
+}
 
-        .btn {
+.btn{
 
-            min-height: 48px;
+    min-height:48px;
 
-            display: inline-flex;
+    display:inline-flex;
 
-            align-items: center;
+    align-items:center;
 
-            justify-content: center;
+    justify-content:center;
 
-            gap: 8px;
+    gap:8px;
 
-            padding: 0 20px;
+    padding:0 20px;
 
-            border-radius: 13px;
+    border-radius:13px;
 
-            font-size: 11px;
+    font-size:11px;
 
-            font-weight: 800;
+    font-weight:800;
 
-            transition: .25s;
+    transition:.25s;
 
-            cursor: pointer;
-        }
+    cursor:pointer;
+}
 
-        .btn-primary {
+.btn-primary{
 
-            background: var(--black);
+    background:var(--black);
 
-            color: white;
+    color:white;
 
-            box-shadow:
-                0 10px 25px rgba(16,17,20,.16);
-        }
+    box-shadow:0 10px 25px rgba(16,17,20,.16);
+}
 
-        .btn-primary:hover {
+.btn-primary:hover{
 
-            transform: translateY(-3px);
+    transform:translateY(-3px);
 
-            box-shadow:
-                0 16px 35px rgba(16,17,20,.20);
-        }
+    box-shadow:0 16px 35px rgba(16,17,20,.20);
+}
 
-        .btn-secondary {
+.btn-secondary{
 
-            background: white;
+    background:white;
 
-            border: 1px solid var(--border);
+    border:1px solid var(--border);
 
-            color: var(--text);
-        }
+    color:var(--text);
+}
 
-        .btn-secondary:hover {
+.btn-secondary:hover{
 
-            border-color: #cfd3da;
+    border-color:#cfd3da;
 
-            transform: translateY(-2px);
-        }
+    transform:translateY(-2px);
+}
 
 
-        /* =========================================================
-           HERO STATS
-        ========================================================= */
+/* =========================================================
+   HERO STATS
+========================================================= */
 
-        .hero-stats {
+.hero-stats{
 
-            display: grid;
+    display:grid;
 
-            grid-template-columns: repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
-            margin-top: 65px;
+    margin-top:65px;
 
-            background: white;
+    background:white;
 
-            border: 1px solid var(--border);
+    border:1px solid var(--border);
 
-            border-radius: 22px;
+    border-radius:22px;
 
-            box-shadow: var(--shadow);
+    box-shadow:var(--shadow);
 
-            overflow: hidden;
-        }
+    overflow:hidden;
+}
 
-        .stat {
+.stat{
 
-            padding: 22px;
+    padding:22px;
 
-            text-align: center;
+    text-align:center;
 
-            border-left: 1px solid var(--border);
-        }
+    border-left:1px solid var(--border);
+}
 
-        .stat:last-child {
-            border-left: none;
-        }
+.stat:last-child{
 
-        .stat strong {
+    border-left:none;
+}
 
-            display: block;
+.stat strong{
 
-            font-size: 19px;
+    display:block;
 
-            font-weight: 900;
-        }
+    font-size:19px;
 
-        .stat span {
+    font-weight:900;
+}
 
-            color: var(--muted);
+.stat span{
 
-            font-size: 10px;
-        }
+    color:var(--muted);
 
+    font-size:10px;
+}
 
-        /* =========================================================
-           SECTION
-        ========================================================= */
 
-        .section {
+/* =========================================================
+   SECTION
+========================================================= */
 
-            padding: 85px 0;
-        }
+.section{
 
-        .section-header {
+    padding:85px 0;
+}
 
-            max-width: 700px;
+.section-header{
 
-            margin: 0 auto 38px;
+    max-width:700px;
 
-            text-align: center;
-        }
+    margin:0 auto 38px;
 
-        .section-kicker {
+    text-align:center;
+}
 
-            color: var(--gold-dark);
+.section-kicker{
 
-            font-size: 10px;
+    color:var(--gold-dark);
 
-            font-weight: 900;
+    font-size:10px;
 
-            margin-bottom: 8px;
-        }
+    font-weight:900;
 
-        .section-header h2 {
+    margin-bottom:8px;
+}
 
-            font-size: clamp(27px, 4vw, 39px);
+.section-header h2{
 
-            line-height: 1.35;
+    font-size:clamp(27px,4vw,39px);
 
-            font-weight: 900;
+    line-height:1.35;
 
-            letter-spacing: -1px;
-        }
+    font-weight:900;
 
-        .section-header p {
+    letter-spacing:-1px;
+}
 
-            color: var(--text-soft);
+.section-header p{
 
-            font-size: 12px;
+    color:var(--text-soft);
 
-            margin-top: 9px;
-        }
+    font-size:12px;
 
+    margin-top:9px;
+}
 
-        /* =========================================================
-           SERVICE CARDS
-        ========================================================= */
 
-        .service-grid {
+/* =========================================================
+   SERVICES
+========================================================= */
 
-            display: grid;
+.service-grid{
 
-            grid-template-columns: repeat(4,1fr);
+    display:grid;
 
-            gap: 14px;
-        }
+    grid-template-columns:repeat(4,1fr);
 
-        .service-card {
+    gap:14px;
+}
 
-            padding: 24px;
+.service-card{
 
-            background: white;
+    padding:24px;
 
-            border: 1px solid var(--border);
+    background:white;
 
-            border-radius: 21px;
+    border:1px solid var(--border);
 
-            box-shadow: var(--shadow);
+    border-radius:21px;
 
-            transition: .25s;
-        }
+    box-shadow:var(--shadow);
 
-        .service-card:hover {
+    transition:.25s;
+}
 
-            transform: translateY(-5px);
+.service-card:hover{
 
-            box-shadow: var(--shadow-hover);
-        }
+    transform:translateY(-5px);
 
-        .service-icon {
+    box-shadow:var(--shadow-hover);
+}
 
-            width: 45px;
-            height: 45px;
+.service-icon{
 
-            display: grid;
+    width:45px;
+    height:45px;
 
-            place-items: center;
+    display:grid;
 
-            border-radius: 14px;
+    place-items:center;
 
-            margin-bottom: 18px;
+    border-radius:14px;
 
-            font-size: 16px;
-        }
+    margin-bottom:18px;
 
-        .service-card:nth-child(1) .service-icon {
+    font-size:16px;
+}
 
-            color: var(--gold-dark);
+.service-card:nth-child(1) .service-icon{
 
-            background: var(--gold-light);
-        }
+    color:var(--gold-dark);
 
-        .service-card:nth-child(2) .service-icon {
+    background:var(--gold-light);
+}
 
-            color: var(--blue);
+.service-card:nth-child(2) .service-icon{
 
-            background: var(--blue-light);
-        }
+    color:var(--blue);
 
-        .service-card:nth-child(3) .service-icon {
+    background:var(--blue-light);
+}
 
-            color: var(--purple);
+.service-card:nth-child(3) .service-icon{
 
-            background: var(--purple-light);
-        }
+    color:var(--purple);
 
-        .service-card:nth-child(4) .service-icon {
+    background:var(--purple-light);
+}
 
-            color: var(--green);
+.service-card:nth-child(4) .service-icon{
 
-            background: var(--green-light);
-        }
+    color:var(--green);
 
-        .service-card h3 {
+    background:var(--green-light);
+}
 
-            font-size: 15px;
+.service-card h3{
 
-            font-weight: 900;
+    font-size:15px;
 
-            margin-bottom: 6px;
-        }
+    font-weight:900;
 
-        .service-card p {
+    margin-bottom:6px;
+}
 
-            color: var(--text-soft);
+.service-card p{
 
-            font-size: 10px;
+    color:var(--text-soft);
 
-            line-height: 1.9;
-        }
+    font-size:10px;
 
+    line-height:1.9;
+}
 
-        /* =========================================================
-           PRICING
-        ========================================================= */
 
-        .pricing {
+/* =========================================================
+   PRICING
+========================================================= */
 
-            background: #101114;
+.pricing{
 
-            color: white;
+    background:#101114;
 
-            padding: 95px 0;
-        }
+    color:white;
 
-        .pricing .section-header p {
+    padding:95px 0;
+}
 
-            color: #a4a8b1;
-        }
+.pricing .section-header p{
 
-        .pricing .section-kicker {
+    color:#a4a8b1;
+}
 
-            color: #e9b74e;
-        }
+.pricing .section-kicker{
 
-        .pricing-grid {
+    color:#e9b74e;
+}
 
-            display: grid;
+.pricing-grid{
 
-            grid-template-columns: repeat(3,1fr);
+    display:grid;
 
-            gap: 17px;
+    grid-template-columns:repeat(3,1fr);
 
-            align-items: start;
-        }
+    gap:17px;
 
-        .plan {
+    align-items:start;
+}
 
-            position: relative;
+.plan{
 
-            background: #181a1f;
+    position:relative;
 
-            border: 1px solid #292c32;
+    background:#181a1f;
 
-            border-radius: 27px;
+    border:1px solid #292c32;
 
-            padding: 27px;
+    border-radius:27px;
 
-            transition: .3s;
-        }
+    padding:27px;
 
-        .plan:hover {
+    transition:.3s;
+}
 
-            transform: translateY(-5px);
+.plan:hover{
 
-            border-color: #3a3d45;
-        }
+    transform:translateY(-5px);
 
-        .plan.featured {
+    border-color:#3a3d45;
+}
 
-            background: white;
+.plan.featured{
 
-            color: var(--text);
+    background:white;
 
-            border: 2px solid var(--gold);
+    color:var(--text);
 
-            transform: translateY(-12px);
+    border:2px solid var(--gold);
 
-            box-shadow:
-                0 25px 70px rgba(0,0,0,.27);
-        }
+    transform:translateY(-12px);
 
-        .plan.featured:hover {
+    box-shadow:0 25px 70px rgba(0,0,0,.27);
+}
 
-            transform: translateY(-16px);
-        }
+.plan.featured:hover{
 
-        .featured-label {
+    transform:translateY(-16px);
+}
 
-            position: absolute;
+.featured-label{
 
-            top: -13px;
+    position:absolute;
 
-            right: 22px;
+    top:-13px;
 
-            background: var(--gold);
+    right:22px;
 
-            color: #2b1b05;
+    background:var(--gold);
 
-            padding: 5px 13px;
+    color:#2b1b05;
 
-            border-radius: 50px;
+    padding:5px 13px;
 
-            font-size: 9px;
+    border-radius:50px;
 
-            font-weight: 900;
-        }
+    font-size:9px;
 
-        .plan-top {
+    font-weight:900;
+}
 
-            display: flex;
+.plan-top{
 
-            align-items: center;
+    display:flex;
 
-            justify-content: space-between;
+    align-items:center;
 
-            padding-bottom: 20px;
+    justify-content:space-between;
 
-            border-bottom: 1px solid #2b2e35;
-        }
+    gap:15px;
 
-        .featured .plan-top {
+    padding-bottom:20px;
 
-            border-color: var(--border);
-        }
+    border-bottom:1px solid #2b2e35;
+}
 
-        .plan h3 {
+.featured .plan-top{
 
-            font-size: 20px;
+    border-color:var(--border);
+}
 
-            font-weight: 900;
-        }
+.plan h3{
 
-        .plan-subtitle {
+    font-size:20px;
 
-            color: #969ba5;
+    font-weight:900;
+}
 
-            font-size: 9px;
+.plan-subtitle{
 
-            margin-top: 2px;
-        }
+    color:#969ba5;
 
-        .featured .plan-subtitle {
+    font-size:9px;
 
-            color: var(--muted);
-        }
+    margin-top:2px;
+}
 
-        .plan-icon {
+.featured .plan-subtitle{
 
-            width: 42px;
-            height: 42px;
+    color:var(--muted);
+}
 
-            display: grid;
+.plan-icon{
 
-            place-items: center;
+    width:42px;
+    height:42px;
 
-            border-radius: 13px;
+    display:grid;
 
-            background: #22252b;
+    place-items:center;
 
-            color: #d6d9de;
-        }
+    border-radius:13px;
 
-        .featured .plan-icon {
+    background:#22252b;
 
-            background: var(--gold-light);
+    color:#d6d9de;
 
-            color: var(--gold-dark);
-        }
+    flex-shrink:0;
+}
 
-        .price {
+.featured .plan-icon{
 
-            padding: 24px 0 20px;
-        }
+    background:var(--gold-light);
 
-        .price-number {
+    color:var(--gold-dark);
+}
 
-            display: flex;
+.price{
 
-            align-items: baseline;
+    padding:24px 0 20px;
+}
 
-            gap: 6px;
-        }
+.price-number{
 
-        .price-number strong {
+    display:flex;
 
-            font-size: 42px;
+    align-items:baseline;
 
-            line-height: 1;
+    gap:6px;
+}
 
-            font-weight: 900;
+.price-number strong{
 
-            letter-spacing: -1.5px;
-        }
+    font-size:42px;
 
-        .price-number span {
+    line-height:1;
 
-            color: #9297a0;
+    font-weight:900;
 
-            font-size: 10px;
-        }
+    letter-spacing:-1.5px;
+}
 
-        .featured .price-number span {
+.price-number span{
 
-            color: var(--muted);
-        }
+    color:#9297a0;
 
-        .price-description {
+    font-size:10px;
+}
 
-            color: #9297a0;
+.featured .price-number span{
 
-            font-size: 9px;
+    color:var(--muted);
+}
 
-            margin-top: 7px;
-        }
+.price-description{
 
-        .featured .price-description {
+    color:#9297a0;
 
-            color: var(--muted);
-        }
+    font-size:9px;
 
-        .plan-button {
+    margin-top:7px;
+}
 
-            width: 100%;
+.featured .price-description{
 
-            min-height: 47px;
+    color:var(--muted);
+}
 
-            display: flex;
 
-            align-items: center;
+/* =========================================================
+   PACKAGE BUTTON
+========================================================= */
 
-            justify-content: center;
+.plan-button{
 
-            gap: 7px;
+    width:100%;
 
-            border-radius: 12px;
+    min-height:47px;
 
-            background: white;
+    display:flex;
 
-            color: var(--black);
+    align-items:center;
 
-            font-size: 10px;
+    justify-content:center;
 
-            font-weight: 900;
+    gap:7px;
 
-            transition: .2s;
-        }
+    border-radius:12px;
 
-        .plan-button:hover {
+    background:white;
 
-            transform: translateY(-2px);
+    color:var(--black);
 
-            background: #f0f1f3;
-        }
+    font-size:10px;
 
-        .featured .plan-button {
+    font-weight:900;
 
-            background: var(--black);
+    transition:.2s;
 
-            color: white;
-        }
+    cursor:pointer;
 
-        .feature-groups {
+    border:0;
+}
 
-            margin-top: 22px;
-        }
+.plan-button:hover{
 
-        .feature-group {
+    transform:translateY(-2px);
 
-            border-top: 1px solid #292c32;
+    background:#f0f1f3;
+}
 
-            padding: 15px 0;
-        }
+.featured .plan-button{
 
-        .featured .feature-group {
+    background:var(--black);
 
-            border-color: var(--border);
-        }
+    color:white;
+}
 
-        .feature-group summary {
+.plan-button.selected{
 
-            display: flex;
+    background:var(--green)!important;
 
-            align-items: center;
+    color:white!important;
 
-            justify-content: space-between;
+    box-shadow:0 8px 25px rgba(24,169,87,.22);
+}
 
-            cursor: pointer;
 
-            list-style: none;
+/* =========================================================
+   FEATURES
+========================================================= */
 
-            font-size: 11px;
+.feature-groups{
 
-            font-weight: 900;
-        }
+    margin-top:22px;
+}
 
-        .feature-group summary::-webkit-details-marker {
-            display: none;
-        }
+.feature-group{
 
-        .summary-left {
+    border-top:1px solid #292c32;
 
-            display: flex;
+    padding:15px 0;
+}
 
-            align-items: center;
+.featured .feature-group{
 
-            gap: 8px;
-        }
+    border-color:var(--border);
+}
 
-        .summary-icon {
+.feature-group summary{
 
-            width: 26px;
-            height: 26px;
+    display:flex;
 
-            display: grid;
+    align-items:center;
 
-            place-items: center;
+    justify-content:space-between;
 
-            border-radius: 8px;
+    cursor:pointer;
 
-            background: #22252b;
+    list-style:none;
 
-            color: #c8cbd0;
+    font-size:11px;
 
-            font-size: 10px;
-        }
+    font-weight:900;
+}
 
-        .featured .summary-icon {
+.feature-group summary::-webkit-details-marker{
 
-            background: #f4f4f5;
+    display:none;
+}
 
-            color: #555b66;
-        }
+.summary-left{
 
-        .feature-group summary i {
+    display:flex;
 
-            color: #777c85;
+    align-items:center;
 
-            font-size: 9px;
+    gap:8px;
+}
 
-            transition: .2s;
-        }
+.summary-icon{
 
-        .feature-group[open] summary i {
+    width:26px;
+    height:26px;
 
-            transform: rotate(180deg);
-        }
+    display:grid;
 
-        .feature-list {
+    place-items:center;
 
-            list-style: none;
+    border-radius:8px;
 
-            margin-top: 13px;
+    background:#22252b;
 
-            display: flex;
+    color:#c8cbd0;
 
-            flex-direction: column;
+    font-size:10px;
 
-            gap: 7px;
-        }
+    flex-shrink:0;
+}
 
-        .feature-list li {
+.featured .summary-icon{
 
-            position: relative;
+    background:#f4f4f5;
 
-            padding-right: 17px;
+    color:#555b66;
+}
 
-            color: #a7abb3;
+.feature-group summary i{
 
-            font-size: 9px;
+    color:#777c85;
 
-            line-height: 1.8;
-        }
+    font-size:9px;
 
-        .featured .feature-list li {
+    transition:.2s;
+}
 
-            color: #626873;
-        }
+.feature-group[open] summary i{
 
-        .feature-list li::before {
+    transform:rotate(180deg);
+}
 
-            content: "✓";
+.feature-list{
 
-            position: absolute;
+    list-style:none;
 
-            right: 0;
+    margin-top:13px;
 
-            color: var(--green);
+    display:flex;
 
-            font-weight: 900;
-        }
+    flex-direction:column;
 
-        .feature-list li strong {
+    gap:7px;
+}
 
-            color: inherit;
+.feature-list li{
 
-            font-weight: 900;
-        }
+    position:relative;
 
+    padding-right:17px;
 
-        /* =========================================================
-           UI UX PREMIUM
-        ========================================================= */
+    color:#a7abb3;
 
-        .ux-section {
+    font-size:9px;
 
-            padding: 100px 0;
-        }
+    line-height:1.8;
+}
 
-        .ux-card {
+.featured .feature-list li{
 
-            position: relative;
+    color:#626873;
+}
 
-            overflow: hidden;
+.feature-list li::before{
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #18191d,
-                    #0e0f12
-                );
+    content:"✓";
 
-            color: white;
+    position:absolute;
 
-            border-radius: 32px;
+    right:0;
 
-            padding: 55px;
+    color:var(--green);
 
-            box-shadow:
-                0 35px 90px rgba(16,17,20,.18);
-        }
+    font-weight:900;
+}
 
-        .ux-card::before {
 
-            content: "";
+/* =========================================================
+   UI UX
+========================================================= */
 
-            position: absolute;
+.ux-section{
 
-            width: 420px;
-            height: 420px;
+    padding:100px 0;
+}
 
-            border-radius: 50%;
+.ux-card{
 
-            background: rgba(230,165,43,.12);
+    position:relative;
 
-            filter: blur(70px);
+    overflow:hidden;
 
-            left: -130px;
-            top: -160px;
-        }
+    background:linear-gradient(
+        135deg,
+        #18191d,
+        #0e0f12
+    );
 
-        .ux-card::after {
+    color:white;
 
-            content: "";
+    border-radius:32px;
 
-            position: absolute;
+    padding:55px;
 
-            width: 300px;
-            height: 300px;
+    box-shadow:0 35px 90px rgba(16,17,20,.18);
+}
 
-            border-radius: 50%;
+.ux-card::before{
 
-            border: 1px solid rgba(255,255,255,.06);
+    content:"";
 
-            left: 18%;
-            bottom: -180px;
-        }
+    position:absolute;
 
-        .ux-grid {
+    width:420px;
+    height:420px;
 
-            position: relative;
+    border-radius:50%;
 
-            z-index: 2;
+    background:rgba(230,165,43,.12);
 
-            display: grid;
+    filter:blur(70px);
 
-            grid-template-columns: 1.25fr .75fr;
+    left:-130px;
+    top:-160px;
+}
 
-            gap: 55px;
+.ux-grid{
 
-            align-items: center;
-        }
+    position:relative;
 
-        .ux-label {
+    z-index:2;
 
-            display: inline-flex;
+    display:grid;
 
-            align-items: center;
+    grid-template-columns:1.25fr .75fr;
 
-            gap: 8px;
+    gap:55px;
 
-            color: #efbd59;
+    align-items:center;
+}
 
-            font-size: 10px;
+.ux-label{
 
-            font-weight: 900;
+    display:inline-flex;
 
-            margin-bottom: 14px;
-        }
+    align-items:center;
 
-        .ux-title {
+    gap:8px;
 
-            font-size: clamp(27px, 4vw, 42px);
+    color:#efbd59;
 
-            line-height: 1.35;
+    font-size:10px;
 
-            font-weight: 900;
+    font-weight:900;
 
-            margin-bottom: 12px;
-        }
+    margin-bottom:14px;
+}
 
-        .ux-description {
+.ux-title{
 
-            max-width: 600px;
+    font-size:clamp(27px,4vw,42px);
 
-            color: #aeb3bc;
+    line-height:1.35;
 
-            font-size: 12px;
+    font-weight:900;
 
-            line-height: 2;
-        }
+    margin-bottom:12px;
+}
 
-        .ux-output {
+.ux-description{
 
-            margin-top: 22px;
+    max-width:600px;
 
-            display: grid;
+    color:#aeb3bc;
 
-            grid-template-columns: repeat(2,1fr);
+    font-size:12px;
 
-            gap: 9px;
-        }
+    line-height:2;
+}
 
-        .ux-output div {
+.ux-output{
 
-            display: flex;
+    margin-top:22px;
 
-            align-items: center;
+    display:grid;
 
-            gap: 8px;
+    grid-template-columns:repeat(2,1fr);
 
-            color: #d6d9de;
+    gap:9px;
+}
 
-            font-size: 10px;
-        }
+.ux-output div{
 
-        .ux-output i {
+    display:flex;
 
-            color: var(--gold);
-        }
+    align-items:center;
 
-        .ux-price {
+    gap:8px;
 
-            background: rgba(255,255,255,.06);
+    color:#d6d9de;
 
-            border: 1px solid rgba(255,255,255,.1);
+    font-size:10px;
+}
 
-            border-radius: 23px;
+.ux-output i{
 
-            padding: 28px;
+    color:var(--gold);
+}
 
-            backdrop-filter: blur(10px);
-        }
+.ux-price{
 
-        .ux-price-label {
+    background:rgba(255,255,255,.06);
 
-            color: #9096a0;
+    border:1px solid rgba(255,255,255,.1);
 
-            font-size: 10px;
-        }
+    border-radius:23px;
 
-        .ux-price strong {
+    padding:28px;
 
-            display: block;
+    backdrop-filter:blur(10px);
+}
 
-            font-size: 43px;
+.ux-price-label{
 
-            line-height: 1.2;
+    color:#9096a0;
 
-            font-weight: 900;
+    font-size:10px;
+}
 
-            margin: 4px 0;
-        }
+.ux-price strong{
 
-        .ux-price strong small {
+    display:block;
 
-            font-size: 11px;
+    font-size:43px;
 
-            color: #9ca2ac;
+    line-height:1.2;
 
-            font-weight: 500;
-        }
+    font-weight:900;
 
-        .ux-price-description {
+    margin:4px 0;
+}
 
-            color: #9298a2;
+.ux-price strong small{
 
-            font-size: 9px;
+    font-size:11px;
 
-            margin-bottom: 19px;
-        }
+    color:#9ca2ac;
 
-        .ux-button {
+    font-weight:500;
+}
 
-            width: 100%;
+.ux-price-description{
 
-            min-height: 46px;
+    color:#9298a2;
 
-            display: flex;
+    font-size:9px;
 
-            align-items: center;
+    margin-bottom:19px;
+}
 
-            justify-content: center;
+.ux-button{
 
-            gap: 8px;
+    width:100%;
 
-            border-radius: 12px;
+    min-height:46px;
 
-            background: var(--gold);
+    display:flex;
 
-            color: #241703;
+    align-items:center;
 
-            font-size: 10px;
+    justify-content:center;
 
-            font-weight: 900;
+    gap:8px;
 
-            transition: .2s;
-        }
+    border-radius:12px;
 
-        .ux-button:hover {
+    background:var(--gold);
 
-            transform: translateY(-2px);
+    color:#241703;
 
-            background: #f2b53d;
-        }
+    font-size:10px;
 
+    font-weight:900;
 
-        /* =========================================================
-           UX STEPS
-        ========================================================= */
+    transition:.2s;
 
-        .steps {
+    cursor:pointer;
+}
 
-            display: grid;
+.ux-button:hover{
 
-            grid-template-columns: repeat(4,1fr);
+    transform:translateY(-2px);
 
-            gap: 13px;
+    background:#f2b53d;
+}
 
-            margin-top: 35px;
-        }
 
-        .step {
+/* =========================================================
+   STEPS
+========================================================= */
 
-            background: white;
+.steps{
 
-            border: 1px solid var(--border);
+    display:grid;
 
-            border-radius: 19px;
+    grid-template-columns:repeat(4,1fr);
 
-            padding: 22px;
+    gap:13px;
 
-            position: relative;
-        }
+    margin-top:35px;
+}
 
-        .step-number {
+.step{
 
-            width: 31px;
-            height: 31px;
+    background:white;
 
-            display: grid;
+    border:1px solid var(--border);
 
-            place-items: center;
+    border-radius:19px;
 
-            border-radius: 10px;
+    padding:22px;
 
-            background: var(--black);
+    position:relative;
+}
 
-            color: white;
+.step-number{
 
-            font-size: 10px;
+    width:31px;
+    height:31px;
 
-            font-weight: 900;
+    display:grid;
 
-            margin-bottom: 16px;
-        }
+    place-items:center;
 
-        .step h3 {
+    border-radius:10px;
 
-            font-size: 13px;
+    background:var(--black);
 
-            font-weight: 900;
+    color:white;
 
-            margin-bottom: 5px;
-        }
+    font-size:10px;
 
-        .step p {
+    font-weight:900;
 
-            color: var(--text-soft);
+    margin-bottom:16px;
+}
 
-            font-size: 9px;
+.step h3{
 
-            line-height: 1.9;
-        }
+    font-size:13px;
 
+    font-weight:900;
 
-        /* =========================================================
-           COMPARISON
-        ========================================================= */
+    margin-bottom:5px;
+}
 
-        .comparison-section {
+.step p{
 
-            padding: 85px 0;
-        }
+    color:var(--text-soft);
 
-        .comparison {
+    font-size:9px;
 
-            background: white;
+    line-height:1.9;
+}
 
-            border: 1px solid var(--border);
 
-            border-radius: 25px;
+/* =========================================================
+   COMPARISON
+========================================================= */
 
-            overflow: hidden;
+.comparison-section{
 
-            box-shadow: var(--shadow);
-        }
+    padding:85px 0;
+}
 
-        .comparison-row {
+.comparison{
 
-            display: grid;
+    background:white;
 
-            grid-template-columns: 1.7fr repeat(3,1fr);
+    border:1px solid var(--border);
 
-            min-height: 58px;
+    border-radius:25px;
 
-            border-bottom: 1px solid var(--border);
-        }
+    overflow:hidden;
 
-        .comparison-row:last-child {
-            border-bottom: none;
-        }
+    box-shadow:var(--shadow);
+}
 
-        .comparison-row > div {
+.comparison-row{
 
-            display: flex;
+    display:grid;
 
-            align-items: center;
+    grid-template-columns:1.7fr repeat(3,1fr);
 
-            justify-content: center;
+    min-height:58px;
 
-            padding: 10px;
+    border-bottom:1px solid var(--border);
+}
 
-            border-left: 1px solid var(--border);
+.comparison-row:last-child{
 
-            font-size: 10px;
-        }
+    border-bottom:none;
+}
 
-        .comparison-row > div:last-child {
-            border-left: none;
-        }
+.comparison-row>div{
 
-        .comparison-row > div:first-child {
-            justify-content: flex-start;
+    display:flex;
 
-            color: var(--text-soft);
-        }
+    align-items:center;
 
-        .comparison-head {
+    justify-content:center;
 
-            background: #f8f9fa;
+    padding:10px;
 
-            font-weight: 900;
-        }
+    border-left:1px solid var(--border);
 
-        .comparison-head > div:first-child {
+    font-size:10px;
+}
 
-            color: var(--text);
-        }
+.comparison-row>div:last-child{
 
-        .check {
+    border-left:none;
+}
 
-            color: var(--green);
+.comparison-row>div:first-child{
 
-            font-size: 13px;
-        }
+    justify-content:flex-start;
 
+    color:var(--text-soft);
+}
 
-        /* =========================================================
-           FAQ
-        ========================================================= */
+.comparison-head{
 
-        .faq-grid {
+    background:#f8f9fa;
 
-            max-width: 850px;
+    font-weight:900;
+}
 
-            margin-inline: auto;
+.comparison-head>div:first-child{
 
-            display: flex;
+    color:var(--text);
+}
 
-            flex-direction: column;
+.check{
 
-            gap: 9px;
-        }
+    color:var(--green);
 
-        .faq-item {
+    font-size:13px;
+}
 
-            background: white;
 
-            border: 1px solid var(--border);
+/* =========================================================
+   FAQ
+========================================================= */
 
-            border-radius: 16px;
+.faq-grid{
 
-            padding: 0 18px;
+    max-width:850px;
 
-            box-shadow: var(--shadow);
-        }
+    margin-inline:auto;
 
-        .faq-item summary {
+    display:flex;
 
-            min-height: 58px;
+    flex-direction:column;
 
-            display: flex;
+    gap:9px;
+}
 
-            align-items: center;
+.faq-item{
 
-            justify-content: space-between;
+    background:white;
 
-            cursor: pointer;
+    border:1px solid var(--border);
 
-            list-style: none;
+    border-radius:16px;
 
-            font-size: 11px;
+    padding:0 18px;
 
-            font-weight: 900;
-        }
+    box-shadow:var(--shadow);
+}
 
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
+.faq-item summary{
 
-        .faq-item summary i {
+    min-height:58px;
 
-            color: var(--muted);
+    display:flex;
 
-            transition: .2s;
-        }
+    align-items:center;
 
-        .faq-item[open] summary i {
+    justify-content:space-between;
 
-            transform: rotate(180deg);
-        }
+    gap:15px;
 
-        .faq-answer {
+    cursor:pointer;
 
-            color: var(--text-soft);
+    list-style:none;
 
-            font-size: 10px;
+    font-size:11px;
 
-            line-height: 2;
+    font-weight:900;
+}
 
-            padding: 0 0 18px;
-        }
+.faq-item summary::-webkit-details-marker{
 
+    display:none;
+}
 
-        /* =========================================================
-           CTA
-        ========================================================= */
+.faq-item summary i{
 
-        .final-cta {
+    color:var(--muted);
 
-            padding: 85px 0 100px;
-        }
+    transition:.2s;
 
-        .cta-box {
+    flex-shrink:0;
+}
 
-            background: var(--black);
+.faq-item[open] summary i{
 
-            color: white;
+    transform:rotate(180deg);
+}
 
-            border-radius: 30px;
+.faq-answer{
 
-            padding: 55px 30px;
+    color:var(--text-soft);
 
-            text-align: center;
+    font-size:10px;
 
-            position: relative;
+    line-height:2;
 
-            overflow: hidden;
-        }
+    padding:0 0 18px;
+}
 
-        .cta-box::before {
 
-            content: "";
+/* =========================================================
+   FINAL CTA
+========================================================= */
 
-            position: absolute;
+.final-cta{
 
-            width: 280px;
-            height: 280px;
+    padding:85px 0 100px;
+}
 
-            border-radius: 50%;
+.cta-box{
 
-            background: rgba(230,165,43,.13);
+    background:var(--black);
 
-            filter: blur(45px);
+    color:white;
 
-            left: -100px;
-            top: -150px;
-        }
+    border-radius:30px;
 
-        .cta-box > * {
+    padding:55px 30px;
 
-            position: relative;
+    text-align:center;
 
-            z-index: 2;
-        }
+    position:relative;
 
-        .cta-box h2 {
+    overflow:hidden;
+}
 
-            font-size: clamp(26px,4vw,40px);
+.cta-box::before{
 
-            font-weight: 900;
+    content:"";
 
-            margin-bottom: 10px;
-        }
+    position:absolute;
 
-        .cta-box p {
+    width:280px;
+    height:280px;
 
-            max-width: 600px;
+    border-radius:50%;
 
-            margin: auto;
+    background:rgba(230,165,43,.13);
 
-            color: #a9aeb7;
+    filter:blur(45px);
 
-            font-size: 11px;
-        }
+    left:-100px;
+    top:-150px;
+}
 
-        .cta-button {
+.cta-box>*{
 
-            display: inline-flex;
+    position:relative;
 
-            align-items: center;
+    z-index:2;
+}
 
-            justify-content: center;
+.cta-box h2{
 
-            gap: 8px;
+    font-size:clamp(26px,4vw,40px);
 
-            min-height: 48px;
+    font-weight:900;
 
-            margin-top: 24px;
+    margin-bottom:10px;
+}
 
-            padding: 0 23px;
+.cta-box p{
 
-            background: var(--gold);
+    max-width:600px;
 
-            color: #261903;
+    margin:auto;
 
-            border-radius: 13px;
+    color:#a9aeb7;
 
-            font-size: 11px;
+    font-size:11px;
+}
 
-            font-weight: 900;
+.selected-package{
 
-            transition: .2s;
-        }
+    display:none;
 
-        .cta-button:hover {
+    width:max-content;
 
-            transform: translateY(-3px);
+    max-width:100%;
 
-            background: #f2b53d;
-        }
+    margin:20px auto 0;
 
+    padding:8px 15px;
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+    border:1px solid rgba(255,255,255,.12);
 
-        footer {
+    background:rgba(255,255,255,.06);
 
-            padding: 25px 0 35px;
+    border-radius:50px;
 
-            text-align: center;
+    color:#dfe2e6;
 
-            color: var(--muted);
+    font-size:10px;
+}
 
-            font-size: 9px;
+.selected-package.show{
 
-            border-top: 1px solid var(--border);
-        }
+    display:block;
+}
 
-        footer strong {
-            color: var(--text);
-        }
+.selected-package strong{
 
+    color:var(--gold);
+}
 
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+.cta-button{
 
-        @media (max-width: 1000px) {
+    display:inline-flex;
 
-            .service-grid {
+    align-items:center;
 
-                grid-template-columns: repeat(2,1fr);
-            }
+    justify-content:center;
 
-            .pricing-grid {
+    gap:8px;
 
-                grid-template-columns: 1fr;
+    min-height:48px;
 
-                max-width: 650px;
+    margin-top:24px;
 
-                margin-inline: auto;
-            }
+    padding:0 23px;
 
-            .plan.featured {
+    background:var(--gold);
 
-                order: -1;
+    color:#261903;
 
-                transform: none;
-            }
+    border-radius:13px;
 
-            .plan.featured:hover {
+    font-size:11px;
 
-                transform: translateY(-5px);
-            }
+    font-weight:900;
 
-            .ux-grid {
+    transition:.2s;
 
-                grid-template-columns: 1fr;
-            }
+    border:0;
 
-            .steps {
+    cursor:pointer;
+}
 
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
+.cta-button:hover{
 
+    transform:translateY(-3px);
 
-        @media (max-width: 700px) {
+    background:#f2b53d;
+}
 
-            .container {
+.cta-button i{
 
-                width: min(100% - 26px, 600px);
-            }
+    font-size:13px;
+}
 
-            .header-inner {
 
-                min-height: 62px;
-            }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-            .nav {
+footer{
 
-                display: none;
-            }
+    padding:25px 0 35px;
 
-            .header-button {
+    text-align:center;
 
-                padding: 9px 11px;
+    color:var(--muted);
 
-                font-size: 9px;
-            }
+    font-size:9px;
 
-            .hero {
+    border-top:1px solid var(--border);
+}
 
-                padding: 65px 0 55px;
-            }
+footer strong{
 
-            .hero h1 {
+    color:var(--text);
+}
 
-                letter-spacing: -1.2px;
-            }
 
-            .hero-description {
+/* =========================================================
+   RESPONSIVE 1000
+========================================================= */
 
-                font-size: 12px;
-            }
+@media(max-width:1000px){
 
-            .hero-stats {
+    .service-grid{
 
-                grid-template-columns: repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
+    }
 
-                margin-top: 45px;
-            }
+    .pricing-grid{
 
-            .stat:nth-child(2) {
+        grid-template-columns:1fr;
 
-                border-left: none;
-            }
+        max-width:680px;
 
-            .stat:nth-child(-n+2) {
+        margin-inline:auto;
 
-                border-bottom: 1px solid var(--border);
-            }
+        gap:25px;
+    }
 
-            .section {
+    .plan.featured{
 
-                padding: 65px 0;
-            }
+        order:-1;
 
-            .service-grid {
+        transform:none;
+    }
 
-                grid-template-columns: 1fr;
-            }
+    .plan.featured:hover{
 
-            .pricing {
+        transform:translateY(-5px);
+    }
 
-                padding: 70px 0;
-            }
+    .ux-grid{
 
-            .plan {
+        grid-template-columns:1fr;
+    }
 
-                padding: 23px 19px;
-            }
+    .ux-price{
 
-            .ux-section {
+        max-width:520px;
+    }
 
-                padding: 70px 0;
-            }
+    .steps{
 
-            .ux-card {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
 
-                padding: 30px 20px;
 
-                border-radius: 24px;
-            }
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
 
-            .ux-output {
+@media(max-width:700px){
 
-                grid-template-columns: 1fr;
-            }
+    .container{
 
-            .steps {
+        width:calc(100% - 28px);
 
-                grid-template-columns: 1fr;
-            }
+        max-width:560px;
+    }
 
-            .comparison-section {
 
-                padding: 65px 0;
-            }
+    /* HEADER */
 
-            .comparison {
+    .header-inner{
 
-                overflow-x: auto;
-            }
+        min-height:62px;
 
-            .comparison-row {
+        gap:8px;
+    }
 
-                min-width: 650px;
-            }
+    .logo{
 
-            .final-cta {
+        min-width:0;
 
-                padding: 65px 0 75px;
-            }
+        gap:8px;
+    }
 
-            .cta-box {
+    .logo-icon{
 
-                padding: 42px 20px;
-            }
-        }
+        width:36px;
+        height:36px;
 
+        border-radius:11px;
+    }
 
-        @media (prefers-reduced-motion: reduce) {
+    .logo-text{
 
-            *,
-            *::before,
-            *::after {
+        font-size:11px;
 
-                scroll-behavior: auto !important;
+        line-height:1.4;
 
-                transition: none !important;
-            }
-        }
+        white-space:nowrap;
+    }
 
-    </style>
+    .logo-text small{
+
+        font-size:7px;
+    }
+
+    .nav{
+
+        display:none;
+    }
+
+    .header-button{
+
+        padding:9px 11px;
+
+        min-height:38px;
+
+        font-size:9px;
+
+        border-radius:10px;
+    }
+
+    .header-button i{
+
+        font-size:9px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        padding:55px 0 48px;
+    }
+
+    .badge{
+
+        font-size:8px;
+
+        padding:6px 10px;
+
+        margin-bottom:16px;
+    }
+
+    .hero h1{
+
+        font-size:clamp(31px,9vw,43px);
+
+        letter-spacing:-1.3px;
+
+        line-height:1.35;
+
+        margin-bottom:17px;
+    }
+
+    .hero h1 span::after{
+
+        height:7px;
+
+        bottom:2px;
+    }
+
+    .hero-description{
+
+        font-size:11px;
+
+        line-height:2;
+
+        padding:0 3px;
+    }
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+
+        margin-top:23px;
+
+        gap:8px;
+    }
+
+    .btn{
+
+        width:100%;
+
+        min-height:46px;
+
+        font-size:10px;
+    }
+
+
+    /* STATS */
+
+    .hero-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+        margin-top:35px;
+
+        border-radius:17px;
+    }
+
+    .stat{
+
+        min-height:78px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        justify-content:center;
+
+        padding:12px 8px;
+    }
+
+    .stat:nth-child(2){
+
+        border-left:none;
+    }
+
+    .stat:nth-child(-n+2){
+
+        border-bottom:1px solid var(--border);
+    }
+
+    .stat strong{
+
+        font-size:16px;
+    }
+
+    .stat span{
+
+        font-size:8px;
+    }
+
+
+    /* SECTION */
+
+    .section{
+
+        padding:60px 0;
+    }
+
+    .section-header{
+
+        margin-bottom:28px;
+    }
+
+    .section-kicker{
+
+        font-size:8px;
+    }
+
+    .section-header h2{
+
+        font-size:25px;
+
+        line-height:1.45;
+
+        letter-spacing:-.5px;
+    }
+
+    .section-header p{
+
+        font-size:10px;
+
+        line-height:1.9;
+    }
+
+
+    /* SERVICES */
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .service-card{
+
+        padding:19px;
+
+        border-radius:17px;
+    }
+
+    .service-icon{
+
+        width:40px;
+        height:40px;
+
+        margin-bottom:13px;
+
+        border-radius:12px;
+    }
+
+    .service-card h3{
+
+        font-size:13px;
+    }
+
+    .service-card p{
+
+        font-size:9px;
+
+        line-height:2;
+    }
+
+
+    /* PRICING */
+
+    .pricing{
+
+        padding:65px 0;
+    }
+
+    .pricing-grid{
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:19px;
+    }
+
+    .plan{
+
+        width:100%;
+
+        padding:21px 17px;
+
+        border-radius:21px;
+    }
+
+    .plan.featured{
+
+        transform:none;
+
+        order:-1;
+    }
+
+    .plan.featured:hover{
+
+        transform:none;
+    }
+
+    .featured-label{
+
+        top:-11px;
+
+        right:17px;
+
+        font-size:8px;
+
+        padding:4px 10px;
+    }
+
+    .plan-top{
+
+        padding-bottom:16px;
+    }
+
+    .plan h3{
+
+        font-size:17px;
+    }
+
+    .plan-subtitle{
+
+        font-size:8px;
+
+        line-height:1.8;
+    }
+
+    .plan-icon{
+
+        width:38px;
+        height:38px;
+
+        border-radius:11px;
+    }
+
+    .price{
+
+        padding:20px 0 17px;
+    }
+
+    .price-number strong{
+
+        font-size:35px;
+    }
+
+    .price-number span{
+
+        font-size:9px;
+    }
+
+    .price-description{
+
+        font-size:8px;
+
+        line-height:1.8;
+    }
+
+    .plan-button{
+
+        min-height:46px;
+
+        font-size:9px;
+
+        border-radius:11px;
+    }
+
+    .feature-groups{
+
+        margin-top:17px;
+    }
+
+    .feature-group{
+
+        padding:13px 0;
+    }
+
+    .feature-group summary{
+
+        font-size:9px;
+
+        gap:8px;
+    }
+
+    .summary-icon{
+
+        width:25px;
+        height:25px;
+
+        border-radius:7px;
+    }
+
+    .feature-list{
+
+        gap:6px;
+
+        margin-top:11px;
+    }
+
+    .feature-list li{
+
+        font-size:8px;
+
+        line-height:1.9;
+
+        padding-right:15px;
+    }
+
+
+    /* UX */
+
+    .ux-section{
+
+        padding:65px 0;
+    }
+
+    .ux-card{
+
+        padding:28px 18px;
+
+        border-radius:23px;
+    }
+
+    .ux-grid{
+
+        gap:27px;
+    }
+
+    .ux-label{
+
+        font-size:8px;
+
+        margin-bottom:11px;
+    }
+
+    .ux-title{
+
+        font-size:25px;
+
+        line-height:1.45;
+    }
+
+    .ux-description{
+
+        font-size:10px;
+
+        line-height:2;
+    }
+
+    .ux-output{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+
+        margin-top:18px;
+    }
+
+    .ux-output div{
+
+        font-size:9px;
+    }
+
+    .ux-price{
+
+        padding:22px 18px;
+
+        border-radius:19px;
+
+        width:100%;
+    }
+
+    .ux-price-label{
+
+        font-size:8px;
+    }
+
+    .ux-price strong{
+
+        font-size:36px;
+    }
+
+    .ux-price strong small{
+
+        font-size:9px;
+    }
+
+    .ux-price-description{
+
+        font-size:8px;
+
+        line-height:2;
+    }
+
+    .ux-button{
+
+        min-height:45px;
+
+        font-size:9px;
+    }
+
+
+    /* STEPS */
+
+    .steps{
+
+        grid-template-columns:1fr;
+
+        gap:9px;
+
+        margin-top:22px;
+    }
+
+    .step{
+
+        padding:18px;
+
+        border-radius:16px;
+    }
+
+    .step-number{
+
+        width:29px;
+        height:29px;
+
+        margin-bottom:12px;
+    }
+
+    .step h3{
+
+        font-size:12px;
+    }
+
+    .step p{
+
+        font-size:8px;
+    }
+
+
+    /* COMPARISON */
+
+    .comparison-section{
+
+        padding:60px 0;
+    }
+
+    .comparison{
+
+        border-radius:18px;
+
+        overflow-x:auto;
+
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .comparison-row{
+
+        min-width:570px;
+
+        min-height:51px;
+    }
+
+    .comparison-row>div{
+
+        font-size:8px;
+
+        padding:8px;
+    }
+
+    .comparison-head>div{
+
+        font-size:8px;
+    }
+
+    .check{
+
+        font-size:11px;
+    }
+
+
+    /* FAQ */
+
+    .faq-grid{
+
+        gap:8px;
+    }
+
+    .faq-item{
+
+        padding:0 14px;
+
+        border-radius:14px;
+    }
+
+    .faq-item summary{
+
+        min-height:53px;
+
+        font-size:9px;
+
+        line-height:1.8;
+    }
+
+    .faq-answer{
+
+        font-size:8px;
+
+        line-height:2;
+    }
+
+
+    /* CTA */
+
+    .final-cta{
+
+        padding:60px 0 70px;
+    }
+
+    .cta-box{
+
+        padding:38px 18px;
+
+        border-radius:23px;
+    }
+
+    .cta-box h2{
+
+        font-size:25px;
+
+        line-height:1.5;
+    }
+
+    .cta-box p{
+
+        font-size:9px;
+
+        line-height:2;
+    }
+
+    .selected-package{
+
+        width:100%;
+
+        font-size:8px;
+
+        line-height:1.8;
+
+        padding:8px 11px;
+    }
+
+    .cta-button{
+
+        width:100%;
+
+        min-height:47px;
+
+        font-size:10px;
+
+        margin-top:18px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+
+        font-size:8px;
+
+        line-height:2;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media(max-width:380px){
+
+    .container{
+
+        width:calc(100% - 22px);
+    }
+
+    .logo-text{
+
+        font-size:10px;
+    }
+
+    .header-button{
+
+        padding:8px 9px;
+
+        font-size:8px;
+    }
+
+    .hero h1{
+
+        font-size:29px;
+    }
+
+    .hero-description{
+
+        font-size:10px;
+    }
+
+    .price-number strong{
+
+        font-size:32px;
+    }
+
+    .plan{
+
+        padding:19px 15px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        scroll-behavior:auto!important;
+
+        transition:none!important;
+    }
+}
+
+</style>
 
 </head>
 
@@ -1855,57 +2502,52 @@
 
 <header class="header">
 
-    <div class="container header-inner">
+<div class="container header-inner">
 
-        <a href="#" class="logo">
+<a href="#" class="logo">
 
-            <span class="logo-icon">
-                <i class="fa-solid fa-layer-group"></i>
-            </span>
+<span class="logo-icon">
+<i class="fa-solid fa-layer-group"></i>
+</span>
 
-            <span class="logo-text">
+<span class="logo-text">
 
-                طراحی و توسعه فروشگاه
+طراحی و توسعه فروشگاه
 
-                <small>
-                    UI/UX • Development • SEO
-                </small>
+<small>
+UI/UX • Development • SEO
+</small>
 
-            </span>
+</span>
 
-        </a>
-
-
-        <nav class="nav">
-
-            <a href="#services">
-                خدمات
-            </a>
-
-            <a href="#pricing">
-                پکیج‌ها
-            </a>
-
-            <a href="#uiux">
-                طراحی UI/UX
-            </a>
-
-            <a href="#faq">
-                سوالات متداول
-            </a>
-
-        </nav>
+</a>
 
 
-        <a href="#contact" class="header-button">
+<nav class="nav">
 
-            شروع پروژه
+<a href="#services">خدمات</a>
 
-            <i class="fa-solid fa-arrow-left"></i>
+<a href="#pricing">پکیج‌ها</a>
 
-        </a>
+<a href="#uiux">طراحی UI/UX</a>
 
-    </div>
+<a href="#faq">سوالات متداول</a>
+
+</nav>
+
+
+<a
+href="https://wa.me/989212789310?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B4%D8%B1%D9%88%D8%B9%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D9%88%20%D8%AA%D9%88%D8%B3%D8%B9%D9%87%20%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85."
+target="_blank"
+class="header-button">
+
+شروع پروژه
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</div>
 
 </header>
 
@@ -1917,103 +2559,96 @@
 
 <section class="hero">
 
-    <div class="container hero-content">
+<div class="container hero-content">
 
-        <div class="badge">
+<div class="badge">
 
-            <span class="badge-dot"></span>
+<span class="badge-dot"></span>
 
-            طراحی و پیاده‌سازی حرفه‌ای فروشگاه اینترنتی
+طراحی و پیاده‌سازی حرفه‌ای فروشگاه اینترنتی
 
-        </div>
-
-
-        <h1>
-
-            فروشگاهت را فقط
-            <span>راه‌اندازی نکن.</span>
-
-            حرفه‌ای بساز.
-
-        </h1>
+</div>
 
 
-        <p class="hero-description">
+<h1>
 
-            از طراحی رابط و تجربه کاربری تا پیاده‌سازی فروشگاه،
-            سئو، Performance، امنیت و زیرساخت؛
-            تمام مراحل ساخت یک فروشگاه حرفه‌ای در یک مسیر مشخص.
+فروشگاهت را فقط
 
-        </p>
+<span>راه‌اندازی نکن.</span>
 
+حرفه‌ای بساز.
 
-        <div class="hero-actions">
-
-            <a href="#pricing" class="btn btn-primary">
-
-                مشاهده پکیج‌ها
-
-                <i class="fa-solid fa-arrow-down"></i>
-
-            </a>
+</h1>
 
 
-            <a href="#uiux" class="btn btn-secondary">
+<p class="hero-description">
 
-                طراحی UI/UX
+از طراحی رابط و تجربه کاربری تا پیاده‌سازی فروشگاه،
+سئو، Performance، امنیت و زیرساخت؛
+تمام مراحل ساخت یک فروشگاه حرفه‌ای در یک مسیر مشخص.
 
-                <i class="fa-solid fa-pen-ruler"></i>
-
-            </a>
-
-        </div>
+</p>
 
 
-        <div class="hero-stats">
+<div class="hero-actions">
 
-            <div class="stat">
+<a href="#pricing" class="btn btn-primary">
 
-                <strong>۴۰M+</strong>
+مشاهده پکیج‌ها
 
-                <span>
-                    شروع پکیج‌ها
-                </span>
+<i class="fa-solid fa-arrow-down"></i>
 
-            </div>
+</a>
 
-            <div class="stat">
 
-                <strong>۳</strong>
+<a href="#uiux" class="btn btn-secondary">
 
-                <span>
-                    سطح خدمات
-                </span>
+طراحی UI/UX
 
-            </div>
+<i class="fa-solid fa-pen-ruler"></i>
 
-            <div class="stat">
+</a>
 
-                <strong>۲۰M</strong>
+</div>
 
-                <span>
-                    طراحی UI/UX
-                </span>
 
-            </div>
+<div class="hero-stats">
 
-            <div class="stat">
+<div class="stat">
 
-                <strong>۱۰۰٪</strong>
+<strong>۴۰M+</strong>
 
-                <span>
-                    ریسپانسیو
-                </span>
+<span>شروع پکیج‌ها</span>
 
-            </div>
+</div>
 
-        </div>
+<div class="stat">
 
-    </div>
+<strong>۳</strong>
+
+<span>سطح خدمات</span>
+
+</div>
+
+<div class="stat">
+
+<strong>۲۰M</strong>
+
+<span>طراحی UI/UX</span>
+
+</div>
+
+<div class="stat">
+
+<strong>۱۰۰٪</strong>
+
+<span>ریسپانسیو</span>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -2025,104 +2660,104 @@
 
 <section class="section" id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-kicker">
-                WHAT WE DO
-            </div>
+<div class="section-kicker">
+WHAT WE DO
+</div>
 
-            <h2>
-                همه چیز برای ساخت یک فروشگاه حرفه‌ای
-            </h2>
+<h2>
+همه چیز برای ساخت یک فروشگاه حرفه‌ای
+</h2>
 
-            <p>
-                خدمات بر اساس نیاز پروژه در چند مرحله قابل انتخاب هستند.
-            </p>
+<p>
+خدمات بر اساس نیاز پروژه در چند مرحله قابل انتخاب هستند.
+</p>
 
-        </div>
-
-
-        <div class="service-grid">
+</div>
 
 
-            <article class="service-card">
-
-                <div class="service-icon">
-                    <i class="fa-solid fa-store"></i>
-                </div>
-
-                <h3>
-                    پیاده‌سازی فروشگاه
-                </h3>
-
-                <p>
-                    قالب اختصاصی، ووکامرس، محصولات،
-                    دسته‌بندی‌ها، پرداخت، سبد خرید
-                    و ساختار کامل فروشگاه.
-                </p>
-
-            </article>
+<div class="service-grid">
 
 
-            <article class="service-card">
+<article class="service-card">
 
-                <div class="service-icon">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
+<div class="service-icon">
+<i class="fa-solid fa-store"></i>
+</div>
 
-                <h3>
-                    SEO و Google
-                </h3>
+<h3>
+پیاده‌سازی فروشگاه
+</h3>
 
-                <p>
-                    سئو تکنیکال، ساختار URL،
-                    Sitemap، Indexing و اتصال ابزارهای Google.
-                </p>
+<p>
+قالب اختصاصی، ووکامرس، محصولات،
+دسته‌بندی‌ها، پرداخت، سبد خرید
+و ساختار کامل فروشگاه.
+</p>
 
-            </article>
-
-
-            <article class="service-card">
-
-                <div class="service-icon">
-                    <i class="fa-solid fa-gauge-high"></i>
-                </div>
-
-                <h3>
-                    Performance
-                </h3>
-
-                <p>
-                    CDN، Cache، Core Web Vitals،
-                    تصاویر WebP، Lazy Load و بهینه‌سازی منابع.
-                </p>
-
-            </article>
+</article>
 
 
-            <article class="service-card">
+<article class="service-card">
 
-                <div class="service-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
+<div class="service-icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
 
-                <h3>
-                    امنیت و زیرساخت
-                </h3>
+<h3>
+SEO و Google
+</h3>
 
-                <p>
-                    Hardening، Firewall، Backup،
-                    بهینه‌سازی Database و کنترل منابع سرور.
-                </p>
+<p>
+سئو تکنیکال، ساختار URL،
+Sitemap، Indexing و اتصال ابزارهای Google.
+</p>
 
-            </article>
+</article>
 
 
-        </div>
+<article class="service-card">
 
-    </div>
+<div class="service-icon">
+<i class="fa-solid fa-gauge-high"></i>
+</div>
+
+<h3>
+Performance
+</h3>
+
+<p>
+CDN، Cache، Core Web Vitals،
+تصاویر WebP، Lazy Load و بهینه‌سازی منابع.
+</p>
+
+</article>
+
+
+<article class="service-card">
+
+<div class="service-icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h3>
+امنیت و زیرساخت
+</h3>
+
+<p>
+Hardening، Firewall، Backup،
+بهینه‌سازی Database و کنترل منابع سرور.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -2134,810 +2769,603 @@
 
 <section class="pricing" id="pricing">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-kicker">
-                PRICING
-            </div>
+<div class="section-kicker">
+PRICING
+</div>
 
-            <h2>
-                پکیج مناسب پروژه‌ات را انتخاب کن
-            </h2>
+<h2>
+پکیج مناسب پروژه‌ات را انتخاب کن
+</h2>
 
-            <p>
-                از راه‌اندازی فروشگاه تا زیرساخت و امنیت پیشرفته.
-            </p>
+<p>
+از راه‌اندازی فروشگاه تا زیرساخت و امنیت پیشرفته.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="pricing-grid">
+<div class="pricing-grid">
 
 
-            <!-- =================================================
-                 BASIC
-            ================================================= -->
+<!-- BASIC -->
 
-            <article class="plan">
+<article class="plan">
 
-                <div class="plan-top">
+<div class="plan-top">
 
-                    <div>
+<div>
 
-                        <h3>
-                            پکیج پایه
-                        </h3>
+<h3>پکیج پایه</h3>
 
-                        <div class="plan-subtitle">
-                            شروع حرفه‌ای فروش آنلاین
-                        </div>
+<div class="plan-subtitle">
+شروع حرفه‌ای فروش آنلاین
+</div>
 
-                    </div>
+</div>
 
-                    <div class="plan-icon">
+<div class="plan-icon">
 
-                        <i class="fa-solid fa-rocket"></i>
+<i class="fa-solid fa-rocket"></i>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
 
-                <div class="price">
+<div class="price">
 
-                    <div class="price-number">
+<div class="price-number">
 
-                        <strong>
-                            ۴۰
-                        </strong>
+<strong>۴۰</strong>
 
-                        <span>
-                            میلیون تومان
-                        </span>
+<span>میلیون تومان</span>
 
-                    </div>
+</div>
 
-                    <div class="price-description">
-                        مناسب برای راه‌اندازی فروشگاه
-                    </div>
+<div class="price-description">
+مناسب برای راه‌اندازی فروشگاه
+</div>
 
-                </div>
+</div>
 
 
-                <a href="#contact" class="plan-button">
+<a
+href="#contact"
+class="plan-button package-select"
+data-package="پکیج پایه"
+data-price="۴۰ میلیون تومان">
 
-                    انتخاب پکیج پایه
+انتخاب پکیج پایه
 
-                    <i class="fa-solid fa-arrow-left"></i>
+<i class="fa-solid fa-arrow-left"></i>
 
-                </a>
+</a>
 
 
-                <div class="feature-groups">
+<div class="feature-groups">
 
+<details class="feature-group" open>
 
-                    <details class="feature-group" open>
+<summary>
 
-                        <summary>
+<span class="summary-left">
 
-                            <span class="summary-left">
+<span class="summary-icon">
+<i class="fa-solid fa-store"></i>
+</span>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-store"></i>
-                                </span>
+امکانات اصلی فروشگاه
 
-                                امکانات اصلی فروشگاه
+</span>
 
-                            </span>
+<i class="fa-solid fa-chevron-down"></i>
 
-                            <i class="fa-solid fa-chevron-down"></i>
+</summary>
 
-                        </summary>
 
+<ul class="feature-list">
 
-                        <ul class="feature-list">
+<li>پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده</li>
 
-                            <li>
-                                پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده
-                            </li>
+<li>پیکربندی کامل ووکامرس</li>
 
-                            <li>
-                                پیکربندی کامل ووکامرس
-                            </li>
+<li>راه‌اندازی محصولات و دسته‌بندی‌ها</li>
 
-                            <li>
-                                راه‌اندازی محصولات و دسته‌بندی‌ها
-                            </li>
+<li>اتصال و پیکربندی پنل پیامکی</li>
 
-                            <li>
-                                اتصال و پیکربندی پنل پیامکی
-                            </li>
+<li>اتصال درگاه پرداخت</li>
 
-                            <li>
-                                اتصال درگاه پرداخت
-                            </li>
+<li>ریسپانسیو موبایل، تبلت و دسکتاپ</li>
 
-                            <li>
-                                ریسپانسیو موبایل، تبلت و دسکتاپ
-                            </li>
+</ul>
 
-                        </ul>
+</details>
 
-                    </details>
 
+<details class="feature-group">
 
-                    <details class="feature-group">
+<summary>
 
-                        <summary>
+<span class="summary-left">
 
-                            <span class="summary-left">
+<span class="summary-icon">
+<i class="fa-solid fa-user"></i>
+</span>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-user"></i>
-                                </span>
+صفحات و تجربه خرید
 
-                                صفحات و تجربه خرید
+</span>
 
-                            </span>
+<i class="fa-solid fa-chevron-down"></i>
 
-                            <i class="fa-solid fa-chevron-down"></i>
+</summary>
 
-                        </summary>
 
+<ul class="feature-list">
 
-                        <ul class="feature-list">
+<li>تنظیم صفحات اصلی فروشگاه</li>
 
-                            <li>
-                                تنظیم صفحات اصلی فروشگاه
-                            </li>
+<li>تنظیم منو و ساختار ناوبری</li>
 
-                            <li>
-                                تنظیم منو و ساختار ناوبری
-                            </li>
+<li>تنظیم ثبت‌نام و ورود کاربران</li>
 
-                            <li>
-                                تنظیم ثبت‌نام و ورود کاربران
-                            </li>
+<li>تنظیم سبد خرید و تسویه‌حساب</li>
 
-                            <li>
-                                تنظیم سبد خرید و تسویه‌حساب
-                            </li>
+<li>تست فرآیند خرید و ثبت سفارش</li>
 
-                            <li>
-                                تست فرآیند خرید و ثبت سفارش
-                            </li>
+</ul>
 
-                        </ul>
+</details>
 
-                    </details>
+</div>
 
+</article>
 
-                </div>
 
-            </article>
 
+<!-- PROFESSIONAL -->
 
+<article class="plan featured">
 
-            <!-- =================================================
-                 PROFESSIONAL
-            ================================================= -->
+<div class="featured-label">
+پیشنهاد پیشنهادی
+</div>
 
-            <article class="plan featured">
 
-                <div class="featured-label">
-                    پیشنهاد پیشنهادی
-                </div>
+<div class="plan-top">
 
+<div>
 
-                <div class="plan-top">
+<h3>پکیج حرفه‌ای</h3>
 
-                    <div>
+<div class="plan-subtitle">
+برای فروشگاه‌های در حال رشد
+</div>
 
-                        <h3>
-                            پکیج حرفه‌ای
-                        </h3>
+</div>
 
-                        <div class="plan-subtitle">
-                            برای فروشگاه‌های در حال رشد
-                        </div>
+<div class="plan-icon">
 
-                    </div>
+<i class="fa-solid fa-chart-line"></i>
 
-                    <div class="plan-icon">
+</div>
 
-                        <i class="fa-solid fa-chart-line"></i>
+</div>
 
-                    </div>
 
-                </div>
+<div class="price">
 
+<div class="price-number">
 
-                <div class="price">
+<strong>۶۵</strong>
 
-                    <div class="price-number">
+<span>میلیون تومان</span>
 
-                        <strong>
-                            ۶۵
-                        </strong>
+</div>
 
-                        <span>
-                            میلیون تومان
-                        </span>
+<div class="price-description">
+تمام امکانات پایه + SEO + Performance + مارکت‌پلیس
+</div>
 
-                    </div>
+</div>
 
-                    <div class="price-description">
-                        تمام امکانات پایه + SEO + Performance + مارکت‌پلیس
-                    </div>
 
-                </div>
+<a
+href="#contact"
+class="plan-button package-select"
+data-package="پکیج حرفه‌ای"
+data-price="۶۵ میلیون تومان">
 
+انتخاب پکیج حرفه‌ای
 
-                <a href="#contact" class="plan-button">
+<i class="fa-solid fa-arrow-left"></i>
 
-                    انتخاب پکیج حرفه‌ای
+</a>
 
-                    <i class="fa-solid fa-arrow-left"></i>
 
-                </a>
+<div class="feature-groups">
 
 
-                <div class="feature-groups">
+<details class="feature-group" open>
 
+<summary>
 
-                    <details class="feature-group" open>
+<span class="summary-left">
 
-                        <summary>
+<span class="summary-icon">
+<i class="fa-solid fa-layer-group"></i>
+</span>
 
-                            <span class="summary-left">
+امکانات پایه
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-layer-group"></i>
-                                </span>
+</span>
 
-                                امکانات پایه
+<i class="fa-solid fa-chevron-down"></i>
 
-                            </span>
+</summary>
 
-                            <i class="fa-solid fa-chevron-down"></i>
+<ul class="feature-list">
 
-                        </summary>
+<li>تمام امکانات پکیج پایه</li>
 
+</ul>
 
-                        <ul class="feature-list">
+</details>
 
-                            <li>
-                                تمام امکانات پکیج پایه
-                            </li>
 
-                        </ul>
+<details class="feature-group" open>
 
-                    </details>
+<summary>
 
+<span class="summary-left">
 
-                    <details class="feature-group" open>
+<span class="summary-icon">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
 
-                        <summary>
+SEO و Google
 
-                            <span class="summary-left">
+</span>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </span>
+<i class="fa-solid fa-chevron-down"></i>
 
-                                SEO و Google
+</summary>
 
-                            </span>
+<ul class="feature-list">
 
-                            <i class="fa-solid fa-chevron-down"></i>
+<li>سئو تکنیکال اولیه</li>
+<li>بهینه‌سازی ساختار URL</li>
+<li>بهینه‌سازی ساختار Headingها</li>
+<li>بهینه‌سازی لینک‌سازی داخلی</li>
+<li>تنظیم Sitemap</li>
+<li>تنظیم Robots.txt</li>
+<li>تنظیم Indexing</li>
+<li>اتصال Google Analytics</li>
+<li>اتصال Google Search Console</li>
+<li>بررسی خطاهای اولیه Search Console</li>
 
-                        </summary>
+</ul>
 
+</details>
 
-                        <ul class="feature-list">
 
-                            <li>
-                                سئو تکنیکال اولیه
-                            </li>
+<details class="feature-group">
 
-                            <li>
-                                بهینه‌سازی ساختار URL
-                            </li>
+<summary>
 
-                            <li>
-                                بهینه‌سازی ساختار Headingها
-                            </li>
+<span class="summary-left">
 
-                            <li>
-                                بهینه‌سازی لینک‌سازی داخلی
-                            </li>
+<span class="summary-icon">
+<i class="fa-solid fa-gauge-high"></i>
+</span>
 
-                            <li>
-                                تنظیم Sitemap
-                            </li>
+Performance
 
-                            <li>
-                                تنظیم Robots.txt
-                            </li>
+</span>
 
-                            <li>
-                                تنظیم Indexing
-                            </li>
+<i class="fa-solid fa-chevron-down"></i>
 
-                            <li>
-                                اتصال Google Analytics
-                            </li>
+</summary>
 
-                            <li>
-                                اتصال Google Search Console
-                            </li>
+<ul class="feature-list">
 
-                            <li>
-                                بررسی خطاهای اولیه Search Console
-                            </li>
+<li>راه‌اندازی و پیکربندی CDN</li>
+<li>پیاده‌سازی سیستم Cache</li>
+<li>بهینه‌سازی Core Web Vitals</li>
+<li>بهینه‌سازی LCP</li>
+<li>بهینه‌سازی CLS</li>
+<li>بهینه‌سازی INP</li>
+<li>Minify فایل‌های CSS و JS</li>
+<li>حذف منابع و فایل‌های غیرضروری</li>
+<li>Lazy Load تصاویر</li>
+<li>تبدیل و فشرده‌سازی تصاویر WebP</li>
+<li>بهینه‌سازی فونت‌ها</li>
+<li>بهینه‌سازی منابع Third-Party</li>
 
-                        </ul>
+</ul>
 
-                    </details>
+</details>
 
 
-                    <details class="feature-group">
+<details class="feature-group">
 
-                        <summary>
+<summary>
 
-                            <span class="summary-left">
+<span class="summary-left">
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-gauge-high"></i>
-                                </span>
+<span class="summary-icon">
+<i class="fa-solid fa-cart-shopping"></i>
+</span>
 
-                                Performance
+فروش و مارکت‌پلیس
 
-                            </span>
+</span>
 
-                            <i class="fa-solid fa-chevron-down"></i>
+<i class="fa-solid fa-chevron-down"></i>
 
-                        </summary>
+</summary>
 
+<ul class="feature-list">
 
-                        <ul class="feature-list">
+<li>پیاده‌سازی اسنپ‌پی</li>
+<li>اتصال و پیکربندی ترب</li>
+<li>اتصال و پیکربندی دیجی‌کالا</li>
+<li>ساخت و پیاده‌سازی برگه‌های کمپین</li>
+<li>پیاده‌سازی صفحات Landing اختصاصی کمپین</li>
 
-                            <li>
-                                راه‌اندازی و پیکربندی CDN
-                            </li>
+</ul>
 
-                            <li>
-                                پیاده‌سازی سیستم Cache
-                            </li>
+</details>
 
-                            <li>
-                                بهینه‌سازی Core Web Vitals
-                            </li>
 
-                            <li>
-                                بهینه‌سازی LCP
-                            </li>
+<details class="feature-group">
 
-                            <li>
-                                بهینه‌سازی CLS
-                            </li>
+<summary>
 
-                            <li>
-                                بهینه‌سازی INP
-                            </li>
+<span class="summary-left">
 
-                            <li>
-                                Minify فایل‌های CSS و JS
-                            </li>
+<span class="summary-icon">
+<i class="fa-solid fa-vial"></i>
+</span>
 
-                            <li>
-                                حذف منابع و فایل‌های غیرضروری
-                            </li>
+تست
 
-                            <li>
-                                Lazy Load تصاویر
-                            </li>
+</span>
 
-                            <li>
-                                تبدیل و فشرده‌سازی تصاویر WebP
-                            </li>
+<i class="fa-solid fa-chevron-down"></i>
 
-                            <li>
-                                بهینه‌سازی فونت‌ها
-                            </li>
+</summary>
 
-                            <li>
-                                بهینه‌سازی منابع Third-Party
-                            </li>
+<ul class="feature-list">
 
-                        </ul>
+<li>تست سرعت قبل و بعد از بهینه‌سازی</li>
+<li>تست فرآیند خرید و پرداخت</li>
+<li>تست ریسپانسیو</li>
+<li>تست سازگاری مرورگرها</li>
 
-                    </details>
+</ul>
 
+</details>
 
-                    <details class="feature-group">
 
-                        <summary>
+</div>
 
-                            <span class="summary-left">
+</article>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </span>
 
-                                فروش و مارکت‌پلیس
 
-                            </span>
+<!-- ENTERPRISE -->
 
-                            <i class="fa-solid fa-chevron-down"></i>
+<article class="plan">
 
-                        </summary>
+<div class="plan-top">
 
+<div>
 
-                        <ul class="feature-list">
+<h3>پکیج اختصاصی</h3>
 
-                            <li>
-                                پیاده‌سازی اسنپ‌پی
-                            </li>
+<div class="plan-subtitle">
+برای پروژه‌های بزرگ و حساس
+</div>
 
-                            <li>
-                                اتصال و پیکربندی ترب
-                            </li>
+</div>
 
-                            <li>
-                                اتصال و پیکربندی دیجی‌کالا
-                            </li>
+<div class="plan-icon">
 
-                            <li>
-                                ساخت و پیاده‌سازی برگه‌های کمپین
-                            </li>
+<i class="fa-solid fa-shield-halved"></i>
 
-                            <li>
-                                پیاده‌سازی صفحات Landing اختصاصی کمپین
-                            </li>
+</div>
 
-                        </ul>
+</div>
 
-                    </details>
 
+<div class="price">
 
-                    <details class="feature-group">
+<div class="price-number">
 
-                        <summary>
+<strong>۸۰</strong>
 
-                            <span class="summary-left">
+<span>میلیون تومان</span>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-vial"></i>
-                                </span>
+</div>
 
-                                تست
+<div class="price-description">
+تمام امکانات حرفه‌ای + زیرساخت و امنیت پیشرفته
+</div>
 
-                            </span>
+</div>
 
-                            <i class="fa-solid fa-chevron-down"></i>
 
-                        </summary>
+<a
+href="#contact"
+class="plan-button package-select"
+data-package="پکیج اختصاصی"
+data-price="۸۰ میلیون تومان">
 
+انتخاب پکیج اختصاصی
 
-                        <ul class="feature-list">
+<i class="fa-solid fa-arrow-left"></i>
 
-                            <li>
-                                تست سرعت قبل و بعد از بهینه‌سازی
-                            </li>
+</a>
 
-                            <li>
-                                تست فرآیند خرید و پرداخت
-                            </li>
 
-                            <li>
-                                تست ریسپانسیو
-                            </li>
+<div class="feature-groups">
 
-                            <li>
-                                تست سازگاری مرورگرها
-                            </li>
 
-                        </ul>
+<details class="feature-group" open>
 
-                    </details>
+<summary>
 
+<span class="summary-left">
 
-                </div>
+<span class="summary-icon">
+<i class="fa-solid fa-layer-group"></i>
+</span>
 
-            </article>
+امکانات پایه
 
+</span>
 
+<i class="fa-solid fa-chevron-down"></i>
 
-            <!-- =================================================
-                 ENTERPRISE
-            ================================================= -->
+</summary>
 
-            <article class="plan">
+<ul class="feature-list">
 
-                <div class="plan-top">
+<li>تمام امکانات پکیج حرفه‌ای</li>
 
-                    <div>
+</ul>
 
-                        <h3>
-                            پکیج اختصاصی
-                        </h3>
+</details>
 
-                        <div class="plan-subtitle">
-                            برای پروژه‌های بزرگ و حساس
-                        </div>
 
-                    </div>
+<details class="feature-group">
 
-                    <div class="plan-icon">
+<summary>
 
-                        <i class="fa-solid fa-shield-halved"></i>
+<span class="summary-left">
 
-                    </div>
+<span class="summary-icon">
+<i class="fa-solid fa-server"></i>
+</span>
 
-                </div>
+زیرساخت پیشرفته
 
+</span>
 
-                <div class="price">
+<i class="fa-solid fa-chevron-down"></i>
 
-                    <div class="price-number">
+</summary>
 
-                        <strong>
-                            ۸۰
-                        </strong>
+<ul class="feature-list">
 
-                        <span>
-                            میلیون تومان
-                        </span>
+<li>بهینه‌سازی Database وردپرس</li>
+<li>پاک‌سازی داده‌ها و Revisionهای غیرضروری</li>
+<li>بهینه‌سازی Queryهای سنگین</li>
+<li>بهینه‌سازی TTFB</li>
+<li>تحلیل مصرف منابع سرور و بهینه‌سازی در صورت نیاز</li>
+<li>بهینه‌سازی PHP و PHP Workers</li>
+<li>بهینه‌سازی Object Cache</li>
+<li>تنظیم Browser Cache</li>
+<li>بهینه‌سازی HTTP Requests</li>
+<li>کاهش Render-Blocking Resources</li>
+<li>بهینه‌سازی Critical Resources</li>
 
-                    </div>
+</ul>
 
-                    <div class="price-description">
-                        تمام امکانات حرفه‌ای + زیرساخت و امنیت پیشرفته
-                    </div>
+</details>
 
-                </div>
 
+<details class="feature-group">
 
-                <a href="#contact" class="plan-button">
+<summary>
 
-                    انتخاب پکیج اختصاصی
+<span class="summary-left">
 
-                    <i class="fa-solid fa-arrow-left"></i>
+<span class="summary-icon">
+<i class="fa-solid fa-lock"></i>
+</span>
 
-                </a>
+امنیت
 
+</span>
 
-                <div class="feature-groups">
+<i class="fa-solid fa-chevron-down"></i>
 
+</summary>
 
-                    <details class="feature-group" open>
+<ul class="feature-list">
 
-                        <summary>
+<li>Hardening وردپرس</li>
+<li>محدودسازی Login و XML-RPC</li>
+<li>تنظیم Firewall</li>
+<li>محافظت در برابر Brute Force</li>
+<li>بررسی افزونه‌ها و نقاط آسیب‌پذیر</li>
+<li>تنظیم Backup دوره‌ای</li>
+<li>تست Restore</li>
 
-                            <span class="summary-left">
+</ul>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-layer-group"></i>
-                                </span>
+</details>
 
-                                امکانات پایه
 
-                            </span>
+<details class="feature-group">
 
-                            <i class="fa-solid fa-chevron-down"></i>
+<summary>
 
-                        </summary>
+<span class="summary-left">
 
+<span class="summary-icon">
+<i class="fa-solid fa-circle-check"></i>
+</span>
 
-                        <ul class="feature-list">
+کنترل کیفیت پیشرفته
 
-                            <li>
-                                تمام امکانات پکیج حرفه‌ای
-                            </li>
+</span>
 
-                        </ul>
+<i class="fa-solid fa-chevron-down"></i>
 
-                    </details>
+</summary>
 
+<ul class="feature-list">
 
-                    <details class="feature-group">
+<li>تست فشار و Performance</li>
+<li>بررسی Bottleneckهای سایت</li>
+<li>بررسی خطاهای Server و WordPress</li>
+<li>بررسی خطاهای Search Console</li>
+<li>تست کامل فرآیند سفارش و پرداخت</li>
+<li>تست نهایی Performance</li>
 
-                        <summary>
+</ul>
 
-                            <span class="summary-left">
+</details>
 
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-server"></i>
-                                </span>
 
-                                زیرساخت پیشرفته
+</div>
 
-                            </span>
+</article>
 
-                            <i class="fa-solid fa-chevron-down"></i>
 
-                        </summary>
+</div>
 
 
-                        <ul class="feature-list">
+<div style="
+text-align:center;
+color:#8e939c;
+font-size:9px;
+margin-top:28px;
+">
 
-                            <li>
-                                بهینه‌سازی Database وردپرس
-                            </li>
+هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+بر عهده کارفرما می‌باشد.
 
-                            <li>
-                                پاک‌سازی داده‌ها و Revisionهای غیرضروری
-                            </li>
+</div>
 
-                            <li>
-                                بهینه‌سازی Queryهای سنگین
-                            </li>
-
-                            <li>
-                                بهینه‌سازی TTFB
-                            </li>
-
-                            <li>
-                                تحلیل مصرف منابع سرور و بهینه‌سازی در صورت نیاز
-                            </li>
-
-                            <li>
-                                بهینه‌سازی PHP و PHP Workers
-                            </li>
-
-                            <li>
-                                بهینه‌سازی Object Cache
-                            </li>
-
-                            <li>
-                                تنظیم Browser Cache
-                            </li>
-
-                            <li>
-                                بهینه‌سازی HTTP Requests
-                            </li>
-
-                            <li>
-                                کاهش Render-Blocking Resources
-                            </li>
-
-                            <li>
-                                بهینه‌سازی Critical Resources
-                            </li>
-
-                        </ul>
-
-                    </details>
-
-
-                    <details class="feature-group">
-
-                        <summary>
-
-                            <span class="summary-left">
-
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-lock"></i>
-                                </span>
-
-                                امنیت
-
-                            </span>
-
-                            <i class="fa-solid fa-chevron-down"></i>
-
-                        </summary>
-
-
-                        <ul class="feature-list">
-
-                            <li>
-                                Hardening وردپرس
-                            </li>
-
-                            <li>
-                                محدودسازی Login و XML-RPC
-                            </li>
-
-                            <li>
-                                تنظیم Firewall
-                            </li>
-
-                            <li>
-                                محافظت در برابر Brute Force
-                            </li>
-
-                            <li>
-                                بررسی افزونه‌ها و نقاط آسیب‌پذیر
-                            </li>
-
-                            <li>
-                                تنظیم Backup دوره‌ای
-                            </li>
-
-                            <li>
-                                تست Restore
-                            </li>
-
-                        </ul>
-
-                    </details>
-
-
-                    <details class="feature-group">
-
-                        <summary>
-
-                            <span class="summary-left">
-
-                                <span class="summary-icon">
-                                    <i class="fa-solid fa-circle-check"></i>
-                                </span>
-
-                                کنترل کیفیت پیشرفته
-
-                            </span>
-
-                            <i class="fa-solid fa-chevron-down"></i>
-
-                        </summary>
-
-
-                        <ul class="feature-list">
-
-                            <li>
-                                تست فشار و Performance
-                            </li>
-
-                            <li>
-                                بررسی Bottleneckهای سایت
-                            </li>
-
-                            <li>
-                                بررسی خطاهای Server و WordPress
-                            </li>
-
-                            <li>
-                                بررسی خطاهای Search Console
-                            </li>
-
-                            <li>
-                                تست کامل فرآیند سفارش و پرداخت
-                            </li>
-
-                            <li>
-                                تست نهایی Performance
-                            </li>
-
-                        </ul>
-
-                    </details>
-
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-        <div style="
-            text-align:center;
-            color:#8e939c;
-            font-size:9px;
-            margin-top:28px;
-        ">
-
-            هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
-            بر عهده کارفرما می‌باشد.
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -2949,220 +3377,205 @@
 
 <section class="ux-section" id="uiux">
 
-    <div class="container">
+<div class="container">
 
-        <div class="ux-card">
+<div class="ux-card">
 
-            <div class="ux-grid">
+<div class="ux-grid">
 
 
-                <div>
+<div>
 
-                    <div class="ux-label">
+<div class="ux-label">
 
-                        <i class="fa-solid fa-pen-ruler"></i>
+<i class="fa-solid fa-pen-ruler"></i>
 
-                        UI / UX DESIGN
+UI / UX DESIGN
 
-                    </div>
+</div>
 
 
-                    <h2 class="ux-title">
+<h2 class="ux-title">
 
-                        قبل از کدنویسی،
-                        تجربه کاربر را طراحی می‌کنیم.
+قبل از کدنویسی،
+تجربه کاربر را طراحی می‌کنیم.
 
-                    </h2>
+</h2>
 
 
-                    <p class="ux-description">
+<p class="ux-description">
 
-                        در این مرحله، پیش از شروع برنامه‌نویسی و
-                        پیاده‌سازی سایت، ساختار و ظاهر کامل سایت
-                        به‌صورت گرافیکی طراحی و آماده می‌شود.
-                        طراحی بر اساس هویت و هدف برند انجام شده
-                        و مسیر حرکت کاربر قبل از ورود به مرحله
-                        توسعه مشخص می‌شود.
+در این مرحله، پیش از شروع برنامه‌نویسی و
+پیاده‌سازی سایت، ساختار و ظاهر کامل سایت
+به‌صورت گرافیکی طراحی و آماده می‌شود.
+طراحی بر اساس هویت و هدف برند انجام شده
+و مسیر حرکت کاربر قبل از ورود به مرحله
+توسعه مشخص می‌شود.
 
-                    </p>
+</p>
 
 
-                    <div class="ux-output">
+<div class="ux-output">
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            طراحی Wireframe
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+طراحی Wireframe
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            طراحی کامل UI/UX
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+طراحی کامل UI/UX
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            طراحی چیدمان محتوا
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+طراحی چیدمان محتوا
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            طراحی صفحات اصلی
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+طراحی صفحات اصلی
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            نسخه موبایل
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+نسخه موبایل
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            نسخه تبلت
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+نسخه تبلت
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            نسخه دسکتاپ
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+نسخه دسکتاپ
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            Prototype در Figma
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+Prototype در Figma
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            طراحی رنگ‌بندی و Typography
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+طراحی رنگ‌بندی و Typography
+</div>
 
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            اصلاح نهایی طراحی
-                        </div>
+<div>
+<i class="fa-solid fa-check"></i>
+اصلاح نهایی طراحی
+</div>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
 
+<div class="ux-price">
 
-                <div class="ux-price">
+<div class="ux-price-label">
+هزینه طراحی رابط و تجربه کاربری
+</div>
 
-                    <div class="ux-price-label">
-                        هزینه طراحی رابط و تجربه کاربری
-                    </div>
+<strong>
 
-                    <strong>
+۲۰
 
-                        ۲۰
+<small>
+میلیون تومان
+</small>
 
-                        <small>
-                            میلیون تومان
-                        </small>
+</strong>
 
-                    </strong>
+<div class="ux-price-description">
 
-                    <div class="ux-price-description">
+خروجی این مرحله، طرح گرافیکی و
+پروتوتایپ کامل سایت است که به‌عنوان
+مرجع اصلی مرحله کدنویسی و پیاده‌سازی
+استفاده خواهد شد.
 
-                        خروجی این مرحله، طرح گرافیکی و
-                        پروتوتایپ کامل سایت است که به‌عنوان
-                        مرجع اصلی مرحله کدنویسی و پیاده‌سازی
-                        استفاده خواهد شد.
+</div>
 
-                    </div>
 
+<a
+href="#contact"
+class="ux-button package-select"
+data-package="طراحی UI/UX"
+data-price="۲۰ میلیون تومان">
 
-                    <a href="#contact" class="ux-button">
+درخواست طراحی UI/UX
 
-                        درخواست طراحی UI/UX
+<i class="fa-solid fa-arrow-left"></i>
 
-                        <i class="fa-solid fa-arrow-left"></i>
+</a>
 
-                    </a>
+</div>
 
-                </div>
 
+</div>
 
-            </div>
+</div>
 
-        </div>
 
+<div class="steps">
 
-        <!-- STEPS -->
 
-        <div class="steps">
+<div class="step">
 
+<div class="step-number">۰۱</div>
 
-            <div class="step">
+<h3>Wireframe</h3>
 
-                <div class="step-number">
-                    ۰۱
-                </div>
+<p>
+مشخص‌کردن ساختار، چیدمان و مسیر اصلی صفحات.
+</p>
 
-                <h3>
-                    Wireframe
-                </h3>
+</div>
 
-                <p>
-                    مشخص‌کردن ساختار، چیدمان و مسیر اصلی صفحات.
-                </p>
 
-            </div>
+<div class="step">
 
+<div class="step-number">۰۲</div>
 
-            <div class="step">
+<h3>UI Design</h3>
 
-                <div class="step-number">
-                    ۰۲
-                </div>
+<p>
+طراحی ظاهر، رنگ، Typography و المان‌های رابط کاربری.
+</p>
 
-                <h3>
-                    UI Design
-                </h3>
+</div>
 
-                <p>
-                    طراحی ظاهر، رنگ، Typography و المان‌های رابط کاربری.
-                </p>
 
-            </div>
+<div class="step">
 
+<div class="step-number">۰۳</div>
 
-            <div class="step">
+<h3>Prototype</h3>
 
-                <div class="step-number">
-                    ۰۳
-                </div>
+<p>
+شبیه‌سازی مسیر حرکت کاربر بین صفحات در Figma.
+</p>
 
-                <h3>
-                    Prototype
-                </h3>
+</div>
 
-                <p>
-                    شبیه‌سازی مسیر حرکت کاربر بین صفحات در Figma.
-                </p>
 
-            </div>
+<div class="step">
 
+<div class="step-number">۰۴</div>
 
-            <div class="step">
+<h3>تأیید نهایی</h3>
 
-                <div class="step-number">
-                    ۰۴
-                </div>
+<p>
+بررسی و اصلاح نهایی طراحی قبل از ورود به پیاده‌سازی.
+</p>
 
-                <h3>
-                    تأیید نهایی
-                </h3>
+</div>
 
-                <p>
-                    بررسی و اصلاح نهایی طراحی قبل از ورود به پیاده‌سازی.
-                </p>
 
-            </div>
+</div>
 
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -3174,156 +3587,128 @@
 
 <section class="comparison-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-kicker">
-                COMPARE
-            </div>
+<div class="section-kicker">
+COMPARE
+</div>
 
-            <h2>
-                تفاوت پکیج‌ها در یک نگاه
-            </h2>
+<h2>
+تفاوت پکیج‌ها در یک نگاه
+</h2>
 
-            <p>
-                اگر هنوز بین پکیج‌ها مردد هستی، این جدول تصمیم‌گیری را ساده‌تر می‌کند.
-            </p>
+<p>
+اگر هنوز بین پکیج‌ها مردد هستی، این جدول تصمیم‌گیری را ساده‌تر می‌کند.
+</p>
 
-        </div>
-
-
-        <div class="comparison">
+</div>
 
 
-            <div class="comparison-row comparison-head">
+<div class="comparison">
 
-                <div>
-                    امکانات
-                </div>
+<div class="comparison-row comparison-head">
 
-                <div>
-                    پایه
-                </div>
+<div>امکانات</div>
+<div>پایه</div>
+<div>حرفه‌ای</div>
+<div>اختصاصی</div>
 
-                <div>
-                    حرفه‌ای
-                </div>
-
-                <div>
-                    اختصاصی
-                </div>
-
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    پیاده‌سازی فروشگاه
-                </div>
+<div>پیاده‌سازی فروشگاه</div>
 
-                <div class="check">✓</div>
-                <div class="check">✓</div>
-                <div class="check">✓</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    ریسپانسیو
-                </div>
+<div>ریسپانسیو</div>
 
-                <div class="check">✓</div>
-                <div class="check">✓</div>
-                <div class="check">✓</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    SEO و Google
-                </div>
+<div>SEO و Google</div>
 
-                <div>—</div>
-                <div class="check">✓</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    Performance
-                </div>
+<div>Performance</div>
 
-                <div>—</div>
-                <div class="check">✓</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    مارکت‌پلیس
-                </div>
+<div>مارکت‌پلیس</div>
 
-                <div>—</div>
-                <div class="check">✓</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div class="check">✓</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    زیرساخت پیشرفته
-                </div>
+<div>زیرساخت پیشرفته</div>
 
-                <div>—</div>
-                <div>—</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div>—</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    امنیت پیشرفته
-                </div>
+<div>امنیت پیشرفته</div>
 
-                <div>—</div>
-                <div>—</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div>—</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-            <div class="comparison-row">
+<div class="comparison-row">
 
-                <div>
-                    کنترل کیفیت پیشرفته
-                </div>
+<div>کنترل کیفیت پیشرفته</div>
 
-                <div>—</div>
-                <div>—</div>
-                <div class="check">✓</div>
+<div>—</div>
+<div>—</div>
+<div class="check">✓</div>
 
-            </div>
+</div>
 
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -3335,137 +3720,137 @@
 
 <section class="section" id="faq">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-header">
+<div class="section-header">
 
-            <div class="section-kicker">
-                FAQ
-            </div>
+<div class="section-kicker">
+FAQ
+</div>
 
-            <h2>
-                سوالات متداول
-            </h2>
+<h2>
+سوالات متداول
+</h2>
 
-            <p>
-                چند نکته مهم قبل از شروع پروژه
-            </p>
+<p>
+چند نکته مهم قبل از شروع پروژه
+</p>
 
-        </div>
-
-
-        <div class="faq-grid">
+</div>
 
 
-            <details class="faq-item">
-
-                <summary>
-
-                    آیا UI/UX جزو پکیج‌های پیاده‌سازی است؟
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
-                </summary>
-
-                <div class="faq-answer">
-
-                    طراحی رابط و تجربه کاربری به‌صورت یک سرویس
-                    مستقل با هزینه ۲۰ میلیون تومان ارائه می‌شود
-                    و خروجی آن مرجع اصلی مرحله کدنویسی و پیاده‌سازی
-                    خواهد بود.
-
-                </div>
-
-            </details>
+<div class="faq-grid">
 
 
-            <details class="faq-item">
+<details class="faq-item">
 
-                <summary>
+<summary>
 
-                    تفاوت اصلی پکیج پایه و حرفه‌ای چیست؟
+آیا UI/UX جزو پکیج‌های پیاده‌سازی است؟
 
-                    <i class="fa-solid fa-chevron-down"></i>
+<i class="fa-solid fa-chevron-down"></i>
 
-                </summary>
+</summary>
 
-                <div class="faq-answer">
+<div class="faq-answer">
 
-                    پکیج حرفه‌ای تمام امکانات پکیج پایه را شامل می‌شود
-                    و علاوه بر آن بخش‌های SEO و Google، Performance،
-                    فروش و مارکت‌پلیس و تست‌های تکمیلی را نیز پوشش می‌دهد.
+طراحی رابط و تجربه کاربری به‌صورت یک سرویس
+مستقل با هزینه ۲۰ میلیون تومان ارائه می‌شود
+و خروجی آن مرجع اصلی مرحله کدنویسی و پیاده‌سازی
+خواهد بود.
 
-                </div>
+</div>
 
-            </details>
-
-
-            <details class="faq-item">
-
-                <summary>
-
-                    پکیج اختصاصی چه امکانات اضافه‌ای دارد؟
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
-                </summary>
-
-                <div class="faq-answer">
-
-                    پکیج اختصاصی تمام امکانات حرفه‌ای را به همراه
-                    زیرساخت پیشرفته، بهینه‌سازی Database و PHP،
-                    امنیت، Firewall، Backup، تست فشار و کنترل کیفیت
-                    پیشرفته ارائه می‌کند.
-
-                </div>
-
-            </details>
+</details>
 
 
-            <details class="faq-item">
+<details class="faq-item">
 
-                <summary>
+<summary>
 
-                    آیا هزینه سرویس‌های شخص ثالث داخل قیمت است؟
+تفاوت اصلی پکیج پایه و حرفه‌ای چیست؟
 
-                    <i class="fa-solid fa-chevron-down"></i>
+<i class="fa-solid fa-chevron-down"></i>
 
-                </summary>
+</summary>
 
-                <div class="faq-answer">
+<div class="faq-answer">
 
-                    خیر. هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
-                    بر عهده کارفرما می‌باشد.
+پکیج حرفه‌ای تمام امکانات پکیج پایه را شامل می‌شود
+و علاوه بر آن بخش‌های SEO و Google، Performance،
+فروش و مارکت‌پلیس و تست‌های تکمیلی را نیز پوشش می‌دهد.
 
-                </div>
+</div>
 
-            </details>
-
-
-            <details class="faq-item">
-
-                <summary>
-
-                    خروجی طراحی UI/UX چیست؟
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
-                </summary>
-
-                <div class="faq-answer">
-
-                    خروجی این مرحله شامل طرح گرافیکی کامل سایت،
-                    Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
-                    است که پس از تأیید برای مرحله پیاده‌سازی استفاده می‌شود.
-
-                </div>
-
-            </details>
+</details>
 
 
-        </div>
+<details class="faq-item">
 
-    </div>
+<summary>
+
+پکیج اختصاصی چه امکانات اضافه‌ای دارد؟
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</summary>
+
+<div class="faq-answer">
+
+پکیج اختصاصی تمام امکانات حرفه‌ای را به همراه
+زیرساخت پیشرفته، بهینه‌سازی Database و PHP،
+امنیت، Firewall، Backup، تست فشار و کنترل کیفیت
+پیشرفته ارائه می‌کند.
+
+</div>
+
+</details>
+
+
+<details class="faq-item">
+
+<summary>
+
+آیا هزینه سرویس‌های شخص ثالث داخل قیمت است؟
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</summary>
+
+<div class="faq-answer">
+
+خیر. هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+بر عهده کارفرما می‌باشد.
+
+</div>
+
+</details>
+
+
+<details class="faq-item">
+
+<summary>
+
+خروجی طراحی UI/UX چیست؟
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</summary>
+
+<div class="faq-answer">
+
+خروجی این مرحله شامل طرح گرافیکی کامل سایت،
+Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
+است که پس از تأیید برای مرحله پیاده‌سازی استفاده می‌شود.
+
+</div>
+
+</details>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -3477,33 +3862,49 @@
 
 <section class="final-cta" id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="cta-box">
+<div class="cta-box">
 
-            <h2>
-                آماده‌ای فروشگاهت را حرفه‌ای بسازی؟
-            </h2>
+<h2>
+آماده‌ای فروشگاهت را حرفه‌ای بسازی؟
+</h2>
 
-            <p>
+<p>
 
-                ابتدا پکیج مناسب پروژه را انتخاب کن،
-                سپس مسیر طراحی و پیاده‌سازی را شروع می‌کنیم.
+ابتدا پکیج مناسب پروژه را انتخاب کن،
+سپس اطلاعات انتخابت مستقیماً در واتساپ برای ما ارسال می‌شود.
 
-            </p>
+</p>
 
 
-            <a href="mailto:your@email.com" class="cta-button">
+<div class="selected-package" id="selectedPackage">
 
-                شروع همکاری
+پکیج انتخاب‌شده:
+<strong id="selectedPackageName"></strong>
 
-                <i class="fa-solid fa-arrow-left"></i>
+&nbsp; — &nbsp;
 
-            </a>
+<span id="selectedPackagePrice"></span>
 
-        </div>
+</div>
 
-    </div>
+
+<a
+href="https://wa.me/989212789310"
+target="_blank"
+class="cta-button"
+id="whatsappCta">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+شروع همکاری در واتساپ
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
@@ -3515,23 +3916,185 @@
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <strong>
-            طراحی و توسعه فروشگاه اینترنتی
-        </strong>
+<strong>
+طراحی و توسعه فروشگاه اینترنتی
+</strong>
 
-        <br>
+<br>
 
-        تمامی قیمت‌ها به تومان می‌باشد.
-        هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
-        بر عهده کارفرما می‌باشد.
+تمامی قیمت‌ها به تومان می‌باشد.
+هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+بر عهده کارفرما می‌باشد.
 
-    </div>
+</div>
 
 </footer>
 
 
-</body>
 
+<!-- =========================================================
+     WHATSAPP PACKAGE SYSTEM
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const whatsappNumber = "989212789310";
+
+    let selectedPackage = "";
+    let selectedPrice = "";
+
+    const packageButtons =
+        document.querySelectorAll(".package-select");
+
+    const selectedBox =
+        document.getElementById("selectedPackage");
+
+    const selectedName =
+        document.getElementById("selectedPackageName");
+
+    const selectedPriceElement =
+        document.getElementById("selectedPackagePrice");
+
+    const whatsappButton =
+        document.getElementById("whatsappCta");
+
+
+    /* =====================================================
+       PACKAGE SELECT
+    ===================================================== */
+
+    packageButtons.forEach(function(button){
+
+        button.addEventListener("click", function(e){
+
+            selectedPackage =
+                button.getAttribute("data-package") || "";
+
+            selectedPrice =
+                button.getAttribute("data-price") || "";
+
+
+            /* تغییر وضعیت تمام دکمه‌ها */
+
+            packageButtons.forEach(function(item){
+
+                item.classList.remove("selected");
+
+                const icon =
+                    item.querySelector("i");
+
+                if(icon){
+
+                    icon.className =
+                        "fa-solid fa-arrow-left";
+                }
+
+            });
+
+
+            /* دکمه انتخاب‌شده */
+
+            button.classList.add("selected");
+
+            button.innerHTML =
+                'پکیج انتخاب شد <i class="fa-solid fa-check"></i>';
+
+
+            /* نمایش پکیج در CTA */
+
+            selectedName.textContent =
+                selectedPackage;
+
+            selectedPriceElement.textContent =
+                selectedPrice;
+
+            selectedBox.classList.add("show");
+
+
+            /*
+             * اسکرول نرم به CTA
+             */
+
+            setTimeout(function(){
+
+                document
+                    .getElementById("contact")
+                    .scrollIntoView({
+                        behavior:"smooth",
+                        block:"center"
+                    });
+
+            },120);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       WHATSAPP CTA
+    ===================================================== */
+
+    whatsappButton.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+
+        let message = "";
+
+
+        if(selectedPackage){
+
+            message =
+                "سلام، وقت بخیر 🌱\n\n" +
+
+                "برای شروع پروژه فروشگاه اینترنتی پیام می‌دهم.\n\n" +
+
+                "📦 پکیج انتخاب‌شده: " +
+                selectedPackage +
+                "\n" +
+
+                "💰 قیمت پکیج: " +
+                selectedPrice +
+                "\n\n" +
+
+                "لطفاً برای ادامه همکاری و شروع پروژه راهنمایی بفرمایید.";
+
+        }else{
+
+            message =
+                "سلام، وقت بخیر 🌱\n\n" +
+
+                "برای طراحی و توسعه فروشگاه اینترنتی پیام می‌دهم.\n\n" +
+
+                "می‌خواهم درباره پکیج‌ها و شروع پروژه مشاوره بگیرم.";
+
+        }
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    });
+
+
+});
+
+</script>
+
+
+</body>
 </html>
