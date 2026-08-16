@@ -4,16 +4,18 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
 
 <meta name="description"
-content="طراحی UI/UX، قالب اختصاصی کدنویسی شده، زیرساخت وردپرس، سئو، Performance، امنیت و توسعه فروشگاه اینترنتی">
+content="طراحی UI/UX، زیرساخت وردپرس، قالب اختصاصی کدنویسی شده، سئو، Performance، امنیت و توسعه فروشگاه اینترنتی">
 
+<!-- Vazir -->
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
 
+<!-- Font Awesome -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -29,7 +31,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     --white:#fff;
 
     --black:#101114;
-    --black-2:#181a1f;
+    --black-2:#17191e;
 
     --text:#16181d;
     --text-soft:#535964;
@@ -61,32 +63,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 /* =========================================================
-   RESET / MOBILE WIDTH FIX
+   RESET
 ========================================================= */
 
 *,
 *::before,
 *::after{
+
     box-sizing:border-box;
+
+    margin:0;
+    padding:0;
 }
 
 html{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
+
     scroll-behavior:smooth;
+
+    width:100%;
+
+    overflow-x:hidden;
 }
 
 body{
 
     width:100%;
     max-width:100%;
-    min-width:0;
 
-    margin:0;
-    padding:0;
-
-    font-family:Vazir,Tahoma,sans-serif;
+    font-family:Vazir,Tahoma,Arial,sans-serif;
 
     background:
         radial-gradient(
@@ -101,30 +105,32 @@ body{
     line-height:1.8;
 
     overflow-x:hidden;
+
+    position:relative;
 }
 
 img,
-svg,
-video,
-iframe{
+svg{
+
     max-width:100%;
 }
 
 a{
+
     text-decoration:none;
+
     color:inherit;
 }
 
-button,
-input,
-textarea,
-select{
+button{
+
     font-family:inherit;
 }
 
-button{
-    border:0;
-}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 .container{
 
@@ -149,13 +155,13 @@ button{
     z-index:1000;
 
     width:100%;
-    max-width:100%;
 
     border-bottom:1px solid rgba(231,233,237,.8);
 
-    background:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.82);
 
     backdrop-filter:blur(18px);
+
     -webkit-backdrop-filter:blur(18px);
 }
 
@@ -170,8 +176,6 @@ button{
     justify-content:space-between;
 
     gap:20px;
-
-    min-width:0;
 }
 
 .logo{
@@ -193,6 +197,7 @@ button{
     height:40px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:13px;
@@ -207,14 +212,17 @@ button{
 }
 
 .logo-icon i{
-    font-size:15px;
+
+    display:block;
+
+    line-height:1;
 }
 
 .logo-text{
 
     font-size:14px;
 
-    white-space:nowrap;
+    line-height:1.5;
 }
 
 .logo-text small{
@@ -235,8 +243,6 @@ button{
     align-items:center;
 
     gap:7px;
-
-    min-width:0;
 }
 
 .nav a{
@@ -250,8 +256,6 @@ button{
     font-size:11px;
 
     transition:.2s;
-
-    white-space:nowrap;
 }
 
 .nav a:hover{
@@ -311,8 +315,6 @@ button{
     text-align:center;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .hero::before{
@@ -345,8 +347,6 @@ button{
     max-width:850px;
 
     margin-inline:auto;
-
-    min-width:0;
 }
 
 .badge{
@@ -398,7 +398,7 @@ button{
 
     font-weight:900;
 
-    margin:0 0 22px;
+    margin-bottom:22px;
 }
 
 .hero h1 span{
@@ -513,7 +513,7 @@ button{
 
 
 /* =========================================================
-   STATS
+   HERO STATS
 ========================================================= */
 
 .hero-stats{
@@ -533,8 +533,6 @@ button{
     box-shadow:var(--shadow);
 
     overflow:hidden;
-
-    width:100%;
 }
 
 .stat{
@@ -577,8 +575,6 @@ button{
     padding:85px 0;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .section-header{
@@ -610,8 +606,6 @@ button{
     font-weight:900;
 
     letter-spacing:-1px;
-
-    margin:0;
 }
 
 .section-header p{
@@ -677,6 +671,11 @@ button{
     font-size:16px;
 }
 
+.service-icon i{
+
+    line-height:1;
+}
+
 .service-card:nth-child(1) .service-icon{
 
     color:var(--gold-dark);
@@ -711,7 +710,7 @@ button{
 
     font-weight:900;
 
-    margin:0 0 6px;
+    margin-bottom:6px;
 }
 
 .service-card p{
@@ -721,8 +720,6 @@ button{
     font-size:10px;
 
     line-height:1.9;
-
-    margin:0;
 }
 
 
@@ -739,8 +736,6 @@ button{
     padding:95px 0;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .pricing .section-header p{
@@ -852,8 +847,6 @@ button{
     font-size:20px;
 
     font-weight:900;
-
-    margin:0;
 }
 
 .plan-subtitle{
@@ -886,6 +879,11 @@ button{
     color:#d6d9de;
 
     flex-shrink:0;
+}
+
+.plan-icon i{
+
+    line-height:1;
 }
 
 .featured .plan-icon{
@@ -1103,9 +1101,7 @@ button{
 
     list-style:none;
 
-    margin:13px 0 0;
-
-    padding:0;
+    margin-top:13px;
 
     display:flex;
 
@@ -1155,8 +1151,6 @@ button{
     padding:100px 0;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .ux-card{
@@ -1239,7 +1233,7 @@ button{
 
     font-weight:900;
 
-    margin:0 0 12px;
+    margin-bottom:12px;
 }
 
 .ux-description{
@@ -1251,8 +1245,6 @@ button{
     font-size:12px;
 
     line-height:2;
-
-    margin:0;
 }
 
 .ux-output{
@@ -1295,8 +1287,6 @@ button{
     padding:28px;
 
     backdrop-filter:blur(10px);
-
-    min-width:0;
 }
 
 .ux-price-label{
@@ -1400,8 +1390,6 @@ button{
     padding:22px;
 
     position:relative;
-
-    min-width:0;
 }
 
 .step-number{
@@ -1432,7 +1420,7 @@ button{
 
     font-weight:900;
 
-    margin:0 0 5px;
+    margin-bottom:5px;
 }
 
 .step p{
@@ -1442,8 +1430,6 @@ button{
     font-size:9px;
 
     line-height:1.9;
-
-    margin:0;
 }
 
 
@@ -1456,8 +1442,6 @@ button{
     padding:85px 0;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .comparison{
@@ -1471,8 +1455,6 @@ button{
     overflow:hidden;
 
     box-shadow:var(--shadow);
-
-    max-width:100%;
 }
 
 .comparison-row{
@@ -1504,8 +1486,6 @@ button{
     border-left:1px solid var(--border);
 
     font-size:10px;
-
-    min-width:0;
 }
 
 .comparison-row>div:last-child{
@@ -1568,8 +1548,6 @@ button{
     padding:0 18px;
 
     box-shadow:var(--shadow);
-
-    min-width:0;
 }
 
 .faq-item summary{
@@ -1625,7 +1603,7 @@ button{
 
 
 /* =========================================================
-   CTA
+   FINAL CTA
 ========================================================= */
 
 .final-cta{
@@ -1633,8 +1611,6 @@ button{
     padding:85px 0 100px;
 
     width:100%;
-
-    overflow:hidden;
 }
 
 .cta-box{
@@ -1686,7 +1662,7 @@ button{
 
     font-weight:900;
 
-    margin:0 0 10px;
+    margin-bottom:10px;
 }
 
 .cta-box p{
@@ -1794,8 +1770,6 @@ footer{
     font-size:9px;
 
     border-top:1px solid var(--border);
-
-    width:100%;
 }
 
 footer strong{
@@ -1805,7 +1779,7 @@ footer strong{
 
 
 /* =========================================================
-   1000
+   TABLET
 ========================================================= */
 
 @media(max-width:1000px){
@@ -1865,6 +1839,7 @@ footer strong{
     body{
 
         width:100%;
+
         max-width:100%;
 
         overflow-x:hidden;
@@ -1874,28 +1849,34 @@ footer strong{
 
         width:calc(100% - 28px);
 
-        max-width:calc(100% - 28px);
+        max-width:560px;
 
         margin-left:auto;
         margin-right:auto;
     }
 
 
-    /* HEADER */
+    /* =====================================================
+       HEADER MOBILE
+    ===================================================== */
 
     .header{
 
         width:100%;
+
+        overflow:hidden;
     }
 
     .header-inner{
 
         min-height:62px;
 
-        gap:10px;
+        width:100%;
 
-        padding-left:6px;
-        padding-right:6px;
+        padding-left:8px;
+        padding-right:8px;
+
+        gap:10px;
     }
 
     .logo{
@@ -1912,12 +1893,9 @@ footer strong{
         width:36px;
         height:36px;
 
+        min-width:36px;
+
         border-radius:11px;
-    }
-
-    .logo-icon i{
-
-        font-size:13px;
     }
 
     .logo-text{
@@ -1936,6 +1914,8 @@ footer strong{
     .logo-text small{
 
         font-size:7px;
+
+        white-space:nowrap;
     }
 
     .nav{
@@ -1955,28 +1935,28 @@ footer strong{
 
         gap:6px;
 
-        margin-left:3px;
-        margin-right:3px;
+        margin-left:2px;
+
+        margin-right:2px;
     }
 
     .header-button i{
 
-        font-size:10px;
+        font-size:9px;
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero{
 
         padding:55px 0 48px;
-    }
-
-    .hero-content{
 
         width:100%;
 
-        max-width:100%;
+        overflow:hidden;
     }
 
     .badge{
@@ -1999,6 +1979,8 @@ footer strong{
         line-height:1.35;
 
         margin-bottom:17px;
+
+        word-break:normal;
     }
 
     .hero h1 span::after{
@@ -2015,8 +1997,6 @@ footer strong{
         line-height:2;
 
         padding:0 3px;
-
-        max-width:100%;
     }
 
     .hero-actions{
@@ -2040,7 +2020,9 @@ footer strong{
     }
 
 
-    /* STATS */
+    /* =====================================================
+       STATS
+    ===================================================== */
 
     .hero-stats{
 
@@ -2049,6 +2031,8 @@ footer strong{
         margin-top:35px;
 
         border-radius:17px;
+
+        width:100%;
     }
 
     .stat{
@@ -2087,7 +2071,9 @@ footer strong{
     }
 
 
-    /* SECTION */
+    /* =====================================================
+       SECTION
+    ===================================================== */
 
     .section{
 
@@ -2097,18 +2083,16 @@ footer strong{
     .section-header{
 
         margin-bottom:28px;
-
-        width:100%;
     }
 
     .section-kicker{
 
-        font-size:9px;
+        font-size:8px;
     }
 
     .section-header h2{
 
-        font-size:27px;
+        font-size:25px;
 
         line-height:1.45;
 
@@ -2123,13 +2107,17 @@ footer strong{
     }
 
 
-    /* SERVICES */
+    /* =====================================================
+       SERVICES
+    ===================================================== */
 
     .service-grid{
 
         grid-template-columns:1fr;
 
         gap:10px;
+
+        width:100%;
     }
 
     .service-card{
@@ -2137,6 +2125,8 @@ footer strong{
         padding:19px;
 
         border-radius:17px;
+
+        width:100%;
     }
 
     .service-icon{
@@ -2151,7 +2141,7 @@ footer strong{
 
     .service-card h3{
 
-        font-size:14px;
+        font-size:13px;
     }
 
     .service-card p{
@@ -2162,18 +2152,22 @@ footer strong{
     }
 
 
-    /* PRICING */
+    /* =====================================================
+       PRICING
+    ===================================================== */
 
     .pricing{
 
         padding:65px 0;
+
+        width:100%;
+
+        overflow:hidden;
     }
 
     .pricing-grid{
 
         width:100%;
-
-        max-width:100%;
 
         display:flex;
 
@@ -2186,9 +2180,7 @@ footer strong{
 
         width:100%;
 
-        max-width:100%;
-
-        padding:22px 17px;
+        padding:21px 17px;
 
         border-radius:21px;
     }
@@ -2223,20 +2215,20 @@ footer strong{
 
     .plan h3{
 
-        font-size:20px;
+        font-size:17px;
     }
 
     .plan-subtitle{
 
-        font-size:9px;
+        font-size:8px;
 
         line-height:1.8;
     }
 
     .plan-icon{
 
-        width:40px;
-        height:40px;
+        width:38px;
+        height:38px;
 
         border-radius:11px;
     }
@@ -2248,26 +2240,26 @@ footer strong{
 
     .price-number strong{
 
-        font-size:39px;
+        font-size:35px;
     }
 
     .price-number span{
 
-        font-size:10px;
+        font-size:9px;
     }
 
     .price-description{
 
-        font-size:9px;
+        font-size:8px;
 
         line-height:1.8;
     }
 
     .plan-button{
 
-        min-height:48px;
+        min-height:46px;
 
-        font-size:10px;
+        font-size:9px;
 
         border-radius:11px;
     }
@@ -2284,15 +2276,15 @@ footer strong{
 
     .feature-group summary{
 
-        font-size:10px;
+        font-size:9px;
 
         gap:8px;
     }
 
     .summary-icon{
 
-        width:26px;
-        height:26px;
+        width:25px;
+        height:25px;
 
         border-radius:7px;
     }
@@ -2306,7 +2298,7 @@ footer strong{
 
     .feature-list li{
 
-        font-size:8.5px;
+        font-size:8px;
 
         line-height:1.9;
 
@@ -2314,7 +2306,9 @@ footer strong{
     }
 
 
-    /* UX */
+    /* =====================================================
+       UI UX
+    ===================================================== */
 
     .ux-section{
 
@@ -2326,6 +2320,8 @@ footer strong{
         padding:28px 18px;
 
         border-radius:23px;
+
+        width:100%;
     }
 
     .ux-grid{
@@ -2342,7 +2338,7 @@ footer strong{
 
     .ux-title{
 
-        font-size:27px;
+        font-size:25px;
 
         line-height:1.45;
     }
@@ -2376,7 +2372,7 @@ footer strong{
 
         width:100%;
 
-        max-width:100%;
+        max-width:none;
     }
 
     .ux-price-label{
@@ -2386,12 +2382,12 @@ footer strong{
 
     .ux-price strong{
 
-        font-size:39px;
+        font-size:36px;
     }
 
     .ux-price strong small{
 
-        font-size:10px;
+        font-size:9px;
     }
 
     .ux-price-description{
@@ -2403,13 +2399,15 @@ footer strong{
 
     .ux-button{
 
-        min-height:47px;
+        min-height:45px;
 
-        font-size:10px;
+        font-size:9px;
     }
 
 
-    /* STEPS */
+    /* =====================================================
+       STEPS
+    ===================================================== */
 
     .steps{
 
@@ -2437,7 +2435,7 @@ footer strong{
 
     .step h3{
 
-        font-size:13px;
+        font-size:12px;
     }
 
     .step p{
@@ -2446,24 +2444,26 @@ footer strong{
     }
 
 
-    /* COMPARISON */
+    /* =====================================================
+       COMPARISON
+    ===================================================== */
 
     .comparison-section{
 
         padding:60px 0;
+
+        overflow:hidden;
     }
 
     .comparison{
-
-        width:100%;
-
-        max-width:100%;
 
         border-radius:18px;
 
         overflow-x:auto;
 
         -webkit-overflow-scrolling:touch;
+
+        width:100%;
     }
 
     .comparison-row{
@@ -2491,7 +2491,9 @@ footer strong{
     }
 
 
-    /* FAQ */
+    /* =====================================================
+       FAQ
+    ===================================================== */
 
     .faq-grid{
 
@@ -2505,26 +2507,30 @@ footer strong{
         padding:0 14px;
 
         border-radius:14px;
+
+        width:100%;
     }
 
     .faq-item summary{
 
         min-height:53px;
 
-        font-size:10px;
+        font-size:9px;
 
         line-height:1.8;
     }
 
     .faq-answer{
 
-        font-size:8.5px;
+        font-size:8px;
 
         line-height:2;
     }
 
 
-    /* CTA */
+    /* =====================================================
+       CTA
+    ===================================================== */
 
     .final-cta{
 
@@ -2536,11 +2542,13 @@ footer strong{
         padding:38px 18px;
 
         border-radius:23px;
+
+        width:100%;
     }
 
     .cta-box h2{
 
-        font-size:27px;
+        font-size:25px;
 
         line-height:1.5;
     }
@@ -2567,7 +2575,7 @@ footer strong{
 
         width:100%;
 
-        min-height:48px;
+        min-height:47px;
 
         font-size:10px;
 
@@ -2575,14 +2583,21 @@ footer strong{
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer{
 
         font-size:8px;
 
         line-height:2;
+
+        padding-left:12px;
+
+        padding-right:12px;
     }
+
 }
 
 
@@ -2595,14 +2610,27 @@ footer strong{
     .container{
 
         width:calc(100% - 22px);
-
-        max-width:calc(100% - 22px);
     }
 
     .header-inner{
 
-        padding-left:4px;
-        padding-right:4px;
+        padding-left:7px;
+        padding-right:7px;
+
+        gap:8px;
+    }
+
+    .logo{
+
+        gap:7px;
+    }
+
+    .logo-icon{
+
+        width:34px;
+        height:34px;
+
+        min-width:34px;
     }
 
     .logo-text{
@@ -2629,17 +2657,12 @@ footer strong{
 
     .price-number strong{
 
-        font-size:34px;
+        font-size:32px;
     }
 
     .plan{
 
         padding:19px 15px;
-    }
-
-    .plan h3{
-
-        font-size:18px;
     }
 }
 
@@ -2663,6 +2686,7 @@ footer strong{
 </style>
 
 </head>
+
 
 <body>
 
@@ -2708,7 +2732,7 @@ UI/UX • Development • SEO
 
 
 <a
-href="https://wa.me/989212789310"
+href="https://wa.me/989212789310?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B4%D8%B1%D9%88%D8%B9%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C%20%D9%88%20%D8%AA%D9%88%D8%B3%D8%B9%D9%87%20%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87%20%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C%20%D9%85%DB%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85."
 target="_blank"
 class="header-button">
 
@@ -2721,6 +2745,7 @@ class="header-button">
 </div>
 
 </header>
+
 
 
 <!-- =========================================================
@@ -2754,7 +2779,7 @@ class="header-button">
 <p class="hero-description">
 
 از طراحی رابط و تجربه کاربری تا پیاده‌سازی فروشگاه،
-سئو، Performance، امنیت و زیرساخت؛
+زیرساخت وردپرس، سئو، Performance، امنیت و توسعه؛
 تمام مراحل ساخت یک فروشگاه حرفه‌ای در یک مسیر مشخص.
 
 </p>
@@ -2823,6 +2848,7 @@ class="header-button">
 </section>
 
 
+
 <!-- =========================================================
      SERVICES
 ========================================================= -->
@@ -2842,7 +2868,7 @@ WHAT WE DO
 </h2>
 
 <p>
-از طراحی تا زیرساخت؛ همه‌چیز در یک مسیر حرفه‌ای.
+از طراحی تا توسعه، سئو، زیرساخت و امنیت.
 </p>
 
 </div>
@@ -2862,7 +2888,8 @@ WHAT WE DO
 </h3>
 
 <p>
-قالب اختصاصی کدنویسی‌شده، ووکامرس،
+زیرساخت وردپرس، ووکامرس و قالب اختصاصی
+کدنویسی‌شده بر اساس نیاز پروژه،
 محصولات، دسته‌بندی‌ها، پرداخت،
 سبد خرید و ساختار کامل فروشگاه.
 </p>
@@ -2917,17 +2944,19 @@ CDN، Cache، Core Web Vitals،
 </h3>
 
 <p>
-زیرساخت وردپرس، Hardening، Firewall،
-Backup، Database و کنترل منابع سرور.
+Hardening، Firewall، Backup،
+بهینه‌سازی Database و کنترل منابع سرور.
 </p>
 
 </article>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -3031,19 +3060,20 @@ data-price="۵۰ میلیون تومان">
 
 </summary>
 
+
 <ul class="feature-list">
 
 <li>زیرساخت وردپرس</li>
 
 <li>قالب اختصاصی کدنویسی‌شده</li>
 
-<li>پیاده‌سازی UI/UX تأییدشده</li>
+<li>پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده</li>
 
 <li>پیکربندی کامل ووکامرس</li>
 
 <li>راه‌اندازی محصولات و دسته‌بندی‌ها</li>
 
-<li>اتصال پنل پیامکی</li>
+<li>اتصال و پیکربندی پنل پیامکی</li>
 
 <li>اتصال درگاه پرداخت</li>
 
@@ -3072,15 +3102,16 @@ data-price="۵۰ میلیون تومان">
 
 </summary>
 
+
 <ul class="feature-list">
 
-<li>صفحات اصلی فروشگاه</li>
+<li>تنظیم صفحات اصلی فروشگاه</li>
 
-<li>منو و ساختار ناوبری</li>
+<li>تنظیم منو و ساختار ناوبری</li>
 
-<li>ثبت‌نام و ورود کاربران</li>
+<li>تنظیم ثبت‌نام و ورود کاربران</li>
 
-<li>سبد خرید و تسویه‌حساب</li>
+<li>تنظیم سبد خرید و تسویه‌حساب</li>
 
 <li>تست فرآیند خرید و ثبت سفارش</li>
 
@@ -3093,12 +3124,13 @@ data-price="۵۰ میلیون تومان">
 </article>
 
 
+
 <!-- PROFESSIONAL -->
 
 <article class="plan featured">
 
 <div class="featured-label">
-پیشنهاد ویژه
+پیشنهاد پیشنهادی
 </div>
 
 
@@ -3205,14 +3237,14 @@ SEO و Google
 
 <li>سئو تکنیکال اولیه</li>
 <li>بهینه‌سازی ساختار URL</li>
-<li>Headingها</li>
-<li>لینک‌سازی داخلی</li>
-<li>Sitemap</li>
-<li>Robots.txt</li>
-<li>Indexing</li>
-<li>Google Analytics</li>
-<li>Google Search Console</li>
-<li>بررسی خطاهای Search Console</li>
+<li>بهینه‌سازی ساختار Headingها</li>
+<li>بهینه‌سازی لینک‌سازی داخلی</li>
+<li>تنظیم Sitemap</li>
+<li>تنظیم Robots.txt</li>
+<li>تنظیم Indexing</li>
+<li>اتصال Google Analytics</li>
+<li>اتصال Google Search Console</li>
+<li>بررسی خطاهای اولیه Search Console</li>
 
 </ul>
 
@@ -3239,17 +3271,18 @@ Performance
 
 <ul class="feature-list">
 
-<li>CDN</li>
-<li>Cache</li>
-<li>Core Web Vitals</li>
+<li>راه‌اندازی و پیکربندی CDN</li>
+<li>پیاده‌سازی سیستم Cache</li>
+<li>بهینه‌سازی Core Web Vitals</li>
 <li>بهینه‌سازی LCP</li>
 <li>بهینه‌سازی CLS</li>
 <li>بهینه‌سازی INP</li>
-<li>Minify CSS و JS</li>
-<li>Lazy Load</li>
-<li>WebP</li>
+<li>Minify فایل‌های CSS و JS</li>
+<li>حذف منابع و فایل‌های غیرضروری</li>
+<li>Lazy Load تصاویر</li>
+<li>تبدیل و فشرده‌سازی تصاویر WebP</li>
 <li>بهینه‌سازی فونت‌ها</li>
-<li>بهینه‌سازی Third-Party</li>
+<li>بهینه‌سازی منابع Third-Party</li>
 
 </ul>
 
@@ -3277,10 +3310,10 @@ Performance
 <ul class="feature-list">
 
 <li>پیاده‌سازی اسنپ‌پی</li>
-<li>اتصال ترب</li>
-<li>اتصال دیجی‌کالا</li>
-<li>صفحات کمپین</li>
-<li>Landing اختصاصی</li>
+<li>اتصال و پیکربندی ترب</li>
+<li>اتصال و پیکربندی دیجی‌کالا</li>
+<li>ساخت و پیاده‌سازی برگه‌های کمپین</li>
+<li>پیاده‌سازی صفحات Landing اختصاصی کمپین</li>
 
 </ul>
 
@@ -3307,18 +3340,20 @@ Performance
 
 <ul class="feature-list">
 
-<li>تست سرعت</li>
-<li>تست فرآیند خرید</li>
+<li>تست سرعت قبل و بعد از بهینه‌سازی</li>
+<li>تست فرآیند خرید و پرداخت</li>
 <li>تست ریسپانسیو</li>
-<li>تست مرورگرها</li>
+<li>تست سازگاری مرورگرها</li>
 
 </ul>
 
 </details>
 
+
 </div>
 
 </article>
+
 
 
 <!-- ENTERPRISE -->
@@ -3401,10 +3436,6 @@ data-price="۹۰ میلیون تومان">
 
 <li>تمام امکانات پکیج حرفه‌ای</li>
 
-<li>زیرساخت پیشرفته وردپرس</li>
-
-<li>قالب اختصاصی کدنویسی‌شده</li>
-
 </ul>
 
 </details>
@@ -3430,17 +3461,18 @@ data-price="۹۰ میلیون تومان">
 
 <ul class="feature-list">
 
+<li>زیرساخت اختصاصی وردپرس</li>
 <li>بهینه‌سازی Database وردپرس</li>
-<li>پاک‌سازی Revisionهای غیرضروری</li>
+<li>پاک‌سازی داده‌ها و Revisionهای غیرضروری</li>
 <li>بهینه‌سازی Queryهای سنگین</li>
 <li>بهینه‌سازی TTFB</li>
-<li>تحلیل منابع سرور</li>
+<li>تحلیل مصرف منابع سرور و بهینه‌سازی در صورت نیاز</li>
 <li>بهینه‌سازی PHP و PHP Workers</li>
-<li>Object Cache</li>
-<li>Browser Cache</li>
-<li>HTTP Requests</li>
-<li>Render-Blocking Resources</li>
-<li>Critical Resources</li>
+<li>بهینه‌سازی Object Cache</li>
+<li>تنظیم Browser Cache</li>
+<li>بهینه‌سازی HTTP Requests</li>
+<li>کاهش Render-Blocking Resources</li>
+<li>بهینه‌سازی Critical Resources</li>
 
 </ul>
 
@@ -3469,10 +3501,10 @@ data-price="۹۰ میلیون تومان">
 
 <li>Hardening وردپرس</li>
 <li>محدودسازی Login و XML-RPC</li>
-<li>Firewall</li>
-<li>Brute Force Protection</li>
-<li>بررسی افزونه‌ها</li>
-<li>Backup دوره‌ای</li>
+<li>تنظیم Firewall</li>
+<li>محافظت در برابر Brute Force</li>
+<li>بررسی افزونه‌ها و نقاط آسیب‌پذیر</li>
+<li>تنظیم Backup دوره‌ای</li>
 <li>تست Restore</li>
 
 </ul>
@@ -3501,20 +3533,21 @@ data-price="۹۰ میلیون تومان">
 <ul class="feature-list">
 
 <li>تست فشار و Performance</li>
-<li>بررسی Bottleneck</li>
-<li>بررسی خطاهای Server</li>
-<li>بررسی خطاهای WordPress</li>
-<li>بررسی Search Console</li>
-<li>تست کامل سفارش و پرداخت</li>
+<li>بررسی Bottleneckهای سایت</li>
+<li>بررسی خطاهای Server و WordPress</li>
+<li>بررسی خطاهای Search Console</li>
+<li>تست کامل فرآیند سفارش و پرداخت</li>
 <li>تست نهایی Performance</li>
 
 </ul>
 
 </details>
 
+
 </div>
 
 </article>
+
 
 </div>
 
@@ -3534,6 +3567,7 @@ margin-top:28px;
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -3570,11 +3604,12 @@ UI / UX DESIGN
 
 <p class="ux-description">
 
-پیش از شروع برنامه‌نویسی و پیاده‌سازی سایت،
-ساختار و ظاهر کامل سایت به‌صورت گرافیکی طراحی
-می‌شود. طراحی بر اساس هویت برند و هدف پروژه
-انجام شده و مسیر حرکت کاربر پیش از ورود به
-مرحله توسعه مشخص خواهد شد.
+در این مرحله، پیش از شروع برنامه‌نویسی و
+پیاده‌سازی سایت، ساختار و ظاهر کامل سایت
+به‌صورت گرافیکی طراحی و آماده می‌شود.
+طراحی بر اساس هویت و هدف برند انجام شده
+و مسیر حرکت کاربر قبل از ورود به مرحله
+توسعه مشخص می‌شود.
 
 </p>
 
@@ -3623,7 +3658,7 @@ Prototype در Figma
 
 <div>
 <i class="fa-solid fa-check"></i>
-رنگ‌بندی و Typography
+طراحی رنگ‌بندی و Typography
 </div>
 
 <div>
@@ -3736,11 +3771,13 @@ data-price="۳۵ میلیون تومان">
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -3782,7 +3819,7 @@ COMPARE
 
 <div class="comparison-row">
 
-<div>قالب اختصاصی کدنویسی‌شده</div>
+<div>زیرساخت وردپرس</div>
 
 <div class="check">✓</div>
 <div class="check">✓</div>
@@ -3793,7 +3830,7 @@ COMPARE
 
 <div class="comparison-row">
 
-<div>زیرساخت وردپرس</div>
+<div>قالب اختصاصی کدنویسی‌شده</div>
 
 <div class="check">✓</div>
 <div class="check">✓</div>
@@ -3878,11 +3915,13 @@ COMPARE
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -4026,6 +4065,7 @@ Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
 </section>
 
 
+
 <!-- =========================================================
      FINAL CTA
 ========================================================= -->
@@ -4079,6 +4119,7 @@ id="whatsappCta">
 </section>
 
 
+
 <!-- =========================================================
      FOOTER
 ========================================================= -->
@@ -4102,8 +4143,9 @@ id="whatsappCta">
 </footer>
 
 
+
 <!-- =========================================================
-     WHATSAPP SYSTEM
+     WHATSAPP PACKAGE SYSTEM
 ========================================================= -->
 
 <script>
@@ -4131,6 +4173,10 @@ document.addEventListener("DOMContentLoaded",function(){
         document.getElementById("whatsappCta");
 
 
+    /* =====================================================
+       PACKAGE SELECT
+    ===================================================== */
+
     packageButtons.forEach(function(button){
 
         button.addEventListener("click",function(e){
@@ -4147,11 +4193,8 @@ document.addEventListener("DOMContentLoaded",function(){
                 item.classList.remove("selected");
 
                 item.innerHTML=
-                    item.getAttribute("data-package")==="طراحی UI/UX"
-                    ?
-                    'درخواست طراحی UI/UX <i class="fa-solid fa-arrow-left"></i>'
-                    :
-                    'انتخاب '+item.getAttribute("data-package")+
+                    'انتخاب '+
+                    item.getAttribute("data-package")+
                     ' <i class="fa-solid fa-arrow-left"></i>';
 
             });
@@ -4177,8 +4220,11 @@ document.addEventListener("DOMContentLoaded",function(){
                 document
                     .getElementById("contact")
                     .scrollIntoView({
+
                         behavior:"smooth",
+
                         block:"center"
+
                     });
 
             },120);
@@ -4188,30 +4234,41 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
 
+    /* =====================================================
+       WHATSAPP CTA
+    ===================================================== */
+
     whatsappButton.addEventListener("click",function(e){
 
         e.preventDefault();
 
         let message="";
 
+
         if(selectedPackage){
 
             message=
                 "سلام، وقت بخیر 🌱\n\n"+
+
                 "برای شروع پروژه فروشگاه اینترنتی پیام می‌دهم.\n\n"+
+
                 "📦 پکیج انتخاب‌شده: "+
                 selectedPackage+
                 "\n"+
+
                 "💰 قیمت پکیج: "+
                 selectedPrice+
                 "\n\n"+
+
                 "لطفاً برای ادامه همکاری و شروع پروژه راهنمایی بفرمایید.";
 
         }else{
 
             message=
                 "سلام، وقت بخیر 🌱\n\n"+
+
                 "برای طراحی و توسعه فروشگاه اینترنتی پیام می‌دهم.\n\n"+
+
                 "می‌خواهم درباره پکیج‌ها و شروع پروژه مشاوره بگیرم.";
 
         }
@@ -4226,8 +4283,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         window.open(
             whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
+            "_blank"
         );
 
     });
