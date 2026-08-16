@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>پکیج‌های طراحی و پیاده‌سازی فروشگاه</title>
+    <title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
-        rel="stylesheet"
+    <meta
+        name="description"
+        content="طراحی UI/UX، پیاده‌سازی فروشگاه، سئو، Performance، امنیت و زیرساخت فروشگاه اینترنتی"
     >
 
+    <!-- Vazir -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+    >
+
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -21,54 +27,59 @@
 
     <style>
 
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
         :root {
-            --bg: #f5f7fa;
-            --surface: #ffffff;
-            --surface-2: #f8fafc;
 
-            --text: #111827;
-            --muted: #667085;
-            --muted-2: #98a2b3;
+            --bg: #f6f7f9;
+            --white: #ffffff;
 
-            --border: #e7ebf0;
+            --black: #101114;
+            --black-2: #17191e;
 
-            --primary: #111827;
-            --primary-2: #1f2937;
+            --text: #16181d;
+            --text-soft: #535964;
+            --muted: #858b96;
 
-            --accent: #f5a524;
-            --accent-soft: #fff7e8;
+            --border: #e7e9ed;
 
-            --success: #16a34a;
-            --success-soft: #effcf3;
+            --gold: #e6a52b;
+            --gold-light: #fff6df;
+            --gold-dark: #9c6810;
 
-            --blue: #2563eb;
-            --blue-soft: #eff6ff;
+            --green: #18a957;
+            --green-light: #ecfbf2;
 
-            --danger: #dc2626;
+            --blue: #3b82f6;
+            --blue-light: #eff6ff;
 
-            --radius-xl: 28px;
-            --radius-lg: 20px;
-            --radius-md: 14px;
+            --purple: #7c5cff;
+            --purple-light: #f2efff;
 
-            --shadow-sm:
-                0 4px 15px rgba(15, 23, 42, .05);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
 
-            --shadow-md:
-                0 18px 50px rgba(15, 23, 42, .09);
+            --shadow:
+                0 10px 35px rgba(16, 17, 20, .06);
 
-            --shadow-lg:
-                0 30px 80px rgba(15, 23, 42, .13);
+            --shadow-hover:
+                0 25px 65px rgba(16, 17, 20, .11);
+
         }
 
 
-        /* =====================================================
+        /* =========================================================
            RESET
-        ===================================================== */
+        ========================================================= */
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -76,22 +87,22 @@
         }
 
         body {
+
             font-family: Vazir, Tahoma, sans-serif;
+
             background:
                 radial-gradient(
-                    circle at 50% -20%,
-                    rgba(245,165,36,.10),
-                    transparent 38%
+                    circle at 50% -10%,
+                    rgba(230,165,43,.11),
+                    transparent 32%
                 ),
                 var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            min-height: 100vh;
-        }
 
-        button,
-        a {
-            font-family: inherit;
+            color: var(--text);
+
+            line-height: 1.8;
+
+            overflow-x: hidden;
         }
 
         a {
@@ -99,465 +110,1013 @@
             color: inherit;
         }
 
-
-        /* =====================================================
-           TOP BAR
-        ===================================================== */
-
-        .topbar {
-            width: 100%;
-            border-bottom: 1px solid rgba(231,235,240,.8);
-            background: rgba(255,255,255,.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        button {
+            font-family: inherit;
         }
 
-        .topbar-inner {
-            max-width: 1180px;
-            margin: auto;
-            min-height: 68px;
-            padding: 0 20px;
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+
+            width: min(1180px, calc(100% - 36px));
+
+            margin-inline: auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(231,233,237,.8);
+
+            background: rgba(255,255,255,.78);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .header-inner {
+
+            min-height: 72px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             gap: 20px;
         }
 
-        .brand {
+        .logo {
+
             display: flex;
+
             align-items: center;
-            gap: 11px;
-            font-weight: 800;
-            font-size: 16px;
+
+            gap: 12px;
+
+            font-weight: 900;
         }
 
-        .brand-mark {
-            width: 36px;
-            height: 36px;
-            border-radius: 11px;
+        .logo-icon {
+
+            width: 40px;
+            height: 40px;
 
             display: grid;
+
             place-items: center;
 
-            color: #fff;
-            background: #111827;
+            border-radius: 13px;
+
+            color: white;
+
+            background: var(--black);
 
             box-shadow:
-                0 7px 20px rgba(17,24,39,.18);
+                0 8px 25px rgba(16,17,20,.18);
         }
 
-        .brand small {
+        .logo-text {
+
+            font-size: 14px;
+        }
+
+        .logo-text small {
+
             display: block;
+
+            font-size: 9px;
+
             color: var(--muted);
-            font-size: 10px;
+
             font-weight: 500;
-            margin-top: -2px;
         }
 
-        .top-note {
-            color: var(--muted);
-            font-size: 12px;
+        .nav {
 
             display: flex;
+
             align-items: center;
+
             gap: 7px;
         }
 
-        .top-note i {
-            color: var(--success);
+        .nav a {
+
+            padding: 8px 13px;
+
+            border-radius: 10px;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+
+            transition: .2s;
+        }
+
+        .nav a:hover {
+
+            background: #f2f3f5;
+
+            color: var(--black);
+        }
+
+        .header-button {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 10px 15px;
+
+            border-radius: 11px;
+
+            background: var(--black);
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: .2s;
+        }
+
+        .header-button:hover {
+
+            transform: translateY(-2px);
+
+            background: #25272d;
         }
 
 
-        /* =====================================================
-           MAIN
-        ===================================================== */
-
-        .page {
-            max-width: 1180px;
-            margin: auto;
-            padding: 65px 20px 80px;
-        }
-
-
-        /* =====================================================
+        /* =========================================================
            HERO
-        ===================================================== */
+        ========================================================= */
 
         .hero {
+
+            position: relative;
+
+            padding: 95px 0 80px;
+
             text-align: center;
-            max-width: 820px;
-            margin: 0 auto 55px;
         }
 
-        .eyebrow {
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 480px;
+            height: 480px;
+
+            border-radius: 50%;
+
+            background: rgba(230,165,43,.08);
+
+            filter: blur(60px);
+
+            top: -180px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+
+            position: relative;
+
+            max-width: 850px;
+
+            margin-inline: auto;
+        }
+
+        .badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
 
             padding: 7px 13px;
 
-            border: 1px solid #eadfc9;
-            background: var(--accent-soft);
-            color: #9a6413;
+            background: var(--gold-light);
+
+            border: 1px solid #f0dfb9;
+
+            color: var(--gold-dark);
 
             border-radius: 50px;
 
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 10px;
 
-            margin-bottom: 19px;
+            font-weight: 800;
+
+            margin-bottom: 20px;
         }
 
-        .eyebrow-dot {
+        .badge-dot {
+
             width: 7px;
             height: 7px;
+
             border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 0 4px rgba(245,165,36,.12);
+
+            background: var(--gold);
+
+            box-shadow:
+                0 0 0 4px rgba(230,165,43,.13);
         }
 
         .hero h1 {
-            font-size: clamp(32px, 5vw, 58px);
-            line-height: 1.2;
-            letter-spacing: -1.7px;
+
+            font-size: clamp(35px, 6vw, 67px);
+
+            line-height: 1.18;
+
+            letter-spacing: -2.2px;
+
             font-weight: 900;
-            margin-bottom: 18px;
+
+            margin-bottom: 22px;
         }
 
         .hero h1 span {
+
             position: relative;
-            white-space: nowrap;
+
+            z-index: 1;
         }
 
         .hero h1 span::after {
+
             content: "";
+
             position: absolute;
-            left: 0;
+
             right: 0;
-            bottom: 1px;
-            height: 8px;
+            left: 0;
+
+            height: 10px;
+
+            bottom: 3px;
+
+            background: rgba(230,165,43,.28);
+
+            border-radius: 20px;
+
             z-index: -1;
-            border-radius: 10px;
-            background: rgba(245,165,36,.28);
         }
 
-        .hero p {
-            max-width: 680px;
-            margin: auto;
+        .hero-description {
 
-            color: var(--muted);
-            font-size: 16px;
+            max-width: 690px;
+
+            margin-inline: auto;
+
+            color: var(--text-soft);
+
+            font-size: 15px;
+
+            line-height: 2;
         }
 
-
-        /* =====================================================
-           TRUST STRIP
-        ===================================================== */
-
-        .trust-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-
-            max-width: 850px;
-            margin: 0 auto 45px;
-        }
-
-        .trust-item {
-            background: rgba(255,255,255,.7);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-
-            padding: 14px 16px;
+        .hero-actions {
 
             display: flex;
-            align-items: center;
+
             justify-content: center;
-            gap: 9px;
 
-            color: #475467;
-            font-size: 12px;
+            gap: 10px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
         }
 
-        .trust-item i {
-            color: var(--success);
-            font-size: 14px;
-        }
+        .btn {
 
+            min-height: 48px;
 
-        /* =====================================================
-           PRICING
-        ===================================================== */
+            display: inline-flex;
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            align-items: center;
 
-            align-items: stretch;
-        }
+            justify-content: center;
 
-        .plan {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-xl);
+            gap: 8px;
 
-            padding: 27px 24px 24px;
-
-            position: relative;
-
-            display: flex;
-            flex-direction: column;
-
-            box-shadow: var(--shadow-sm);
-
-            transition:
-                transform .25s ease,
-                box-shadow .25s ease,
-                border-color .25s ease;
-        }
-
-        .plan:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .plan.recommended {
-            border: 2px solid var(--accent);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-8px);
-        }
-
-        .plan.recommended:hover {
-            transform: translateY(-12px);
-        }
-
-
-        /* Recommended badge */
-
-        .recommended-badge {
-            position: absolute;
-            top: -13px;
-            right: 22px;
-
-            padding: 5px 13px;
-
-            background: var(--accent);
-            color: #241708;
-
-            border-radius: 50px;
-
-            font-size: 11px;
-            font-weight: 800;
-
-            box-shadow:
-                0 7px 18px rgba(245,165,36,.28);
-        }
-
-
-        /* Plan head */
-
-        .plan-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
-
-            padding-bottom: 21px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .plan-title {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .plan-title h2 {
-            font-size: 21px;
-            font-weight: 900;
-        }
-
-        .plan-title span {
-            font-size: 11px;
-            color: var(--muted);
-        }
-
-        .plan-icon {
-            width: 43px;
-            height: 43px;
+            padding: 0 20px;
 
             border-radius: 13px;
 
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: .25s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+
+            background: var(--black);
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px rgba(16,17,20,.16);
+        }
+
+        .btn-primary:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 16px 35px rgba(16,17,20,.20);
+        }
+
+        .btn-secondary {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+
+            border-color: #cfd3da;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HERO STATS
+        ========================================================= */
+
+        .hero-stats {
+
             display: grid;
-            place-items: center;
 
-            background: var(--surface-2);
-            color: var(--primary);
+            grid-template-columns: repeat(4,1fr);
 
-            font-size: 17px;
+            margin-top: 65px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
         }
 
-        .recommended .plan-icon {
-            background: var(--accent-soft);
-            color: #b76e00;
+        .stat {
+
+            padding: 22px;
+
+            text-align: center;
+
+            border-left: 1px solid var(--border);
         }
 
-
-        /* Price */
-
-        .price-box {
-            padding: 22px 0 17px;
+        .stat:last-child {
+            border-left: none;
         }
 
-        .price {
-            display: flex;
-            align-items: baseline;
-            gap: 7px;
-        }
+        .stat strong {
 
-        .price strong {
-            font-size: 38px;
-            line-height: 1;
+            display: block;
+
+            font-size: 19px;
+
             font-weight: 900;
+        }
+
+        .stat span {
+
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        .section {
+
+            padding: 85px 0;
+        }
+
+        .section-header {
+
+            max-width: 700px;
+
+            margin: 0 auto 38px;
+
+            text-align: center;
+        }
+
+        .section-kicker {
+
+            color: var(--gold-dark);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+
+            font-size: clamp(27px, 4vw, 39px);
+
+            line-height: 1.35;
+
+            font-weight: 900;
+
             letter-spacing: -1px;
         }
 
-        .price span {
-            font-size: 12px;
-            color: var(--muted);
-        }
+        .section-header p {
 
-        .price-caption {
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 11px;
-        }
-
-
-        /* CTA */
-
-        .plan-btn {
-            width: 100%;
-            min-height: 48px;
-
-            border-radius: 13px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-
-            font-size: 13px;
-            font-weight: 800;
-
-            border: 1px solid #d9dee6;
-            background: #fff;
-            color: #111827;
-
-            cursor: pointer;
-
-            transition:
-                background .2s ease,
-                color .2s ease,
-                transform .2s ease;
-        }
-
-        .plan-btn:hover {
-            background: #111827;
-            color: #fff;
-            transform: translateY(-1px);
-        }
-
-        .recommended .plan-btn {
-            background: #111827;
-            color: #fff;
-            border-color: #111827;
-        }
-
-        .recommended .plan-btn:hover {
-            background: #252f3d;
-        }
-
-
-        /* Features */
-
-        .features-title {
-            margin: 24px 0 12px;
-
-            font-size: 11px;
-            color: var(--muted-2);
-            font-weight: 700;
-        }
-
-        .features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            flex: 1;
-        }
-
-        .features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 9px;
+            color: var(--text-soft);
 
             font-size: 12px;
-            color: #475467;
+
+            margin-top: 9px;
         }
 
-        .features li i {
-            flex: 0 0 auto;
-            width: 18px;
-            height: 18px;
+
+        /* =========================================================
+           SERVICE CARDS
+        ========================================================= */
+
+        .service-grid {
 
             display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 14px;
+        }
+
+        .service-card {
+
+            padding: 24px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 21px;
+
+            box-shadow: var(--shadow);
+
+            transition: .25s;
+        }
+
+        .service-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+
             place-items: center;
 
-            border-radius: 50%;
+            border-radius: 14px;
 
-            background: var(--success-soft);
-            color: var(--success);
+            margin-bottom: 18px;
+
+            font-size: 16px;
+        }
+
+        .service-card:nth-child(1) .service-icon {
+
+            color: var(--gold-dark);
+
+            background: var(--gold-light);
+        }
+
+        .service-card:nth-child(2) .service-icon {
+
+            color: var(--blue);
+
+            background: var(--blue-light);
+        }
+
+        .service-card:nth-child(3) .service-icon {
+
+            color: var(--purple);
+
+            background: var(--purple-light);
+        }
+
+        .service-card:nth-child(4) .service-icon {
+
+            color: var(--green);
+
+            background: var(--green-light);
+        }
+
+        .service-card h3 {
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            margin-bottom: 6px;
+        }
+
+        .service-card p {
+
+            color: var(--text-soft);
+
+            font-size: 10px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           PRICING
+        ========================================================= */
+
+        .pricing {
+
+            background: #101114;
+
+            color: white;
+
+            padding: 95px 0;
+        }
+
+        .pricing .section-header p {
+
+            color: #a4a8b1;
+        }
+
+        .pricing .section-kicker {
+
+            color: #e9b74e;
+        }
+
+        .pricing-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 17px;
+
+            align-items: start;
+        }
+
+        .plan {
+
+            position: relative;
+
+            background: #181a1f;
+
+            border: 1px solid #292c32;
+
+            border-radius: 27px;
+
+            padding: 27px;
+
+            transition: .3s;
+        }
+
+        .plan:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #3a3d45;
+        }
+
+        .plan.featured {
+
+            background: white;
+
+            color: var(--text);
+
+            border: 2px solid var(--gold);
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.27);
+        }
+
+        .plan.featured:hover {
+
+            transform: translateY(-16px);
+        }
+
+        .featured-label {
+
+            position: absolute;
+
+            top: -13px;
+
+            right: 22px;
+
+            background: var(--gold);
+
+            color: #2b1b05;
+
+            padding: 5px 13px;
+
+            border-radius: 50px;
+
+            font-size: 9px;
+
+            font-weight: 900;
+        }
+
+        .plan-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding-bottom: 20px;
+
+            border-bottom: 1px solid #2b2e35;
+        }
+
+        .featured .plan-top {
+
+            border-color: var(--border);
+        }
+
+        .plan h3 {
+
+            font-size: 20px;
+
+            font-weight: 900;
+        }
+
+        .plan-subtitle {
+
+            color: #969ba5;
 
             font-size: 9px;
 
             margin-top: 2px;
         }
 
-        .features li strong {
-            color: #1d2939;
-            font-weight: 800;
+        .featured .plan-subtitle {
+
+            color: var(--muted);
         }
 
+        .plan-icon {
 
-        /* =====================================================
-           UI UX SECTION
-        ===================================================== */
+            width: 42px;
+            height: 42px;
 
-        .design-section {
-            margin-top: 24px;
+            display: grid;
 
-            background: #111827;
-            color: #fff;
+            place-items: center;
 
-            border-radius: var(--radius-xl);
+            border-radius: 13px;
 
-            padding: 32px;
+            background: #22252b;
+
+            color: #d6d9de;
+        }
+
+        .featured .plan-icon {
+
+            background: var(--gold-light);
+
+            color: var(--gold-dark);
+        }
+
+        .price {
+
+            padding: 24px 0 20px;
+        }
+
+        .price-number {
+
+            display: flex;
+
+            align-items: baseline;
+
+            gap: 6px;
+        }
+
+        .price-number strong {
+
+            font-size: 42px;
+
+            line-height: 1;
+
+            font-weight: 900;
+
+            letter-spacing: -1.5px;
+        }
+
+        .price-number span {
+
+            color: #9297a0;
+
+            font-size: 10px;
+        }
+
+        .featured .price-number span {
+
+            color: var(--muted);
+        }
+
+        .price-description {
+
+            color: #9297a0;
+
+            font-size: 9px;
+
+            margin-top: 7px;
+        }
+
+        .featured .price-description {
+
+            color: var(--muted);
+        }
+
+        .plan-button {
+
+            width: 100%;
+
+            min-height: 47px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            border-radius: 12px;
+
+            background: white;
+
+            color: var(--black);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            transition: .2s;
+        }
+
+        .plan-button:hover {
+
+            transform: translateY(-2px);
+
+            background: #f0f1f3;
+        }
+
+        .featured .plan-button {
+
+            background: var(--black);
+
+            color: white;
+        }
+
+        .feature-groups {
+
+            margin-top: 22px;
+        }
+
+        .feature-group {
+
+            border-top: 1px solid #292c32;
+
+            padding: 15px 0;
+        }
+
+        .featured .feature-group {
+
+            border-color: var(--border);
+        }
+
+        .feature-group summary {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            list-style: none;
+
+            font-size: 11px;
+
+            font-weight: 900;
+        }
+
+        .feature-group summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .summary-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .summary-icon {
+
+            width: 26px;
+            height: 26px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            background: #22252b;
+
+            color: #c8cbd0;
+
+            font-size: 10px;
+        }
+
+        .featured .summary-icon {
+
+            background: #f4f4f5;
+
+            color: #555b66;
+        }
+
+        .feature-group summary i {
+
+            color: #777c85;
+
+            font-size: 9px;
+
+            transition: .2s;
+        }
+
+        .feature-group[open] summary i {
+
+            transform: rotate(180deg);
+        }
+
+        .feature-list {
+
+            list-style: none;
+
+            margin-top: 13px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .feature-list li {
 
             position: relative;
-            overflow: hidden;
 
-            box-shadow:
-                0 25px 70px rgba(17,24,39,.17);
+            padding-right: 17px;
+
+            color: #a7abb3;
+
+            font-size: 9px;
+
+            line-height: 1.8;
         }
 
-        .design-section::before {
+        .featured .feature-list li {
+
+            color: #626873;
+        }
+
+        .feature-list li::before {
+
+            content: "✓";
+
+            position: absolute;
+
+            right: 0;
+
+            color: var(--green);
+
+            font-weight: 900;
+        }
+
+        .feature-list li strong {
+
+            color: inherit;
+
+            font-weight: 900;
+        }
+
+
+        /* =========================================================
+           UI UX PREMIUM
+        ========================================================= */
+
+        .ux-section {
+
+            padding: 100px 0;
+        }
+
+        .ux-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #18191d,
+                    #0e0f12
+                );
+
+            color: white;
+
+            border-radius: 32px;
+
+            padding: 55px;
+
+            box-shadow:
+                0 35px 90px rgba(16,17,20,.18);
+        }
+
+        .ux-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            background: rgba(230,165,43,.12);
+
+            filter: blur(70px);
+
+            left: -130px;
+            top: -160px;
+        }
+
+        .ux-card::after {
+
             content: "";
 
             position: absolute;
@@ -567,184 +1126,279 @@
 
             border-radius: 50%;
 
-            background: rgba(245,165,36,.12);
+            border: 1px solid rgba(255,255,255,.06);
 
-            top: -150px;
-            left: -80px;
-
-            filter: blur(10px);
+            left: 18%;
+            bottom: -180px;
         }
 
-        .design-section::after {
-            content: "";
+        .ux-grid {
 
-            position: absolute;
-
-            width: 220px;
-            height: 220px;
-
-            border-radius: 50%;
-
-            border: 1px solid rgba(255,255,255,.08);
-
-            bottom: -100px;
-            right: 10%;
-        }
-
-        .design-inner {
             position: relative;
+
             z-index: 2;
 
             display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 40px;
+
+            grid-template-columns: 1.25fr .75fr;
+
+            gap: 55px;
+
             align-items: center;
         }
 
-        .design-label {
+        .ux-label {
+
             display: inline-flex;
+
             align-items: center;
-            gap: 7px;
 
-            color: #f8c66e;
-            font-size: 11px;
-            font-weight: 800;
+            gap: 8px;
 
-            margin-bottom: 10px;
-        }
+            color: #efbd59;
 
-        .design-title {
-            font-size: 28px;
+            font-size: 10px;
+
             font-weight: 900;
-            margin-bottom: 9px;
+
+            margin-bottom: 14px;
         }
 
-        .design-desc {
-            color: #aeb8c7;
-            font-size: 13px;
+        .ux-title {
+
+            font-size: clamp(27px, 4vw, 42px);
+
+            line-height: 1.35;
+
+            font-weight: 900;
+
+            margin-bottom: 12px;
+        }
+
+        .ux-description {
+
             max-width: 600px;
+
+            color: #aeb3bc;
+
+            font-size: 12px;
+
+            line-height: 2;
         }
 
-        .design-list {
-            margin-top: 20px;
+        .ux-output {
+
+            margin-top: 22px;
 
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 9px 20px;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 9px;
         }
 
-        .design-list div {
+        .ux-output div {
+
             display: flex;
+
             align-items: center;
+
             gap: 8px;
 
-            color: #d7dee8;
-            font-size: 11px;
+            color: #d6d9de;
+
+            font-size: 10px;
         }
 
-        .design-list i {
-            color: #f5a524;
+        .ux-output i {
+
+            color: var(--gold);
         }
 
-        .design-price-card {
-            background: rgba(255,255,255,.07);
-            border: 1px solid rgba(255,255,255,.10);
+        .ux-price {
 
-            border-radius: 20px;
+            background: rgba(255,255,255,.06);
 
-            padding: 24px;
+            border: 1px solid rgba(255,255,255,.1);
+
+            border-radius: 23px;
+
+            padding: 28px;
 
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
-        .design-price-label {
-            color: #9ca8b7;
-            font-size: 11px;
-        }
+        .ux-price-label {
 
-        .design-price {
-            font-size: 39px;
-            font-weight: 900;
-            margin: 3px 0;
-        }
+            color: #9096a0;
 
-        .design-price small {
-            font-size: 12px;
-            font-weight: 500;
-            color: #aeb8c7;
-        }
-
-        .design-price-note {
-            color: #9ca8b7;
             font-size: 10px;
-            margin-bottom: 17px;
         }
 
-        .design-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .ux-price strong {
+
+            display: block;
+
+            font-size: 43px;
+
+            line-height: 1.2;
+
+            font-weight: 900;
+
+            margin: 4px 0;
+        }
+
+        .ux-price strong small {
+
+            font-size: 11px;
+
+            color: #9ca2ac;
+
+            font-weight: 500;
+        }
+
+        .ux-price-description {
+
+            color: #9298a2;
+
+            font-size: 9px;
+
+            margin-bottom: 19px;
+        }
+
+        .ux-button {
 
             width: 100%;
+
             min-height: 46px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
 
             border-radius: 12px;
 
-            background: #f5a524;
-            color: #211505;
+            background: var(--gold);
 
-            font-size: 12px;
+            color: #241703;
+
+            font-size: 10px;
+
             font-weight: 900;
 
-            transition: .2s ease;
+            transition: .2s;
         }
 
-        .design-button:hover {
-            background: #ffb83e;
+        .ux-button:hover {
+
             transform: translateY(-2px);
+
+            background: #f2b53d;
         }
 
 
-        /* =====================================================
+        /* =========================================================
+           UX STEPS
+        ========================================================= */
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 13px;
+
+            margin-top: 35px;
+        }
+
+        .step {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 19px;
+
+            padding: 22px;
+
+            position: relative;
+        }
+
+        .step-number {
+
+            width: 31px;
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            background: var(--black);
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            margin-bottom: 5px;
+        }
+
+        .step p {
+
+            color: var(--text-soft);
+
+            font-size: 9px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
            COMPARISON
-        ===================================================== */
+        ========================================================= */
+
+        .comparison-section {
+
+            padding: 85px 0;
+        }
 
         .comparison {
-            margin-top: 65px;
-        }
 
-        .section-heading {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+            background: white;
 
-        .section-heading h2 {
-            font-size: 25px;
-            font-weight: 900;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .comparison-box {
-            background: #fff;
             border: 1px solid var(--border);
-            border-radius: 22px;
+
+            border-radius: 25px;
+
             overflow: hidden;
 
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
         }
 
         .comparison-row {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
-            min-height: 55px;
+            display: grid;
+
+            grid-template-columns: 1.7fr repeat(3,1fr);
+
+            min-height: 58px;
 
             border-bottom: 1px solid var(--border);
         }
@@ -754,231 +1408,423 @@
         }
 
         .comparison-row > div {
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            padding: 10px 15px;
-
-            font-size: 11px;
+            padding: 10px;
 
             border-left: 1px solid var(--border);
+
+            font-size: 10px;
         }
 
         .comparison-row > div:last-child {
             border-left: none;
         }
 
+        .comparison-row > div:first-child {
+            justify-content: flex-start;
+
+            color: var(--text-soft);
+        }
+
         .comparison-head {
-            background: #f8fafc;
-            font-weight: 800;
+
+            background: #f8f9fa;
+
+            font-weight: 900;
         }
 
         .comparison-head > div:first-child {
-            justify-content: flex-start;
+
+            color: var(--text);
         }
 
-        .comparison-row > div:first-child {
-            justify-content: flex-start;
-            color: #344054;
-        }
+        .check {
 
-        .yes {
-            color: var(--success);
-        }
+            color: var(--green);
 
-        .yes i {
-            margin-left: 5px;
+            font-size: 13px;
         }
 
 
-        /* =====================================================
+        /* =========================================================
            FAQ
-        ===================================================== */
+        ========================================================= */
 
-        .faq {
-            margin-top: 65px;
+        .faq-grid {
+
             max-width: 850px;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
-        .faq-list {
+            margin-inline: auto;
+
             display: flex;
+
             flex-direction: column;
-            gap: 10px;
+
+            gap: 9px;
         }
 
-        details {
-            background: #fff;
+        .faq-item {
+
+            background: white;
+
             border: 1px solid var(--border);
+
             border-radius: 16px;
+
             padding: 0 18px;
 
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
         }
 
-        summary {
-            list-style: none;
-            cursor: pointer;
+        .faq-item summary {
 
             min-height: 58px;
 
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
 
-            font-size: 12px;
-            font-weight: 800;
+            align-items: center;
+
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            list-style: none;
+
+            font-size: 11px;
+
+            font-weight: 900;
         }
 
-        summary::-webkit-details-marker {
+        .faq-item summary::-webkit-details-marker {
             display: none;
         }
 
-        summary i {
-            color: var(--muted-2);
-            transition: transform .2s ease;
+        .faq-item summary i {
+
+            color: var(--muted);
+
+            transition: .2s;
         }
 
-        details[open] summary i {
+        .faq-item[open] summary i {
+
             transform: rotate(180deg);
         }
 
-        details p {
-            color: var(--muted);
-            font-size: 11px;
+        .faq-answer {
 
-            padding: 0 0 17px;
+            color: var(--text-soft);
+
+            font-size: 10px;
+
             line-height: 2;
+
+            padding: 0 0 18px;
         }
 
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+        /* =========================================================
+           CTA
+        ========================================================= */
 
-        footer {
+        .final-cta {
+
+            padding: 85px 0 100px;
+        }
+
+        .cta-box {
+
+            background: var(--black);
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 55px 30px;
+
             text-align: center;
 
-            margin-top: 70px;
-            padding-top: 25px;
+            position: relative;
 
-            border-top: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            background: rgba(230,165,43,.13);
+
+            filter: blur(45px);
+
+            left: -100px;
+            top: -150px;
+        }
+
+        .cta-box > * {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .cta-box h2 {
+
+            font-size: clamp(26px,4vw,40px);
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #a9aeb7;
+
+            font-size: 11px;
+        }
+
+        .cta-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 48px;
+
+            margin-top: 24px;
+
+            padding: 0 23px;
+
+            background: var(--gold);
+
+            color: #261903;
+
+            border-radius: 13px;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            transition: .2s;
+        }
+
+        .cta-button:hover {
+
+            transform: translateY(-3px);
+
+            background: #f2b53d;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding: 25px 0 35px;
+
+            text-align: center;
 
             color: var(--muted);
-            font-size: 10px;
+
+            font-size: 9px;
+
+            border-top: 1px solid var(--border);
         }
 
-        footer i {
-            color: var(--danger);
-            margin: 0 2px;
+        footer strong {
+            color: var(--text);
         }
 
 
-        /* =====================================================
+        /* =========================================================
            RESPONSIVE
-        ===================================================== */
+        ========================================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 580px;
-                margin: auto;
+            .service-grid {
+
+                grid-template-columns: repeat(2,1fr);
             }
 
-            .plan.recommended {
+            .pricing-grid {
+
+                grid-template-columns: 1fr;
+
+                max-width: 650px;
+
+                margin-inline: auto;
+            }
+
+            .plan.featured {
+
                 order: -1;
+
                 transform: none;
             }
 
-            .plan.recommended:hover {
+            .plan.featured:hover {
+
                 transform: translateY(-5px);
             }
 
-            .design-inner {
+            .ux-grid {
+
                 grid-template-columns: 1fr;
             }
 
-            .design-price-card {
-                max-width: 500px;
+            .steps {
+
+                grid-template-columns: repeat(2,1fr);
             }
         }
 
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
-            .top-note {
+            .container {
+
+                width: min(100% - 26px, 600px);
+            }
+
+            .header-inner {
+
+                min-height: 62px;
+            }
+
+            .nav {
+
                 display: none;
             }
 
-            .page {
-                padding: 42px 13px 55px;
+            .header-button {
+
+                padding: 9px 11px;
+
+                font-size: 9px;
             }
 
             .hero {
-                margin-bottom: 38px;
+
+                padding: 65px 0 55px;
             }
 
             .hero h1 {
-                letter-spacing: -1px;
+
+                letter-spacing: -1.2px;
             }
 
-            .hero p {
-                font-size: 13px;
+            .hero-description {
+
+                font-size: 12px;
             }
 
-            .trust-strip {
+            .hero-stats {
+
+                grid-template-columns: repeat(2,1fr);
+
+                margin-top: 45px;
+            }
+
+            .stat:nth-child(2) {
+
+                border-left: none;
+            }
+
+            .stat:nth-child(-n+2) {
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            .section {
+
+                padding: 65px 0;
+            }
+
+            .service-grid {
+
                 grid-template-columns: 1fr;
-                margin-bottom: 35px;
             }
 
-            .trust-item {
-                justify-content: flex-start;
+            .pricing {
+
+                padding: 70px 0;
             }
 
             .plan {
+
                 padding: 23px 19px;
-                border-radius: 22px;
             }
 
-            .price strong {
-                font-size: 34px;
+            .ux-section {
+
+                padding: 70px 0;
             }
 
-            .design-section {
-                padding: 24px 19px;
-                border-radius: 22px;
+            .ux-card {
+
+                padding: 30px 20px;
+
+                border-radius: 24px;
             }
 
-            .design-title {
-                font-size: 23px;
-            }
+            .ux-output {
 
-            .design-list {
                 grid-template-columns: 1fr;
             }
 
-            .design-price {
-                font-size: 34px;
+            .steps {
+
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-section {
+
+                padding: 65px 0;
             }
 
             .comparison {
-                margin-top: 48px;
-            }
 
-            .comparison-box {
                 overflow-x: auto;
             }
 
             .comparison-row {
+
                 min-width: 650px;
             }
 
-            .faq {
-                margin-top: 48px;
+            .final-cta {
+
+                padding: 65px 0 75px;
+            }
+
+            .cta-box {
+
+                padding: 42px 20px;
             }
         }
 
@@ -988,12 +1834,15 @@
             *,
             *::before,
             *::after {
+
                 scroll-behavior: auto !important;
+
                 transition: none !important;
             }
         }
 
     </style>
+
 </head>
 
 
@@ -1001,38 +1850,65 @@
 
 
 <!-- =========================================================
-     TOP BAR
+     HEADER
 ========================================================= -->
 
-<header class="topbar">
+<header class="header">
 
-    <div class="topbar-inner">
+    <div class="container header-inner">
 
-        <a href="#" class="brand">
+        <a href="#" class="logo">
 
-            <span class="brand-mark">
+            <span class="logo-icon">
                 <i class="fa-solid fa-layer-group"></i>
             </span>
 
-            <span>
-                پیاده‌سازی فروشگاه
-                <small>طراحی • توسعه • بهینه‌سازی</small>
+            <span class="logo-text">
+
+                طراحی و توسعه فروشگاه
+
+                <small>
+                    UI/UX • Development • SEO
+                </small>
+
             </span>
 
         </a>
 
-        <div class="top-note">
-            <i class="fa-solid fa-circle-check"></i>
-            قیمت‌ها شفاف و بدون هزینه پنهان
-        </div>
+
+        <nav class="nav">
+
+            <a href="#services">
+                خدمات
+            </a>
+
+            <a href="#pricing">
+                پکیج‌ها
+            </a>
+
+            <a href="#uiux">
+                طراحی UI/UX
+            </a>
+
+            <a href="#faq">
+                سوالات متداول
+            </a>
+
+        </nav>
+
+
+        <a href="#contact" class="header-button">
+
+            شروع پروژه
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </a>
 
     </div>
 
 </header>
 
-
-
-<main class="page">
 
 
 <!-- =========================================================
@@ -1041,48 +1917,214 @@
 
 <section class="hero">
 
-    <div class="eyebrow">
-        <span class="eyebrow-dot"></span>
-        پکیج‌های حرفه‌ای فروشگاه اینترنتی
+    <div class="container hero-content">
+
+        <div class="badge">
+
+            <span class="badge-dot"></span>
+
+            طراحی و پیاده‌سازی حرفه‌ای فروشگاه اینترنتی
+
+        </div>
+
+
+        <h1>
+
+            فروشگاهت را فقط
+            <span>راه‌اندازی نکن.</span>
+
+            حرفه‌ای بساز.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            از طراحی رابط و تجربه کاربری تا پیاده‌سازی فروشگاه،
+            سئو، Performance، امنیت و زیرساخت؛
+            تمام مراحل ساخت یک فروشگاه حرفه‌ای در یک مسیر مشخص.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a href="#pricing" class="btn btn-primary">
+
+                مشاهده پکیج‌ها
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a href="#uiux" class="btn btn-secondary">
+
+                طراحی UI/UX
+
+                <i class="fa-solid fa-pen-ruler"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div class="stat">
+
+                <strong>۴۰M+</strong>
+
+                <span>
+                    شروع پکیج‌ها
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>۳</strong>
+
+                <span>
+                    سطح خدمات
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>۲۰M</strong>
+
+                <span>
+                    طراحی UI/UX
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>۱۰۰٪</strong>
+
+                <span>
+                    ریسپانسیو
+                </span>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <h1>
-        فروشگاه آنلاین خودت را
-        <span>حرفه‌ای بساز.</span>
-    </h1>
-
-    <p>
-        از پیاده‌سازی فروشگاه و ووکامرس تا سئو، عملکرد،
-        امنیت و زیرساخت؛ یک مسیر کامل برای راه‌اندازی
-        و رشد کسب‌وکار آنلاین شما.
-    </p>
 
 </section>
 
 
 
 <!-- =========================================================
-     TRUST
+     SERVICES
 ========================================================= -->
 
-<div class="trust-strip">
+<section class="section" id="services">
 
-    <div class="trust-item">
-        <i class="fa-solid fa-circle-check"></i>
-        پیاده‌سازی اختصاصی
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-kicker">
+                WHAT WE DO
+            </div>
+
+            <h2>
+                همه چیز برای ساخت یک فروشگاه حرفه‌ای
+            </h2>
+
+            <p>
+                خدمات بر اساس نیاز پروژه در چند مرحله قابل انتخاب هستند.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+
+                <h3>
+                    پیاده‌سازی فروشگاه
+                </h3>
+
+                <p>
+                    قالب اختصاصی، ووکامرس، محصولات،
+                    دسته‌بندی‌ها، پرداخت، سبد خرید
+                    و ساختار کامل فروشگاه.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3>
+                    SEO و Google
+                </h3>
+
+                <p>
+                    سئو تکنیکال، ساختار URL،
+                    Sitemap، Indexing و اتصال ابزارهای Google.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    CDN، Cache، Core Web Vitals،
+                    تصاویر WebP، Lazy Load و بهینه‌سازی منابع.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>
+                    امنیت و زیرساخت
+                </h3>
+
+                <p>
+                    Hardening، Firewall، Backup،
+                    بهینه‌سازی Database و کنترل منابع سرور.
+                </p>
+
+            </article>
+
+
+        </div>
+
     </div>
 
-    <div class="trust-item">
-        <i class="fa-solid fa-bolt"></i>
-        بهینه‌سازی عملکرد
-    </div>
-
-    <div class="trust-item">
-        <i class="fa-solid fa-shield-halved"></i>
-        امنیت و زیرساخت
-    </div>
-
-</div>
+</section>
 
 
 
@@ -1090,461 +2132,1035 @@
      PRICING
 ========================================================= -->
 
-<section class="pricing-grid">
+<section class="pricing" id="pricing">
 
+    <div class="container">
 
-    <!-- BASIC -->
+        <div class="section-header">
 
-    <article class="plan">
-
-        <div class="plan-head">
-
-            <div class="plan-title">
-
-                <h2>پایه</h2>
-
-                <span>
-                    شروع سریع و حرفه‌ای
-                </span>
-
+            <div class="section-kicker">
+                PRICING
             </div>
 
-            <div class="plan-icon">
-                <i class="fa-solid fa-rocket"></i>
-            </div>
+            <h2>
+                پکیج مناسب پروژه‌ات را انتخاب کن
+            </h2>
+
+            <p>
+                از راه‌اندازی فروشگاه تا زیرساخت و امنیت پیشرفته.
+            </p>
 
         </div>
 
 
-        <div class="price-box">
+        <div class="pricing-grid">
 
-            <div class="price">
 
-                <strong>۴۰</strong>
+            <!-- =================================================
+                 BASIC
+            ================================================= -->
 
-                <span>میلیون تومان</span>
+            <article class="plan">
 
-            </div>
+                <div class="plan-top">
 
-            <div class="price-caption">
-                مناسب برای شروع فروش آنلاین
-            </div>
+                    <div>
+
+                        <h3>
+                            پکیج پایه
+                        </h3>
+
+                        <div class="plan-subtitle">
+                            شروع حرفه‌ای فروش آنلاین
+                        </div>
+
+                    </div>
+
+                    <div class="plan-icon">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <div class="price-number">
+
+                        <strong>
+                            ۴۰
+                        </strong>
+
+                        <span>
+                            میلیون تومان
+                        </span>
+
+                    </div>
+
+                    <div class="price-description">
+                        مناسب برای راه‌اندازی فروشگاه
+                    </div>
+
+                </div>
+
+
+                <a href="#contact" class="plan-button">
+
+                    انتخاب پکیج پایه
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+
+                <div class="feature-groups">
+
+
+                    <details class="feature-group" open>
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-store"></i>
+                                </span>
+
+                                امکانات اصلی فروشگاه
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده
+                            </li>
+
+                            <li>
+                                پیکربندی کامل ووکامرس
+                            </li>
+
+                            <li>
+                                راه‌اندازی محصولات و دسته‌بندی‌ها
+                            </li>
+
+                            <li>
+                                اتصال و پیکربندی پنل پیامکی
+                            </li>
+
+                            <li>
+                                اتصال درگاه پرداخت
+                            </li>
+
+                            <li>
+                                ریسپانسیو موبایل، تبلت و دسکتاپ
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+
+                                صفحات و تجربه خرید
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                تنظیم صفحات اصلی فروشگاه
+                            </li>
+
+                            <li>
+                                تنظیم منو و ساختار ناوبری
+                            </li>
+
+                            <li>
+                                تنظیم ثبت‌نام و ورود کاربران
+                            </li>
+
+                            <li>
+                                تنظیم سبد خرید و تسویه‌حساب
+                            </li>
+
+                            <li>
+                                تست فرآیند خرید و ثبت سفارش
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROFESSIONAL
+            ================================================= -->
+
+            <article class="plan featured">
+
+                <div class="featured-label">
+                    پیشنهاد پیشنهادی
+                </div>
+
+
+                <div class="plan-top">
+
+                    <div>
+
+                        <h3>
+                            پکیج حرفه‌ای
+                        </h3>
+
+                        <div class="plan-subtitle">
+                            برای فروشگاه‌های در حال رشد
+                        </div>
+
+                    </div>
+
+                    <div class="plan-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <div class="price-number">
+
+                        <strong>
+                            ۶۵
+                        </strong>
+
+                        <span>
+                            میلیون تومان
+                        </span>
+
+                    </div>
+
+                    <div class="price-description">
+                        تمام امکانات پایه + SEO + Performance + مارکت‌پلیس
+                    </div>
+
+                </div>
+
+
+                <a href="#contact" class="plan-button">
+
+                    انتخاب پکیج حرفه‌ای
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+
+                <div class="feature-groups">
+
+
+                    <details class="feature-group" open>
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </span>
+
+                                امکانات پایه
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                تمام امکانات پکیج پایه
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group" open>
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+
+                                SEO و Google
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                سئو تکنیکال اولیه
+                            </li>
+
+                            <li>
+                                بهینه‌سازی ساختار URL
+                            </li>
+
+                            <li>
+                                بهینه‌سازی ساختار Headingها
+                            </li>
+
+                            <li>
+                                بهینه‌سازی لینک‌سازی داخلی
+                            </li>
+
+                            <li>
+                                تنظیم Sitemap
+                            </li>
+
+                            <li>
+                                تنظیم Robots.txt
+                            </li>
+
+                            <li>
+                                تنظیم Indexing
+                            </li>
+
+                            <li>
+                                اتصال Google Analytics
+                            </li>
+
+                            <li>
+                                اتصال Google Search Console
+                            </li>
+
+                            <li>
+                                بررسی خطاهای اولیه Search Console
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </span>
+
+                                Performance
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                راه‌اندازی و پیکربندی CDN
+                            </li>
+
+                            <li>
+                                پیاده‌سازی سیستم Cache
+                            </li>
+
+                            <li>
+                                بهینه‌سازی Core Web Vitals
+                            </li>
+
+                            <li>
+                                بهینه‌سازی LCP
+                            </li>
+
+                            <li>
+                                بهینه‌سازی CLS
+                            </li>
+
+                            <li>
+                                بهینه‌سازی INP
+                            </li>
+
+                            <li>
+                                Minify فایل‌های CSS و JS
+                            </li>
+
+                            <li>
+                                حذف منابع و فایل‌های غیرضروری
+                            </li>
+
+                            <li>
+                                Lazy Load تصاویر
+                            </li>
+
+                            <li>
+                                تبدیل و فشرده‌سازی تصاویر WebP
+                            </li>
+
+                            <li>
+                                بهینه‌سازی فونت‌ها
+                            </li>
+
+                            <li>
+                                بهینه‌سازی منابع Third-Party
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </span>
+
+                                فروش و مارکت‌پلیس
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                پیاده‌سازی اسنپ‌پی
+                            </li>
+
+                            <li>
+                                اتصال و پیکربندی ترب
+                            </li>
+
+                            <li>
+                                اتصال و پیکربندی دیجی‌کالا
+                            </li>
+
+                            <li>
+                                ساخت و پیاده‌سازی برگه‌های کمپین
+                            </li>
+
+                            <li>
+                                پیاده‌سازی صفحات Landing اختصاصی کمپین
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-vial"></i>
+                                </span>
+
+                                تست
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                تست سرعت قبل و بعد از بهینه‌سازی
+                            </li>
+
+                            <li>
+                                تست فرآیند خرید و پرداخت
+                            </li>
+
+                            <li>
+                                تست ریسپانسیو
+                            </li>
+
+                            <li>
+                                تست سازگاری مرورگرها
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ENTERPRISE
+            ================================================= -->
+
+            <article class="plan">
+
+                <div class="plan-top">
+
+                    <div>
+
+                        <h3>
+                            پکیج اختصاصی
+                        </h3>
+
+                        <div class="plan-subtitle">
+                            برای پروژه‌های بزرگ و حساس
+                        </div>
+
+                    </div>
+
+                    <div class="plan-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <div class="price-number">
+
+                        <strong>
+                            ۸۰
+                        </strong>
+
+                        <span>
+                            میلیون تومان
+                        </span>
+
+                    </div>
+
+                    <div class="price-description">
+                        تمام امکانات حرفه‌ای + زیرساخت و امنیت پیشرفته
+                    </div>
+
+                </div>
+
+
+                <a href="#contact" class="plan-button">
+
+                    انتخاب پکیج اختصاصی
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+
+                <div class="feature-groups">
+
+
+                    <details class="feature-group" open>
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </span>
+
+                                امکانات پایه
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                تمام امکانات پکیج حرفه‌ای
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-server"></i>
+                                </span>
+
+                                زیرساخت پیشرفته
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                بهینه‌سازی Database وردپرس
+                            </li>
+
+                            <li>
+                                پاک‌سازی داده‌ها و Revisionهای غیرضروری
+                            </li>
+
+                            <li>
+                                بهینه‌سازی Queryهای سنگین
+                            </li>
+
+                            <li>
+                                بهینه‌سازی TTFB
+                            </li>
+
+                            <li>
+                                تحلیل مصرف منابع سرور و بهینه‌سازی در صورت نیاز
+                            </li>
+
+                            <li>
+                                بهینه‌سازی PHP و PHP Workers
+                            </li>
+
+                            <li>
+                                بهینه‌سازی Object Cache
+                            </li>
+
+                            <li>
+                                تنظیم Browser Cache
+                            </li>
+
+                            <li>
+                                بهینه‌سازی HTTP Requests
+                            </li>
+
+                            <li>
+                                کاهش Render-Blocking Resources
+                            </li>
+
+                            <li>
+                                بهینه‌سازی Critical Resources
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+
+                                امنیت
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                Hardening وردپرس
+                            </li>
+
+                            <li>
+                                محدودسازی Login و XML-RPC
+                            </li>
+
+                            <li>
+                                تنظیم Firewall
+                            </li>
+
+                            <li>
+                                محافظت در برابر Brute Force
+                            </li>
+
+                            <li>
+                                بررسی افزونه‌ها و نقاط آسیب‌پذیر
+                            </li>
+
+                            <li>
+                                تنظیم Backup دوره‌ای
+                            </li>
+
+                            <li>
+                                تست Restore
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                    <details class="feature-group">
+
+                        <summary>
+
+                            <span class="summary-left">
+
+                                <span class="summary-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </span>
+
+                                کنترل کیفیت پیشرفته
+
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </summary>
+
+
+                        <ul class="feature-list">
+
+                            <li>
+                                تست فشار و Performance
+                            </li>
+
+                            <li>
+                                بررسی Bottleneckهای سایت
+                            </li>
+
+                            <li>
+                                بررسی خطاهای Server و WordPress
+                            </li>
+
+                            <li>
+                                بررسی خطاهای Search Console
+                            </li>
+
+                            <li>
+                                تست کامل فرآیند سفارش و پرداخت
+                            </li>
+
+                            <li>
+                                تست نهایی Performance
+                            </li>
+
+                        </ul>
+
+                    </details>
+
+
+                </div>
+
+            </article>
+
 
         </div>
 
 
-        <a href="#contact" class="plan-btn">
-            انتخاب پکیج
-            <i class="fa-solid fa-arrow-left"></i>
-        </a>
+        <div style="
+            text-align:center;
+            color:#8e939c;
+            font-size:9px;
+            margin-top:28px;
+        ">
 
-
-        <div class="features-title">
-            امکانات پکیج
-        </div>
-
-
-        <ul class="features">
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                پیاده‌سازی قالب اختصاصی بر اساس UI/UX
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                پیکربندی کامل ووکامرس
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                راه‌اندازی محصولات و دسته‌بندی‌ها
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                اتصال و پیکربندی پنل پیامکی
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                اتصال درگاه پرداخت
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                ریسپانسیو موبایل، تبلت و دسکتاپ
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                تنظیم صفحات اصلی فروشگاه
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                تنظیم منو و ساختار ناوبری
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                ثبت‌نام و ورود کاربران
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                سبد خرید و تسویه‌حساب
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                تست فرآیند خرید و ثبت سفارش
-            </li>
-
-        </ul>
-
-    </article>
-
-
-
-    <!-- PROFESSIONAL -->
-
-    <article class="plan recommended">
-
-        <div class="recommended-badge">
-            انتخاب پیشنهادی
-        </div>
-
-        <div class="plan-head">
-
-            <div class="plan-title">
-
-                <h2>حرفه‌ای</h2>
-
-                <span>
-                    برای فروشگاه‌های جدی و در حال رشد
-                </span>
-
-            </div>
-
-            <div class="plan-icon">
-                <i class="fa-solid fa-chart-line"></i>
-            </div>
+            هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+            بر عهده کارفرما می‌باشد.
 
         </div>
 
-
-        <div class="price-box">
-
-            <div class="price">
-
-                <strong>۶۵</strong>
-
-                <span>میلیون تومان</span>
-
-            </div>
-
-            <div class="price-caption">
-                پایه + سئو + عملکرد + مارکت‌پلیس
-            </div>
-
-        </div>
-
-
-        <a href="#contact" class="plan-btn">
-            انتخاب پکیج حرفه‌ای
-            <i class="fa-solid fa-arrow-left"></i>
-        </a>
-
-
-        <div class="features-title">
-            امکانات پکیج
-        </div>
-
-
-        <ul class="features">
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span><strong>تمام امکانات پکیج پایه</strong></span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>SEO و Google</strong>
-                    — سئو تکنیکال، URL، Heading و لینک‌سازی داخلی
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                Sitemap، Robots.txt و Indexing
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                اتصال Google Analytics و Search Console
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>Performance</strong>
-                    — CDN، Cache و Core Web Vitals
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                Minify CSS/JS، Lazy Load و WebP
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                بهینه‌سازی فونت و منابع سایت
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>فروش و مارکت‌پلیس</strong>
-                    — اسنپ‌پی، ترب و دیجی‌کالا
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                طراحی Landing Page و صفحات کمپین
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                تست سرعت، خرید، ریسپانسیو و مرورگرها
-            </li>
-
-        </ul>
-
-    </article>
-
-
-
-    <!-- ENTERPRISE -->
-
-    <article class="plan">
-
-        <div class="plan-head">
-
-            <div class="plan-title">
-
-                <h2>اختصاصی</h2>
-
-                <span>
-                    برای پروژه‌های بزرگ و سازمانی
-                </span>
-
-            </div>
-
-            <div class="plan-icon">
-                <i class="fa-solid fa-shield-halved"></i>
-            </div>
-
-        </div>
-
-
-        <div class="price-box">
-
-            <div class="price">
-
-                <strong>۸۰</strong>
-
-                <span>میلیون تومان</span>
-
-            </div>
-
-            <div class="price-caption">
-                زیرساخت، امنیت و کنترل کیفیت پیشرفته
-            </div>
-
-        </div>
-
-
-        <a href="#contact" class="plan-btn">
-            انتخاب پکیج
-            <i class="fa-solid fa-arrow-left"></i>
-        </a>
-
-
-        <div class="features-title">
-            امکانات پکیج
-        </div>
-
-
-        <ul class="features">
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span><strong>تمام امکانات پکیج حرفه‌ای</strong></span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>زیرساخت پیشرفته</strong>
-                    — دیتابیس، Query و TTFB
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                Object Cache و Browser Cache
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                بهینه‌سازی HTTP Requests
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>امنیت</strong>
-                    — Hardening، Login محدودشده و Firewall
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                محافظت در برابر Brute Force
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                بررسی افزونه‌ها و Backup دوره‌ای
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                <span>
-                    <strong>کنترل کیفیت پیشرفته</strong>
-                    — تست فشار و Bottleneck
-                </span>
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                بررسی Search Console
-            </li>
-
-            <li>
-                <i class="fa-solid fa-check"></i>
-                تست کامل سفارش و پرداخت
-            </li>
-
-        </ul>
-
-    </article>
+    </div>
 
 </section>
 
 
 
 <!-- =========================================================
-     UI / UX
+     UI UX
 ========================================================= -->
 
-<section class="design-section" id="design">
+<section class="ux-section" id="uiux">
 
-    <div class="design-inner">
+    <div class="container">
 
+        <div class="ux-card">
 
-        <div>
+            <div class="ux-grid">
 
-            <div class="design-label">
-                <i class="fa-solid fa-pen-ruler"></i>
-                مرحله قبل از توسعه
-            </div>
-
-            <h2 class="design-title">
-                طراحی UI/UX اختصاصی
-            </h2>
-
-            <p class="design-desc">
-                قبل از ورود به مرحله کدنویسی، ساختار و تجربه
-                کاربری فروشگاه طراحی می‌شود تا نتیجه نهایی
-                دقیقاً بر اساس هویت برند و مسیر واقعی کاربر ساخته شود.
-            </p>
-
-
-            <div class="design-list">
 
                 <div>
-                    <i class="fa-solid fa-check"></i>
+
+                    <div class="ux-label">
+
+                        <i class="fa-solid fa-pen-ruler"></i>
+
+                        UI / UX DESIGN
+
+                    </div>
+
+
+                    <h2 class="ux-title">
+
+                        قبل از کدنویسی،
+                        تجربه کاربر را طراحی می‌کنیم.
+
+                    </h2>
+
+
+                    <p class="ux-description">
+
+                        در این مرحله، پیش از شروع برنامه‌نویسی و
+                        پیاده‌سازی سایت، ساختار و ظاهر کامل سایت
+                        به‌صورت گرافیکی طراحی و آماده می‌شود.
+                        طراحی بر اساس هویت و هدف برند انجام شده
+                        و مسیر حرکت کاربر قبل از ورود به مرحله
+                        توسعه مشخص می‌شود.
+
+                    </p>
+
+
+                    <div class="ux-output">
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            طراحی Wireframe
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            طراحی کامل UI/UX
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            طراحی چیدمان محتوا
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            طراحی صفحات اصلی
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            نسخه موبایل
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            نسخه تبلت
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            نسخه دسکتاپ
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            Prototype در Figma
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            طراحی رنگ‌بندی و Typography
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            اصلاح نهایی طراحی
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="ux-price">
+
+                    <div class="ux-price-label">
+                        هزینه طراحی رابط و تجربه کاربری
+                    </div>
+
+                    <strong>
+
+                        ۲۰
+
+                        <small>
+                            میلیون تومان
+                        </small>
+
+                    </strong>
+
+                    <div class="ux-price-description">
+
+                        خروجی این مرحله، طرح گرافیکی و
+                        پروتوتایپ کامل سایت است که به‌عنوان
+                        مرجع اصلی مرحله کدنویسی و پیاده‌سازی
+                        استفاده خواهد شد.
+
+                    </div>
+
+
+                    <a href="#contact" class="ux-button">
+
+                        درخواست طراحی UI/UX
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- STEPS -->
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    ۰۱
+                </div>
+
+                <h3>
                     Wireframe
-                </div>
+                </h3>
 
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    طراحی کامل UI
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    تجربه کاربری UX
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    طراحی نسخه موبایل
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    طراحی نسخه دسکتاپ
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    Prototype در Figma
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    طراحی صفحات اصلی
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-check"></i>
-                    اصلاح نهایی قبل از توسعه
-                </div>
+                <p>
+                    مشخص‌کردن ساختار، چیدمان و مسیر اصلی صفحات.
+                </p>
 
             </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    ۰۲
+                </div>
+
+                <h3>
+                    UI Design
+                </h3>
+
+                <p>
+                    طراحی ظاهر، رنگ، Typography و المان‌های رابط کاربری.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    ۰۳
+                </div>
+
+                <h3>
+                    Prototype
+                </h3>
+
+                <p>
+                    شبیه‌سازی مسیر حرکت کاربر بین صفحات در Figma.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    ۰۴
+                </div>
+
+                <h3>
+                    تأیید نهایی
+                </h3>
+
+                <p>
+                    بررسی و اصلاح نهایی طراحی قبل از ورود به پیاده‌سازی.
+                </p>
+
+            </div>
+
 
         </div>
-
-
-        <div class="design-price-card">
-
-            <div class="design-price-label">
-                هزینه طراحی
-            </div>
-
-            <div class="design-price">
-                ۲۰
-                <small>میلیون تومان</small>
-            </div>
-
-            <div class="design-price-note">
-                خروجی نهایی: طرح کامل + پروتوتایپ قابل ارائه
-            </div>
-
-            <a href="#contact" class="design-button">
-                درخواست طراحی UI/UX
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
-
-        </div>
-
 
     </div>
 
@@ -1556,113 +3172,156 @@
      COMPARISON
 ========================================================= -->
 
-<section class="comparison">
+<section class="comparison-section">
 
-    <div class="section-heading">
+    <div class="container">
 
-        <h2>
-            مقایسه سریع پکیج‌ها
-        </h2>
+        <div class="section-header">
 
-        <p>
-            برای انتخاب راحت‌تر، تفاوت اصلی پکیج‌ها را ببینید.
-        </p>
+            <div class="section-kicker">
+                COMPARE
+            </div>
 
-    </div>
+            <h2>
+                تفاوت پکیج‌ها در یک نگاه
+            </h2>
 
-
-    <div class="comparison-box">
-
-
-        <div class="comparison-row comparison-head">
-
-            <div>امکانات</div>
-
-            <div>پایه</div>
-
-            <div>حرفه‌ای</div>
-
-            <div>اختصاصی</div>
+            <p>
+                اگر هنوز بین پکیج‌ها مردد هستی، این جدول تصمیم‌گیری را ساده‌تر می‌کند.
+            </p>
 
         </div>
 
 
-        <div class="comparison-row">
+        <div class="comparison">
 
-            <div>ووکامرس و فروشگاه</div>
 
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
+            <div class="comparison-row comparison-head">
+
+                <div>
+                    امکانات
+                </div>
+
+                <div>
+                    پایه
+                </div>
+
+                <div>
+                    حرفه‌ای
+                </div>
+
+                <div>
+                    اختصاصی
+                </div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    پیاده‌سازی فروشگاه
+                </div>
+
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    ریسپانسیو
+                </div>
+
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    SEO و Google
+                </div>
+
+                <div>—</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    Performance
+                </div>
+
+                <div>—</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    مارکت‌پلیس
+                </div>
+
+                <div>—</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    زیرساخت پیشرفته
+                </div>
+
+                <div>—</div>
+                <div>—</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    امنیت پیشرفته
+                </div>
+
+                <div>—</div>
+                <div>—</div>
+                <div class="check">✓</div>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <div>
+                    کنترل کیفیت پیشرفته
+                </div>
+
+                <div>—</div>
+                <div>—</div>
+                <div class="check">✓</div>
+
+            </div>
+
 
         </div>
-
-
-        <div class="comparison-row">
-
-            <div>طراحی ریسپانسیو</div>
-
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
-
-        <div class="comparison-row">
-
-            <div>سئو تکنیکال</div>
-
-            <div>—</div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
-
-        <div class="comparison-row">
-
-            <div>Performance و Core Web Vitals</div>
-
-            <div>—</div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
-
-        <div class="comparison-row">
-
-            <div>مارکت‌پلیس</div>
-
-            <div>—</div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
-
-        <div class="comparison-row">
-
-            <div>امنیت پیشرفته</div>
-
-            <div>—</div>
-            <div>—</div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
-
-        <div class="comparison-row">
-
-            <div>زیرساخت پیشرفته</div>
-
-            <div>—</div>
-            <div>—</div>
-            <div class="yes"><i class="fa-solid fa-check"></i></div>
-
-        </div>
-
 
     </div>
 
@@ -1674,87 +3333,175 @@
      FAQ
 ========================================================= -->
 
-<section class="faq">
+<section class="section" id="faq">
 
-    <div class="section-heading">
+    <div class="container">
 
-        <h2>
-            سوالات متداول
-        </h2>
+        <div class="section-header">
 
-        <p>
-            چند نکته مهم قبل از شروع پروژه
-        </p>
+            <div class="section-kicker">
+                FAQ
+            </div>
+
+            <h2>
+                سوالات متداول
+            </h2>
+
+            <p>
+                چند نکته مهم قبل از شروع پروژه
+            </p>
+
+        </div>
+
+
+        <div class="faq-grid">
+
+
+            <details class="faq-item">
+
+                <summary>
+
+                    آیا UI/UX جزو پکیج‌های پیاده‌سازی است؟
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div class="faq-answer">
+
+                    طراحی رابط و تجربه کاربری به‌صورت یک سرویس
+                    مستقل با هزینه ۲۰ میلیون تومان ارائه می‌شود
+                    و خروجی آن مرجع اصلی مرحله کدنویسی و پیاده‌سازی
+                    خواهد بود.
+
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+
+                    تفاوت اصلی پکیج پایه و حرفه‌ای چیست؟
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div class="faq-answer">
+
+                    پکیج حرفه‌ای تمام امکانات پکیج پایه را شامل می‌شود
+                    و علاوه بر آن بخش‌های SEO و Google، Performance،
+                    فروش و مارکت‌پلیس و تست‌های تکمیلی را نیز پوشش می‌دهد.
+
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+
+                    پکیج اختصاصی چه امکانات اضافه‌ای دارد؟
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div class="faq-answer">
+
+                    پکیج اختصاصی تمام امکانات حرفه‌ای را به همراه
+                    زیرساخت پیشرفته، بهینه‌سازی Database و PHP،
+                    امنیت، Firewall، Backup، تست فشار و کنترل کیفیت
+                    پیشرفته ارائه می‌کند.
+
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+
+                    آیا هزینه سرویس‌های شخص ثالث داخل قیمت است؟
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div class="faq-answer">
+
+                    خیر. هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+                    بر عهده کارفرما می‌باشد.
+
+                </div>
+
+            </details>
+
+
+            <details class="faq-item">
+
+                <summary>
+
+                    خروجی طراحی UI/UX چیست؟
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div class="faq-answer">
+
+                    خروجی این مرحله شامل طرح گرافیکی کامل سایت،
+                    Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
+                    است که پس از تأیید برای مرحله پیاده‌سازی استفاده می‌شود.
+
+                </div>
+
+            </details>
+
+
+        </div>
 
     </div>
 
-
-    <div class="faq-list">
-
-
-        <details>
-
-            <summary>
-                آیا هزینه سرویس‌های شخص ثالث داخل قیمت است؟
-                <i class="fa-solid fa-chevron-down"></i>
-            </summary>
-
-            <p>
-                خیر. هزینه سرویس‌ها، اشتراک‌ها، پنل‌های شخص ثالث
-                و خدماتی که مستقیماً توسط سرویس‌دهنده دریافت می‌شوند
-                بر عهده کارفرماست.
-            </p>
-
-        </details>
+</section>
 
 
-        <details>
 
-            <summary>
-                آیا طراحی UI/UX جدا از پیاده‌سازی انجام می‌شود؟
-                <i class="fa-solid fa-chevron-down"></i>
-            </summary>
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta" id="contact">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                آماده‌ای فروشگاهت را حرفه‌ای بسازی؟
+            </h2>
 
             <p>
-                بله. طراحی UI/UX به‌عنوان یک مرحله مستقل با هزینه
-                ۲۰ میلیون تومان در نظر گرفته شده و خروجی آن مرجع
-                اصلی مرحله توسعه خواهد بود.
+
+                ابتدا پکیج مناسب پروژه را انتخاب کن،
+                سپس مسیر طراحی و پیاده‌سازی را شروع می‌کنیم.
+
             </p>
 
-        </details>
 
+            <a href="mailto:your@email.com" class="cta-button">
 
-        <details>
+                شروع همکاری
 
-            <summary>
-                تفاوت اصلی پکیج حرفه‌ای و پایه چیست؟
-                <i class="fa-solid fa-chevron-down"></i>
-            </summary>
+                <i class="fa-solid fa-arrow-left"></i>
 
-            <p>
-                پکیج حرفه‌ای علاوه بر امکانات پایه، روی سئو،
-                Google، عملکرد، Core Web Vitals و حضور در
-                مارکت‌پلیس‌ها تمرکز دارد.
-            </p>
+            </a>
 
-        </details>
-
-
-        <details>
-
-            <summary>
-                پکیج اختصاصی برای چه پروژه‌هایی مناسب است؟
-                <i class="fa-solid fa-chevron-down"></i>
-            </summary>
-
-            <p>
-                برای پروژه‌هایی که علاوه بر امکانات فروشگاهی و سئو،
-                به امنیت، زیرساخت، بهینه‌سازی دیتابیس، کنترل کیفیت
-                و تست‌های پیشرفته نیاز دارند.
-            </p>
-
-        </details>
-
+        </div>
 
     </div>
 
@@ -1766,22 +3513,25 @@
      FOOTER
 ========================================================= -->
 
-<footer id="contact">
+<footer>
 
-    تمامی قیمت‌ها به تومان می‌باشد.
-    هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
-    بر عهده کارفرماست.
+    <div class="container">
 
-    <br><br>
+        <strong>
+            طراحی و توسعه فروشگاه اینترنتی
+        </strong>
 
-    ساخته شده با
-    <i class="fa-solid fa-heart"></i>
-    برای کسب‌وکارهای آنلاین
+        <br>
+
+        تمامی قیمت‌ها به تومان می‌باشد.
+        هزینه سرویس‌ها، اشتراک‌ها و پنل‌های شخص ثالث
+        بر عهده کارفرما می‌باشد.
+
+    </div>
 
 </footer>
 
 
-</main>
-
 </body>
+
 </html>
