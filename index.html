@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>خدمات طراحی و توسعه فروشگاه اینترنتی</title>
 
@@ -12,12 +12,15 @@
 content="طراحی UI/UX، پیاده‌سازی فروشگاه، سئو، Performance، امنیت و زیرساخت فروشگاه اینترنتی">
 
 <!-- Vazir -->
-<link rel="stylesheet"
+<link
+rel="stylesheet"
 href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css">
 
-<!-- Font Awesome -->
-<link rel="stylesheet"
+<!-- Font Awesome 6.5.2 -->
+<link
+rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+crossorigin="anonymous"
 referrerpolicy="no-referrer">
 
 <style>
@@ -27,6 +30,7 @@ referrerpolicy="no-referrer">
 ========================================================= */
 
 :root{
+
     --bg:#f6f7f9;
     --white:#fff;
 
@@ -63,31 +67,34 @@ referrerpolicy="no-referrer">
 
 
 /* =========================================================
-   RESET + MOBILE WIDTH FIX
+   RESET
 ========================================================= */
 
 *,
 *::before,
 *::after{
+
     box-sizing:border-box;
+
     margin:0;
     padding:0;
 }
 
 html{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
+
     scroll-behavior:smooth;
+
+    width:100%;
+
+    overflow-x:hidden;
 }
 
 body{
+
     width:100%;
     max-width:100%;
-    min-width:0;
 
-    margin:0;
-    padding:0;
+    min-width:0;
 
     font-family:Vazir,Tahoma,sans-serif;
 
@@ -104,21 +111,26 @@ body{
     line-height:1.8;
 
     overflow-x:hidden;
+
+    position:relative;
 }
 
 img,
 svg,
 video,
 iframe{
+
     max-width:100%;
 }
 
 a{
+
     text-decoration:none;
     color:inherit;
 }
 
 button{
+
     font-family:inherit;
 }
 
@@ -134,25 +146,19 @@ button{
 .fab,
 .fa-solid,
 .fa-regular,
-.fa-light,
-.fa-thin,
-.fa-duotone,
 .fa-brands{
+
     display:inline-block;
+
     font-style:normal;
+
     line-height:1;
+
     text-rendering:auto;
+
     -webkit-font-smoothing:antialiased;
-}
 
-.fa-solid{
-    font-family:"Font Awesome 6 Free" !important;
-    font-weight:900 !important;
-}
-
-.fa-brands{
-    font-family:"Font Awesome 6 Brands" !important;
-    font-weight:400 !important;
+    -moz-osx-font-smoothing:grayscale;
 }
 
 
@@ -161,8 +167,11 @@ button{
 ========================================================= */
 
 .container{
-    width:min(1180px, calc(100% - 36px));
-    max-width:1180px;
+
+    width:min(1180px,calc(100% - 36px));
+
+    max-width:100%;
+
     margin-inline:auto;
 }
 
@@ -172,8 +181,11 @@ button{
 ========================================================= */
 
 .header{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     width:100%;
@@ -188,10 +200,13 @@ button{
 }
 
 .header-inner{
+
     min-height:72px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     gap:20px;
@@ -200,8 +215,11 @@ button{
 }
 
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
 
     font-weight:900;
@@ -210,6 +228,7 @@ button{
 }
 
 .logo-icon{
+
     width:40px;
     height:40px;
 
@@ -219,6 +238,7 @@ button{
     border-radius:13px;
 
     color:white;
+
     background:var(--black);
 
     box-shadow:0 8px 25px rgba(16,17,20,.18);
@@ -227,43 +247,60 @@ button{
 }
 
 .logo-text{
+
     font-size:14px;
+
     min-width:0;
 }
 
 .logo-text small{
+
     display:block;
+
     font-size:9px;
+
     color:var(--muted);
+
     font-weight:500;
 }
 
 .nav{
+
     display:flex;
+
     align-items:center;
+
     gap:7px;
 
     min-width:0;
 }
 
 .nav a{
+
     padding:8px 13px;
+
     border-radius:10px;
 
     color:var(--text-soft);
+
     font-size:11px;
 
     transition:.2s;
 }
 
 .nav a:hover{
+
     background:#f2f3f5;
+
     color:var(--black);
 }
 
 .header-button{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     gap:7px;
@@ -273,9 +310,11 @@ button{
     border-radius:11px;
 
     background:var(--black);
+
     color:white;
 
     font-size:11px;
+
     font-weight:800;
 
     transition:.2s;
@@ -286,7 +325,9 @@ button{
 }
 
 .header-button:hover{
+
     transform:translateY(-2px);
+
     background:#25272d;
 }
 
@@ -296,22 +337,28 @@ button{
 ========================================================= */
 
 .hero{
+
     position:relative;
+
     padding:95px 0 80px;
 
     text-align:center;
 
     width:100%;
-    max-width:100%;
+
+    overflow:hidden;
 }
 
 .hero::before{
+
     content:"";
 
     position:absolute;
 
     width:480px;
     height:480px;
+
+    max-width:90vw;
 
     border-radius:50%;
 
@@ -328,23 +375,30 @@ button{
 }
 
 .hero-content{
+
     position:relative;
 
     max-width:850px;
 
     margin-inline:auto;
+
+    min-width:0;
 }
 
 .badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
 
-    max-width:100%;
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
 
     padding:7px 13px;
 
+    max-width:100%;
+
     background:var(--gold-light);
+
     border:1px solid #f0dfb9;
 
     color:var(--gold-dark);
@@ -352,12 +406,14 @@ button{
     border-radius:50px;
 
     font-size:10px;
+
     font-weight:800;
 
     margin-bottom:20px;
 }
 
 .badge-dot{
+
     width:7px;
     height:7px;
 
@@ -371,6 +427,7 @@ button{
 }
 
 .hero h1{
+
     font-size:clamp(35px,6vw,67px);
 
     line-height:1.18;
@@ -381,15 +438,18 @@ button{
 
     margin-bottom:22px;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 .hero h1 span{
+
     position:relative;
+
     z-index:1;
 }
 
 .hero h1 span::after{
+
     content:"";
 
     position:absolute;
@@ -409,6 +469,7 @@ button{
 }
 
 .hero-description{
+
     max-width:690px;
 
     margin-inline:auto;
@@ -418,12 +479,12 @@ button{
     font-size:15px;
 
     line-height:2;
-
-    overflow-wrap:anywhere;
 }
 
 .hero-actions{
+
     display:flex;
+
     justify-content:center;
 
     gap:10px;
@@ -431,13 +492,18 @@ button{
     margin-top:30px;
 
     flex-wrap:wrap;
+
+    max-width:100%;
 }
 
 .btn{
+
     min-height:48px;
 
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
 
     gap:8px;
@@ -447,6 +513,7 @@ button{
     border-radius:13px;
 
     font-size:11px;
+
     font-weight:800;
 
     transition:.25s;
@@ -457,18 +524,23 @@ button{
 }
 
 .btn-primary{
+
     background:var(--black);
+
     color:white;
 
     box-shadow:0 10px 25px rgba(16,17,20,.16);
 }
 
 .btn-primary:hover{
+
     transform:translateY(-3px);
+
     box-shadow:0 16px 35px rgba(16,17,20,.20);
 }
 
 .btn-secondary{
+
     background:white;
 
     border:1px solid var(--border);
@@ -477,7 +549,9 @@ button{
 }
 
 .btn-secondary:hover{
+
     border-color:#cfd3da;
+
     transform:translateY(-2px);
 }
 
@@ -487,6 +561,7 @@ button{
 ========================================================= */
 
 .hero-stats{
+
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -507,6 +582,7 @@ button{
 }
 
 .stat{
+
     padding:22px;
 
     text-align:center;
@@ -517,18 +593,23 @@ button{
 }
 
 .stat:last-child{
+
     border-left:none;
 }
 
 .stat strong{
+
     display:block;
 
     font-size:19px;
+
     font-weight:900;
 }
 
 .stat span{
+
     color:var(--muted);
+
     font-size:10px;
 }
 
@@ -538,29 +619,38 @@ button{
 ========================================================= */
 
 .section{
+
     padding:85px 0;
+
     width:100%;
-    max-width:100%;
+
+    overflow:hidden;
 }
 
 .section-header{
+
     max-width:700px;
 
     margin:0 auto 38px;
 
     text-align:center;
+
+    min-width:0;
 }
 
 .section-kicker{
+
     color:var(--gold-dark);
 
     font-size:10px;
+
     font-weight:900;
 
     margin-bottom:8px;
 }
 
 .section-header h2{
+
     font-size:clamp(27px,4vw,39px);
 
     line-height:1.35;
@@ -569,17 +659,16 @@ button{
 
     letter-spacing:-1px;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 .section-header p{
+
     color:var(--text-soft);
 
     font-size:12px;
 
     margin-top:9px;
-
-    overflow-wrap:anywhere;
 }
 
 
@@ -588,6 +677,7 @@ button{
 ========================================================= */
 
 .service-grid{
+
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -598,6 +688,9 @@ button{
 }
 
 .service-card{
+
+    min-width:0;
+
     padding:24px;
 
     background:white;
@@ -609,20 +702,22 @@ button{
     box-shadow:var(--shadow);
 
     transition:.25s;
-
-    min-width:0;
 }
 
 .service-card:hover{
+
     transform:translateY(-5px);
+
     box-shadow:var(--shadow-hover);
 }
 
 .service-icon{
+
     width:45px;
     height:45px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:14px;
@@ -633,38 +728,49 @@ button{
 }
 
 .service-card:nth-child(1) .service-icon{
+
     color:var(--gold-dark);
+
     background:var(--gold-light);
 }
 
 .service-card:nth-child(2) .service-icon{
+
     color:var(--blue);
+
     background:var(--blue-light);
 }
 
 .service-card:nth-child(3) .service-icon{
+
     color:var(--purple);
+
     background:var(--purple-light);
 }
 
 .service-card:nth-child(4) .service-icon{
+
     color:var(--green);
+
     background:var(--green-light);
 }
 
 .service-card h3{
+
     font-size:15px;
+
     font-weight:900;
+
     margin-bottom:6px;
 }
 
 .service-card p{
+
     color:var(--text-soft);
 
     font-size:10px;
-    line-height:1.9;
 
-    overflow-wrap:anywhere;
+    line-height:1.9;
 }
 
 
@@ -673,26 +779,30 @@ button{
 ========================================================= */
 
 .pricing{
+
     background:#101114;
+
     color:white;
 
     padding:95px 0;
 
     width:100%;
-    max-width:100%;
 
     overflow:hidden;
 }
 
 .pricing .section-header p{
+
     color:#a4a8b1;
 }
 
 .pricing .section-kicker{
+
     color:#e9b74e;
 }
 
 .pricing-grid{
+
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
@@ -705,7 +815,10 @@ button{
 }
 
 .plan{
+
     position:relative;
+
+    min-width:0;
 
     background:#181a1f;
 
@@ -716,16 +829,17 @@ button{
     padding:27px;
 
     transition:.3s;
-
-    min-width:0;
 }
 
 .plan:hover{
+
     transform:translateY(-5px);
+
     border-color:#3a3d45;
 }
 
 .plan.featured{
+
     background:white;
 
     color:var(--text);
@@ -738,13 +852,16 @@ button{
 }
 
 .plan.featured:hover{
+
     transform:translateY(-16px);
 }
 
 .featured-label{
+
     position:absolute;
 
     top:-13px;
+
     right:22px;
 
     background:var(--gold);
@@ -756,13 +873,16 @@ button{
     border-radius:50px;
 
     font-size:9px;
+
     font-weight:900;
 }
 
 .plan-top{
+
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     gap:15px;
@@ -775,30 +895,38 @@ button{
 }
 
 .featured .plan-top{
+
     border-color:var(--border);
 }
 
 .plan h3{
+
     font-size:20px;
+
     font-weight:900;
 }
 
 .plan-subtitle{
+
     color:#969ba5;
 
     font-size:9px;
+
     margin-top:2px;
 }
 
 .featured .plan-subtitle{
+
     color:var(--muted);
 }
 
 .plan-icon{
+
     width:42px;
     height:42px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:13px;
@@ -811,23 +939,30 @@ button{
 }
 
 .featured .plan-icon{
+
     background:var(--gold-light);
+
     color:var(--gold-dark);
 }
 
 .price{
+
     padding:24px 0 20px;
 }
 
 .price-number{
+
     display:flex;
+
     align-items:baseline;
+
     gap:6px;
 
-    min-width:0;
+    flex-wrap:wrap;
 }
 
 .price-number strong{
+
     font-size:42px;
 
     line-height:1;
@@ -838,25 +973,28 @@ button{
 }
 
 .price-number span{
+
     color:#9297a0;
+
     font-size:10px;
 }
 
 .featured .price-number span{
+
     color:var(--muted);
 }
 
 .price-description{
+
     color:#9297a0;
 
     font-size:9px;
 
     margin-top:7px;
-
-    overflow-wrap:anywhere;
 }
 
 .featured .price-description{
+
     color:var(--muted);
 }
 
@@ -866,6 +1004,7 @@ button{
 ========================================================= */
 
 .plan-button{
+
     width:100%;
 
     min-height:47px;
@@ -873,6 +1012,7 @@ button{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:7px;
@@ -884,6 +1024,7 @@ button{
     color:var(--black);
 
     font-size:10px;
+
     font-weight:900;
 
     transition:.2s;
@@ -891,22 +1032,26 @@ button{
     cursor:pointer;
 
     border:0;
-
-    text-align:center;
 }
 
 .plan-button:hover{
+
     transform:translateY(-2px);
+
     background:#f0f1f3;
 }
 
 .featured .plan-button{
+
     background:var(--black);
+
     color:white;
 }
 
 .plan-button.selected{
+
     background:var(--green)!important;
+
     color:white!important;
 
     box-shadow:0 8px 25px rgba(24,169,87,.22);
@@ -918,22 +1063,30 @@ button{
 ========================================================= */
 
 .feature-groups{
+
     margin-top:22px;
+
+    min-width:0;
 }
 
 .feature-group{
+
     border-top:1px solid #292c32;
+
     padding:15px 0;
 }
 
 .featured .feature-group{
+
     border-color:var(--border);
 }
 
 .feature-group summary{
+
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     cursor:pointer;
@@ -941,18 +1094,19 @@ button{
     list-style:none;
 
     font-size:11px;
+
     font-weight:900;
 
-    gap:10px;
-
-    min-width:0;
+    gap:8px;
 }
 
 .feature-group summary::-webkit-details-marker{
+
     display:none;
 }
 
 .summary-left{
+
     display:flex;
 
     align-items:center;
@@ -963,10 +1117,12 @@ button{
 }
 
 .summary-icon{
+
     width:26px;
     height:26px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:8px;
@@ -981,23 +1137,30 @@ button{
 }
 
 .featured .summary-icon{
+
     background:#f4f4f5;
+
     color:#555b66;
 }
 
 .feature-group summary i{
+
     color:#777c85;
+
     font-size:9px;
+
     transition:.2s;
 
     flex-shrink:0;
 }
 
 .feature-group[open] summary i{
+
     transform:rotate(180deg);
 }
 
 .feature-list{
+
     list-style:none;
 
     margin-top:13px;
@@ -1010,6 +1173,7 @@ button{
 }
 
 .feature-list li{
+
     position:relative;
 
     padding-right:17px;
@@ -1020,14 +1184,16 @@ button{
 
     line-height:1.8;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 .featured .feature-list li{
+
     color:#626873;
 }
 
 .feature-list li::before{
+
     content:"✓";
 
     position:absolute;
@@ -1045,13 +1211,16 @@ button{
 ========================================================= */
 
 .ux-section{
+
     padding:100px 0;
 
     width:100%;
-    max-width:100%;
+
+    overflow:hidden;
 }
 
 .ux-card{
+
     position:relative;
 
     overflow:hidden;
@@ -1074,12 +1243,15 @@ button{
 }
 
 .ux-card::before{
+
     content:"";
 
     position:absolute;
 
     width:420px;
     height:420px;
+
+    max-width:80vw;
 
     border-radius:50%;
 
@@ -1092,6 +1264,7 @@ button{
 }
 
 .ux-grid{
+
     position:relative;
 
     z-index:2;
@@ -1108,6 +1281,7 @@ button{
 }
 
 .ux-label{
+
     display:inline-flex;
 
     align-items:center;
@@ -1124,6 +1298,7 @@ button{
 }
 
 .ux-title{
+
     font-size:clamp(27px,4vw,42px);
 
     line-height:1.35;
@@ -1132,10 +1307,11 @@ button{
 
     margin-bottom:12px;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 .ux-description{
+
     max-width:600px;
 
     color:#aeb3bc;
@@ -1143,11 +1319,10 @@ button{
     font-size:12px;
 
     line-height:2;
-
-    overflow-wrap:anywhere;
 }
 
 .ux-output{
+
     margin-top:22px;
 
     display:grid;
@@ -1155,9 +1330,12 @@ button{
     grid-template-columns:repeat(2,1fr);
 
     gap:9px;
+
+    min-width:0;
 }
 
 .ux-output div{
+
     display:flex;
 
     align-items:center;
@@ -1172,11 +1350,14 @@ button{
 }
 
 .ux-output i{
+
     color:var(--gold);
+
     flex-shrink:0;
 }
 
 .ux-price{
+
     background:rgba(255,255,255,.06);
 
     border:1px solid rgba(255,255,255,.1);
@@ -1191,11 +1372,14 @@ button{
 }
 
 .ux-price-label{
+
     color:#9096a0;
+
     font-size:10px;
 }
 
 .ux-price strong{
+
     display:block;
 
     font-size:43px;
@@ -1208,6 +1392,7 @@ button{
 }
 
 .ux-price strong small{
+
     font-size:11px;
 
     color:#9ca2ac;
@@ -1216,16 +1401,16 @@ button{
 }
 
 .ux-price-description{
+
     color:#9298a2;
 
     font-size:9px;
 
     margin-bottom:19px;
-
-    overflow-wrap:anywhere;
 }
 
 .ux-button{
+
     width:100%;
 
     min-height:46px;
@@ -1233,6 +1418,7 @@ button{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:8px;
@@ -1250,12 +1436,12 @@ button{
     transition:.2s;
 
     cursor:pointer;
-
-    text-align:center;
 }
 
 .ux-button:hover{
+
     transform:translateY(-2px);
+
     background:#f2b53d;
 }
 
@@ -1265,6 +1451,7 @@ button{
 ========================================================= */
 
 .steps{
+
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -1277,6 +1464,7 @@ button{
 }
 
 .step{
+
     background:white;
 
     border:1px solid var(--border);
@@ -1291,10 +1479,12 @@ button{
 }
 
 .step-number{
+
     width:31px;
     height:31px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:10px;
@@ -1311,20 +1501,21 @@ button{
 }
 
 .step h3{
+
     font-size:13px;
+
     font-weight:900;
 
     margin-bottom:5px;
 }
 
 .step p{
+
     color:var(--text-soft);
 
     font-size:9px;
 
     line-height:1.9;
-
-    overflow-wrap:anywhere;
 }
 
 
@@ -1333,52 +1524,57 @@ button{
 ========================================================= */
 
 .comparison-section{
+
     padding:85px 0;
 
     width:100%;
-    max-width:100%;
+
+    overflow:hidden;
 }
 
 .comparison{
+
     background:white;
 
     border:1px solid var(--border);
 
     border-radius:25px;
 
-    overflow:hidden;
+    overflow-x:auto;
+
+    overflow-y:hidden;
 
     box-shadow:var(--shadow);
 
     width:100%;
-}
 
-.comparison-scroll{
-    width:100%;
-    overflow-x:auto;
     -webkit-overflow-scrolling:touch;
 }
 
 .comparison-row{
+
     display:grid;
 
-    grid-template-columns:1.7fr repeat(3,1fr);
+    grid-template-columns:minmax(180px,1.7fr) repeat(3,minmax(110px,1fr));
 
     min-height:58px;
 
     border-bottom:1px solid var(--border);
 
-    min-width:620px;
+    min-width:520px;
 }
 
 .comparison-row:last-child{
+
     border-bottom:none;
 }
 
 .comparison-row>div{
+
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     padding:10px;
@@ -1391,28 +1587,33 @@ button{
 }
 
 .comparison-row>div:last-child{
+
     border-left:none;
 }
 
 .comparison-row>div:first-child{
+
     justify-content:flex-start;
 
     color:var(--text-soft);
-
-    white-space:nowrap;
 }
 
 .comparison-head{
+
     background:#f8f9fa;
+
     font-weight:900;
 }
 
 .comparison-head>div:first-child{
+
     color:var(--text);
 }
 
 .check{
+
     color:var(--green);
+
     font-size:13px;
 }
 
@@ -1422,11 +1623,13 @@ button{
 ========================================================= */
 
 .faq-grid{
+
     max-width:850px;
 
     margin-inline:auto;
 
     display:flex;
+
     flex-direction:column;
 
     gap:9px;
@@ -1435,6 +1638,7 @@ button{
 }
 
 .faq-item{
+
     background:white;
 
     border:1px solid var(--border);
@@ -1449,11 +1653,13 @@ button{
 }
 
 .faq-item summary{
+
     min-height:58px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     gap:15px;
@@ -1470,10 +1676,12 @@ button{
 }
 
 .faq-item summary::-webkit-details-marker{
+
     display:none;
 }
 
 .faq-item summary i{
+
     color:var(--muted);
 
     transition:.2s;
@@ -1482,10 +1690,12 @@ button{
 }
 
 .faq-item[open] summary i{
+
     transform:rotate(180deg);
 }
 
 .faq-answer{
+
     color:var(--text-soft);
 
     font-size:10px;
@@ -1494,7 +1704,7 @@ button{
 
     padding:0 0 18px;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 
@@ -1503,13 +1713,16 @@ button{
 ========================================================= */
 
 .final-cta{
+
     padding:85px 0 100px;
 
     width:100%;
-    max-width:100%;
+
+    overflow:hidden;
 }
 
 .cta-box{
+
     background:var(--black);
 
     color:white;
@@ -1528,12 +1741,15 @@ button{
 }
 
 .cta-box::before{
+
     content:"";
 
     position:absolute;
 
     width:280px;
     height:280px;
+
+    max-width:80vw;
 
     border-radius:50%;
 
@@ -1546,21 +1762,25 @@ button{
 }
 
 .cta-box>*{
+
     position:relative;
+
     z-index:2;
 }
 
 .cta-box h2{
+
     font-size:clamp(26px,4vw,40px);
 
     font-weight:900;
 
     margin-bottom:10px;
 
-    overflow-wrap:anywhere;
+    overflow-wrap:break-word;
 }
 
 .cta-box p{
+
     max-width:600px;
 
     margin:auto;
@@ -1568,11 +1788,10 @@ button{
     color:#a9aeb7;
 
     font-size:11px;
-
-    overflow-wrap:anywhere;
 }
 
 .selected-package{
+
     display:none;
 
     width:max-content;
@@ -1592,20 +1811,26 @@ button{
     color:#dfe2e6;
 
     font-size:10px;
+
+    overflow-wrap:break-word;
 }
 
 .selected-package.show{
+
     display:block;
 }
 
 .selected-package strong{
+
     color:var(--gold);
 }
 
 .cta-button{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:8px;
@@ -1636,11 +1861,14 @@ button{
 }
 
 .cta-button:hover{
+
     transform:translateY(-3px);
+
     background:#f2b53d;
 }
 
 .cta-button i{
+
     font-size:13px;
 }
 
@@ -1650,6 +1878,7 @@ button{
 ========================================================= */
 
 footer{
+
     padding:25px 0 35px;
 
     text-align:center;
@@ -1661,24 +1890,29 @@ footer{
     border-top:1px solid var(--border);
 
     width:100%;
+
+    overflow:hidden;
 }
 
 footer strong{
+
     color:var(--text);
 }
 
 
 /* =========================================================
-   1000px
+   RESPONSIVE 1000
 ========================================================= */
 
 @media(max-width:1000px){
 
     .service-grid{
+
         grid-template-columns:repeat(2,1fr);
     }
 
     .pricing-grid{
+
         grid-template-columns:1fr;
 
         max-width:680px;
@@ -1689,23 +1923,29 @@ footer strong{
     }
 
     .plan.featured{
+
         order:-1;
+
         transform:none;
     }
 
     .plan.featured:hover{
+
         transform:translateY(-5px);
     }
 
     .ux-grid{
+
         grid-template-columns:1fr;
     }
 
     .ux-price{
+
         max-width:520px;
     }
 
     .steps{
+
         grid-template-columns:repeat(2,1fr);
     }
 }
@@ -1719,45 +1959,59 @@ footer strong{
 
     html,
     body{
-        width:100% !important;
-        max-width:100% !important;
-        min-width:0 !important;
 
-        overflow-x:hidden !important;
+        width:100%;
 
-        overscroll-behavior-x:none;
+        max-width:100%;
+
+        overflow-x:hidden;
+
+        position:relative;
     }
 
     .container{
-        width:calc(100% - 28px) !important;
-        max-width:560px !important;
 
-        margin-left:auto !important;
-        margin-right:auto !important;
+        width:calc(100% - 28px);
+
+        max-width:560px;
+
+        margin-left:auto;
+
+        margin-right:auto;
     }
 
 
     /* HEADER */
 
     .header{
+
         width:100%;
+
         overflow:hidden;
     }
 
     .header-inner{
+
         min-height:62px;
 
         gap:8px;
 
         width:100%;
+
+        max-width:100%;
     }
 
     .logo{
-        flex:1 1 auto;
+
         min-width:0;
+
+        flex:1;
+
+        gap:8px;
     }
 
     .logo-icon{
+
         width:36px;
         height:36px;
 
@@ -1765,6 +2019,7 @@ footer strong{
     }
 
     .logo-text{
+
         font-size:11px;
 
         line-height:1.4;
@@ -1772,18 +2027,22 @@ footer strong{
         white-space:nowrap;
 
         overflow:hidden;
+
         text-overflow:ellipsis;
     }
 
     .logo-text small{
+
         font-size:7px;
     }
 
     .nav{
+
         display:none;
     }
 
     .header-button{
+
         padding:9px 11px;
 
         min-height:38px;
@@ -1794,6 +2053,7 @@ footer strong{
     }
 
     .header-button i{
+
         font-size:9px;
     }
 
@@ -1801,30 +2061,24 @@ footer strong{
     /* HERO */
 
     .hero{
+
         padding:55px 0 48px;
 
-        width:100%;
         overflow:hidden;
     }
 
-    .hero-content{
-        width:100%;
-        max-width:100%;
-        min-width:0;
-    }
-
     .badge{
-        max-width:100%;
 
         font-size:8px;
 
         padding:6px 10px;
 
         margin-bottom:16px;
+
+        white-space:normal;
     }
 
     .hero h1{
-        width:100%;
 
         font-size:clamp(31px,9vw,43px);
 
@@ -1833,28 +2087,26 @@ footer strong{
         line-height:1.35;
 
         margin-bottom:17px;
-
-        overflow-wrap:anywhere;
     }
 
     .hero h1 span::after{
+
         height:7px;
+
         bottom:2px;
     }
 
     .hero-description{
-        width:100%;
 
         font-size:11px;
 
         line-height:2;
 
         padding:0 3px;
-
-        overflow-wrap:anywhere;
     }
 
     .hero-actions{
+
         flex-direction:column;
 
         width:100%;
@@ -1865,6 +2117,7 @@ footer strong{
     }
 
     .btn{
+
         width:100%;
 
         min-height:46px;
@@ -1876,16 +2129,18 @@ footer strong{
     /* STATS */
 
     .hero-stats{
-        width:100%;
 
         grid-template-columns:repeat(2,1fr);
 
         margin-top:35px;
 
         border-radius:17px;
+
+        width:100%;
     }
 
     .stat{
+
         min-height:78px;
 
         display:flex;
@@ -1897,23 +2152,25 @@ footer strong{
         justify-content:center;
 
         padding:12px 8px;
-
-        min-width:0;
     }
 
     .stat:nth-child(2){
+
         border-left:none;
     }
 
     .stat:nth-child(-n+2){
+
         border-bottom:1px solid var(--border);
     }
 
     .stat strong{
+
         font-size:16px;
     }
 
     .stat span{
+
         font-size:8px;
     }
 
@@ -1921,42 +2178,45 @@ footer strong{
     /* SECTION */
 
     .section{
+
         padding:60px 0;
-        width:100%;
+
         overflow:hidden;
     }
 
     .section-header{
+
         margin-bottom:28px;
+
         width:100%;
     }
 
     .section-kicker{
+
         font-size:8px;
     }
 
     .section-header h2{
+
         font-size:25px;
 
         line-height:1.45;
 
         letter-spacing:-.5px;
-
-        overflow-wrap:anywhere;
     }
 
     .section-header p{
+
         font-size:10px;
 
         line-height:1.9;
-
-        overflow-wrap:anywhere;
     }
 
 
     /* SERVICES */
 
     .service-grid{
+
         grid-template-columns:1fr;
 
         gap:10px;
@@ -1965,14 +2225,16 @@ footer strong{
     }
 
     .service-card{
-        width:100%;
 
         padding:19px;
 
         border-radius:17px;
+
+        width:100%;
     }
 
     .service-icon{
+
         width:40px;
         height:40px;
 
@@ -1982,10 +2244,12 @@ footer strong{
     }
 
     .service-card h3{
+
         font-size:13px;
     }
 
     .service-card p{
+
         font-size:9px;
 
         line-height:2;
@@ -1995,14 +2259,14 @@ footer strong{
     /* PRICING */
 
     .pricing{
-        padding:65px 0;
 
-        width:100%;
+        padding:65px 0;
 
         overflow:hidden;
     }
 
     .pricing-grid{
+
         width:100%;
 
         display:flex;
@@ -2010,11 +2274,10 @@ footer strong{
         flex-direction:column;
 
         gap:19px;
-
-        min-width:0;
     }
 
     .plan{
+
         width:100%;
 
         max-width:100%;
@@ -2022,20 +2285,22 @@ footer strong{
         padding:21px 17px;
 
         border-radius:21px;
-
-        min-width:0;
     }
 
     .plan.featured{
+
         transform:none;
+
         order:-1;
     }
 
     .plan.featured:hover{
+
         transform:none;
     }
 
     .featured-label{
+
         top:-11px;
 
         right:17px;
@@ -2046,19 +2311,24 @@ footer strong{
     }
 
     .plan-top{
+
         padding-bottom:16px;
     }
 
     .plan h3{
+
         font-size:17px;
     }
 
     .plan-subtitle{
+
         font-size:8px;
+
         line-height:1.8;
     }
 
     .plan-icon{
+
         width:38px;
         height:38px;
 
@@ -2066,24 +2336,29 @@ footer strong{
     }
 
     .price{
+
         padding:20px 0 17px;
     }
 
     .price-number strong{
+
         font-size:35px;
     }
 
     .price-number span{
+
         font-size:9px;
     }
 
     .price-description{
+
         font-size:8px;
 
         line-height:1.8;
     }
 
     .plan-button{
+
         min-height:46px;
 
         font-size:9px;
@@ -2092,19 +2367,24 @@ footer strong{
     }
 
     .feature-groups{
+
         margin-top:17px;
     }
 
     .feature-group{
+
         padding:13px 0;
     }
 
     .feature-group summary{
+
         font-size:9px;
+
         gap:8px;
     }
 
     .summary-icon{
+
         width:25px;
         height:25px;
 
@@ -2112,12 +2392,14 @@ footer strong{
     }
 
     .feature-list{
+
         gap:6px;
 
         margin-top:11px;
     }
 
     .feature-list li{
+
         font-size:8px;
 
         line-height:1.9;
@@ -2129,45 +2411,51 @@ footer strong{
     /* UX */
 
     .ux-section{
+
         padding:65px 0;
 
-        width:100%;
         overflow:hidden;
     }
 
     .ux-card{
-        width:100%;
 
         padding:28px 18px;
 
         border-radius:23px;
+
+        width:100%;
     }
 
     .ux-grid{
+
         gap:27px;
 
         width:100%;
     }
 
     .ux-label{
+
         font-size:8px;
 
         margin-bottom:11px;
     }
 
     .ux-title{
+
         font-size:25px;
 
         line-height:1.45;
     }
 
     .ux-description{
+
         font-size:10px;
 
         line-height:2;
     }
 
     .ux-output{
+
         grid-template-columns:1fr;
 
         gap:8px;
@@ -2176,37 +2464,45 @@ footer strong{
     }
 
     .ux-output div{
+
         font-size:9px;
     }
 
     .ux-price{
+
         padding:22px 18px;
 
         border-radius:19px;
 
         width:100%;
+
         max-width:100%;
     }
 
     .ux-price-label{
+
         font-size:8px;
     }
 
     .ux-price strong{
+
         font-size:36px;
     }
 
     .ux-price strong small{
+
         font-size:9px;
     }
 
     .ux-price-description{
+
         font-size:8px;
 
         line-height:2;
     }
 
     .ux-button{
+
         min-height:45px;
 
         font-size:9px;
@@ -2216,6 +2512,7 @@ footer strong{
     /* STEPS */
 
     .steps{
+
         grid-template-columns:1fr;
 
         gap:9px;
@@ -2226,14 +2523,16 @@ footer strong{
     }
 
     .step{
-        width:100%;
 
         padding:18px;
 
         border-radius:16px;
+
+        width:100%;
     }
 
     .step-number{
+
         width:29px;
         height:29px;
 
@@ -2241,10 +2540,12 @@ footer strong{
     }
 
     .step h3{
+
         font-size:12px;
     }
 
     .step p{
+
         font-size:8px;
     }
 
@@ -2252,47 +2553,52 @@ footer strong{
     /* COMPARISON */
 
     .comparison-section{
-        padding:60px 0;
 
-        width:100%;
+        padding:60px 0;
 
         overflow:hidden;
     }
 
     .comparison{
+
         width:100%;
+
+        max-width:100%;
 
         border-radius:18px;
 
-        overflow:hidden;
-    }
-
-    .comparison-scroll{
-        width:100%;
-
         overflow-x:auto;
+
         overflow-y:hidden;
+
+        -webkit-overflow-scrolling:touch;
 
         scrollbar-width:thin;
     }
 
     .comparison-row{
+
         min-width:570px;
+
+        width:570px;
 
         min-height:51px;
     }
 
     .comparison-row>div{
+
         font-size:8px;
 
         padding:8px;
     }
 
     .comparison-head>div{
+
         font-size:8px;
     }
 
     .check{
+
         font-size:11px;
     }
 
@@ -2300,20 +2606,23 @@ footer strong{
     /* FAQ */
 
     .faq-grid{
+
         gap:8px;
 
         width:100%;
     }
 
     .faq-item{
-        width:100%;
 
         padding:0 14px;
 
         border-radius:14px;
+
+        width:100%;
     }
 
     .faq-item summary{
+
         min-height:53px;
 
         font-size:9px;
@@ -2322,6 +2631,7 @@ footer strong{
     }
 
     .faq-answer{
+
         font-size:8px;
 
         line-height:2;
@@ -2331,34 +2641,37 @@ footer strong{
     /* CTA */
 
     .final-cta{
-        padding:60px 0 70px;
 
-        width:100%;
+        padding:60px 0 70px;
 
         overflow:hidden;
     }
 
     .cta-box{
-        width:100%;
 
         padding:38px 18px;
 
         border-radius:23px;
+
+        width:100%;
     }
 
     .cta-box h2{
+
         font-size:25px;
 
         line-height:1.5;
     }
 
     .cta-box p{
+
         font-size:9px;
 
         line-height:2;
     }
 
     .selected-package{
+
         width:100%;
 
         font-size:8px;
@@ -2369,6 +2682,7 @@ footer strong{
     }
 
     .cta-button{
+
         width:100%;
 
         min-height:47px;
@@ -2382,11 +2696,12 @@ footer strong{
     /* FOOTER */
 
     footer{
+
         font-size:8px;
 
         line-height:2;
 
-        width:100%;
+        overflow:hidden;
     }
 }
 
@@ -2398,31 +2713,39 @@ footer strong{
 @media(max-width:380px){
 
     .container{
-        width:calc(100% - 22px) !important;
+
+        width:calc(100% - 22px);
     }
 
     .logo-text{
+
         font-size:10px;
     }
 
     .header-button{
+
         padding:8px 9px;
+
         font-size:8px;
     }
 
     .hero h1{
+
         font-size:29px;
     }
 
     .hero-description{
+
         font-size:10px;
     }
 
     .price-number strong{
+
         font-size:32px;
     }
 
     .plan{
+
         padding:19px 15px;
     }
 }
@@ -2437,7 +2760,9 @@ footer strong{
     *,
     *::before,
     *::after{
+
         scroll-behavior:auto!important;
+
         transition:none!important;
     }
 }
@@ -2451,7 +2776,7 @@ footer strong{
 
 
 <!-- =========================================================
-HEADER
+     HEADER
 ========================================================= -->
 
 <header class="header">
@@ -2480,8 +2805,11 @@ UI/UX • Development • SEO
 <nav class="nav">
 
 <a href="#services">خدمات</a>
+
 <a href="#pricing">پکیج‌ها</a>
+
 <a href="#uiux">طراحی UI/UX</a>
+
 <a href="#faq">سوالات متداول</a>
 
 </nav>
@@ -2503,8 +2831,9 @@ class="header-button">
 </header>
 
 
+
 <!-- =========================================================
-HERO
+     HERO
 ========================================================= -->
 
 <section class="hero">
@@ -2565,23 +2894,35 @@ HERO
 <div class="hero-stats">
 
 <div class="stat">
+
 <strong>۴۰M+</strong>
+
 <span>شروع پکیج‌ها</span>
+
 </div>
 
 <div class="stat">
+
 <strong>۳</strong>
+
 <span>سطح خدمات</span>
+
 </div>
 
 <div class="stat">
+
 <strong>۲۰M</strong>
+
 <span>طراحی UI/UX</span>
+
 </div>
 
 <div class="stat">
+
 <strong>۱۰۰٪</strong>
+
 <span>ریسپانسیو</span>
+
 </div>
 
 </div>
@@ -2591,8 +2932,9 @@ HERO
 </section>
 
 
+
 <!-- =========================================================
-SERVICES
+     SERVICES
 ========================================================= -->
 
 <section class="section" id="services">
@@ -2699,8 +3041,9 @@ Hardening، Firewall، Backup،
 </section>
 
 
+
 <!-- =========================================================
-PRICING
+     PRICING
 ========================================================= -->
 
 <section class="pricing" id="pricing">
@@ -2744,7 +3087,9 @@ PRICING
 </div>
 
 <div class="plan-icon">
+
 <i class="fa-solid fa-rocket"></i>
+
 </div>
 
 </div>
@@ -2804,10 +3149,15 @@ data-price="۴۰ میلیون تومان">
 <ul class="feature-list">
 
 <li>پیاده‌سازی قالب اختصاصی بر اساس UI/UX تأییدشده</li>
+
 <li>پیکربندی کامل ووکامرس</li>
+
 <li>راه‌اندازی محصولات و دسته‌بندی‌ها</li>
+
 <li>اتصال و پیکربندی پنل پیامکی</li>
+
 <li>اتصال درگاه پرداخت</li>
+
 <li>ریسپانسیو موبایل، تبلت و دسکتاپ</li>
 
 </ul>
@@ -2837,9 +3187,13 @@ data-price="۴۰ میلیون تومان">
 <ul class="feature-list">
 
 <li>تنظیم صفحات اصلی فروشگاه</li>
+
 <li>تنظیم منو و ساختار ناوبری</li>
+
 <li>تنظیم ثبت‌نام و ورود کاربران</li>
+
 <li>تنظیم سبد خرید و تسویه‌حساب</li>
+
 <li>تست فرآیند خرید و ثبت سفارش</li>
 
 </ul>
@@ -2849,6 +3203,7 @@ data-price="۴۰ میلیون تومان">
 </div>
 
 </article>
+
 
 
 <!-- PROFESSIONAL -->
@@ -2873,7 +3228,9 @@ data-price="۴۰ میلیون تومان">
 </div>
 
 <div class="plan-icon">
+
 <i class="fa-solid fa-chart-line"></i>
+
 </div>
 
 </div>
@@ -2931,7 +3288,9 @@ data-price="۶۵ میلیون تومان">
 </summary>
 
 <ul class="feature-list">
+
 <li>تمام امکانات پکیج پایه</li>
+
 </ul>
 
 </details>
@@ -3077,6 +3436,7 @@ Performance
 </article>
 
 
+
 <!-- ENTERPRISE -->
 
 <article class="plan">
@@ -3094,7 +3454,9 @@ Performance
 </div>
 
 <div class="plan-icon">
+
 <i class="fa-solid fa-shield-halved"></i>
+
 </div>
 
 </div>
@@ -3266,6 +3628,7 @@ data-price="۸۰ میلیون تومان">
 
 </article>
 
+
 </div>
 
 
@@ -3286,8 +3649,9 @@ margin-top:28px;
 </section>
 
 
+
 <!-- =========================================================
-UI UX
+     UI UX
 ========================================================= -->
 
 <section class="ux-section" id="uiux">
@@ -3297,6 +3661,7 @@ UI UX
 <div class="ux-card">
 
 <div class="ux-grid">
+
 
 <div>
 
@@ -3393,8 +3758,13 @@ Prototype در Figma
 </div>
 
 <strong>
+
 ۲۰
-<small>میلیون تومان</small>
+
+<small>
+میلیون تومان
+</small>
+
 </strong>
 
 <div class="ux-price-description">
@@ -3421,12 +3791,14 @@ data-price="۲۰ میلیون تومان">
 
 </div>
 
+
 </div>
 
 </div>
 
 
 <div class="steps">
+
 
 <div class="step">
 
@@ -3479,6 +3851,7 @@ data-price="۲۰ میلیون تومان">
 
 </div>
 
+
 </div>
 
 </div>
@@ -3486,8 +3859,9 @@ data-price="۲۰ میلیون تومان">
 </section>
 
 
+
 <!-- =========================================================
-COMPARISON
+     COMPARISON
 ========================================================= -->
 
 <section class="comparison-section">
@@ -3512,8 +3886,6 @@ COMPARE
 
 
 <div class="comparison">
-
-<div class="comparison-scroll">
 
 <div class="comparison-row comparison-head">
 
@@ -3612,7 +3984,6 @@ COMPARE
 
 </div>
 
-</div>
 
 </div>
 
@@ -3621,8 +3992,9 @@ COMPARE
 </section>
 
 
+
 <!-- =========================================================
-FAQ
+     FAQ
 ========================================================= -->
 
 <section class="section" id="faq">
@@ -3762,8 +4134,9 @@ Wireframe، طراحی UI/UX و Prototype تعاملی در Figma
 </section>
 
 
+
 <!-- =========================================================
-FINAL CTA
+     FINAL CTA
 ========================================================= -->
 
 <section class="final-cta" id="contact">
@@ -3815,8 +4188,9 @@ id="whatsappCta">
 </section>
 
 
+
 <!-- =========================================================
-FOOTER
+     FOOTER
 ========================================================= -->
 
 <footer>
@@ -3838,45 +4212,50 @@ FOOTER
 </footer>
 
 
+
 <!-- =========================================================
-WHATSAPP PACKAGE SYSTEM
+     WHATSAPP PACKAGE SYSTEM
 ========================================================= -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded",function(){
 
-    const whatsappNumber = "989212789310";
+    const whatsappNumber="989212789310";
 
-    let selectedPackage = "";
-    let selectedPrice = "";
+    let selectedPackage="";
+    let selectedPrice="";
 
-    const packageButtons =
+    const packageButtons=
         document.querySelectorAll(".package-select");
 
-    const selectedBox =
+    const selectedBox=
         document.getElementById("selectedPackage");
 
-    const selectedName =
+    const selectedName=
         document.getElementById("selectedPackageName");
 
-    const selectedPriceElement =
+    const selectedPriceElement=
         document.getElementById("selectedPackagePrice");
 
-    const whatsappButton =
+    const whatsappButton=
         document.getElementById("whatsappCta");
 
 
+    /* =====================================================
+       PACKAGE SELECT
+    ===================================================== */
+
     packageButtons.forEach(function(button){
 
-        button.addEventListener("click", function(e){
+        button.addEventListener("click",function(e){
 
             e.preventDefault();
 
-            selectedPackage =
+            selectedPackage=
                 button.getAttribute("data-package") || "";
 
-            selectedPrice =
+            selectedPrice=
                 button.getAttribute("data-price") || "";
 
 
@@ -3884,24 +4263,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 item.classList.remove("selected");
 
-                const oldIcon =
+                const icon=
                     item.querySelector("i");
 
-                if(oldIcon){
+                if(icon){
 
-                    oldIcon.className =
+                    icon.className=
                         "fa-solid fa-arrow-left";
-
-                }
-
-                const packageName =
-                    item.getAttribute("data-package");
-
-                if(packageName){
-
-                    item.firstChild.textContent =
-                        "انتخاب " + packageName + " ";
-
                 }
 
             });
@@ -3909,14 +4277,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
             button.classList.add("selected");
 
-            button.innerHTML =
+            button.innerHTML=
                 'پکیج انتخاب شد <i class="fa-solid fa-check"></i>';
 
 
-            selectedName.textContent =
+            selectedName.textContent=
                 selectedPackage;
 
-            selectedPriceElement.textContent =
+            selectedPriceElement.textContent=
                 selectedPrice;
 
             selectedBox.classList.add("show");
@@ -3924,14 +4292,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
             setTimeout(function(){
 
-                const contact =
+                const contact=
                     document.getElementById("contact");
 
                 if(contact){
 
                     contact.scrollIntoView({
+
                         behavior:"smooth",
+
                         block:"center"
+
                     });
 
                 }
@@ -3943,58 +4314,68 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    whatsappButton.addEventListener("click", function(e){
+    /* =====================================================
+       WHATSAPP CTA
+    ===================================================== */
 
-        e.preventDefault();
+    if(whatsappButton){
 
-        let message = "";
+        whatsappButton.addEventListener("click",function(e){
 
-        if(selectedPackage){
+            e.preventDefault();
 
-            message =
-                "سلام، وقت بخیر 🌱\n\n" +
-
-                "برای شروع پروژه فروشگاه اینترنتی پیام می‌دهم.\n\n" +
-
-                "📦 پکیج انتخاب‌شده: " +
-                selectedPackage +
-                "\n" +
-
-                "💰 قیمت پکیج: " +
-                selectedPrice +
-                "\n\n" +
-
-                "لطفاً برای ادامه همکاری و شروع پروژه راهنمایی بفرمایید.";
-
-        }else{
-
-            message =
-                "سلام، وقت بخیر 🌱\n\n" +
-
-                "برای طراحی و توسعه فروشگاه اینترنتی پیام می‌دهم.\n\n" +
-
-                "می‌خواهم درباره پکیج‌ها و شروع پروژه مشاوره بگیرم.";
-
-        }
+            let message="";
 
 
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(message);
+            if(selectedPackage){
+
+                message=
+                    "سلام، وقت بخیر 🌱\n\n"+
+
+                    "برای شروع پروژه فروشگاه اینترنتی پیام می‌دهم.\n\n"+
+
+                    "📦 پکیج انتخاب‌شده: "+
+                    selectedPackage+
+                    "\n"+
+
+                    "💰 قیمت پکیج: "+
+                    selectedPrice+
+                    "\n\n"+
+
+                    "لطفاً برای ادامه همکاری و شروع پروژه راهنمایی بفرمایید.";
+
+            }else{
+
+                message=
+                    "سلام، وقت بخیر 🌱\n\n"+
+
+                    "برای طراحی و توسعه فروشگاه اینترنتی پیام می‌دهم.\n\n"+
+
+                    "می‌خواهم درباره پکیج‌ها و شروع پروژه مشاوره بگیرم.";
+
+            }
 
 
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
+            const whatsappURL=
+                "https://wa.me/"+
+                whatsappNumber+
+                "?text="+
+                encodeURIComponent(message);
 
-    });
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        });
+
+    }
 
 });
 
 </script>
+
 
 </body>
 </html>
