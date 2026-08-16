@@ -72,6 +72,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 html{
     scroll-behavior:smooth;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
 body{
@@ -90,6 +93,11 @@ body{
 
     line-height:1.8;
 
+    width:100%;
+    max-width:100%;
+
+    min-width:0;
+
     overflow-x:hidden;
 }
 
@@ -102,6 +110,13 @@ button{
     font-family:inherit;
 }
 
+img,
+svg,
+video,
+iframe{
+    max-width:100%;
+}
+
 
 /* =========================================================
    GLOBAL
@@ -112,6 +127,8 @@ button{
     width:min(1180px,calc(100% - 36px));
 
     margin-inline:auto;
+
+    min-width:0;
 }
 
 
@@ -126,6 +143,9 @@ button{
     top:0;
 
     z-index:1000;
+
+    width:100%;
+    max-width:100%;
 
     border-bottom:1px solid rgba(231,233,237,.8);
 
@@ -146,6 +166,8 @@ button{
     justify-content:space-between;
 
     gap:20px;
+
+    min-width:0;
 }
 
 .logo{
@@ -157,6 +179,8 @@ button{
     gap:12px;
 
     font-weight:900;
+
+    min-width:0;
 }
 
 .logo-icon{
@@ -181,6 +205,8 @@ button{
 .logo-text{
 
     font-size:14px;
+
+    min-width:0;
 }
 
 .logo-text small{
@@ -201,6 +227,8 @@ button{
     align-items:center;
 
     gap:7px;
+
+    min-width:0;
 }
 
 .nav a{
@@ -248,6 +276,8 @@ button{
     transition:.2s;
 
     white-space:nowrap;
+
+    flex-shrink:0;
 }
 
 .header-button:hover{
@@ -269,6 +299,10 @@ button{
     padding:95px 0 80px;
 
     text-align:center;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .hero::before{
@@ -301,6 +335,8 @@ button{
     max-width:850px;
 
     margin-inline:auto;
+
+    min-width:0;
 }
 
 .badge{
@@ -326,6 +362,8 @@ button{
     font-weight:800;
 
     margin-bottom:20px;
+
+    max-width:100%;
 }
 
 .badge-dot{
@@ -338,6 +376,8 @@ button{
     background:var(--gold);
 
     box-shadow:0 0 0 4px rgba(230,165,43,.13);
+
+    flex-shrink:0;
 }
 
 .hero h1{
@@ -351,6 +391,10 @@ button{
     font-weight:900;
 
     margin-bottom:22px;
+
+    max-width:100%;
+
+    overflow-wrap:anywhere;
 }
 
 .hero h1 span{
@@ -404,6 +448,8 @@ button{
     margin-top:30px;
 
     flex-wrap:wrap;
+
+    min-width:0;
 }
 
 .btn{
@@ -429,6 +475,8 @@ button{
     transition:.25s;
 
     cursor:pointer;
+
+    max-width:100%;
 }
 
 .btn-primary{
@@ -485,6 +533,8 @@ button{
     box-shadow:var(--shadow);
 
     overflow:hidden;
+
+    min-width:0;
 }
 
 .stat{
@@ -494,6 +544,8 @@ button{
     text-align:center;
 
     border-left:1px solid var(--border);
+
+    min-width:0;
 }
 
 .stat:last-child{
@@ -525,6 +577,10 @@ button{
 .section{
 
     padding:85px 0;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .section-header{
@@ -534,6 +590,8 @@ button{
     margin:0 auto 38px;
 
     text-align:center;
+
+    min-width:0;
 }
 
 .section-kicker{
@@ -556,6 +614,8 @@ button{
     font-weight:900;
 
     letter-spacing:-1px;
+
+    overflow-wrap:anywhere;
 }
 
 .section-header p{
@@ -579,6 +639,8 @@ button{
     grid-template-columns:repeat(4,1fr);
 
     gap:14px;
+
+    min-width:0;
 }
 
 .service-card{
@@ -594,6 +656,8 @@ button{
     box-shadow:var(--shadow);
 
     transition:.25s;
+
+    min-width:0;
 }
 
 .service-card:hover{
@@ -677,6 +741,11 @@ button{
     color:white;
 
     padding:95px 0;
+
+    width:100%;
+    max-width:100%;
+
+    overflow:hidden;
 }
 
 .pricing .section-header p{
@@ -698,6 +767,8 @@ button{
     gap:17px;
 
     align-items:start;
+
+    min-width:0;
 }
 
 .plan{
@@ -713,6 +784,10 @@ button{
     padding:27px;
 
     transition:.3s;
+
+    min-width:0;
+
+    max-width:100%;
 }
 
 .plan:hover{
@@ -774,6 +849,8 @@ button{
     padding-bottom:20px;
 
     border-bottom:1px solid #2b2e35;
+
+    min-width:0;
 }
 
 .featured .plan-top{
@@ -839,6 +916,8 @@ button{
     align-items:baseline;
 
     gap:6px;
+
+    flex-wrap:wrap;
 }
 
 .price-number strong{
@@ -912,6 +991,8 @@ button{
     cursor:pointer;
 
     border:0;
+
+    max-width:100%;
 }
 
 .plan-button:hover{
@@ -945,6 +1026,8 @@ button{
 .feature-groups{
 
     margin-top:22px;
+
+    min-width:0;
 }
 
 .feature-group{
@@ -952,6 +1035,8 @@ button{
     border-top:1px solid #292c32;
 
     padding:15px 0;
+
+    min-width:0;
 }
 
 .featured .feature-group{
@@ -974,6 +1059,8 @@ button{
     font-size:11px;
 
     font-weight:900;
+
+    min-width:0;
 }
 
 .feature-group summary::-webkit-details-marker{
@@ -988,6 +1075,8 @@ button{
     align-items:center;
 
     gap:8px;
+
+    min-width:0;
 }
 
 .summary-icon{
@@ -1024,6 +1113,8 @@ button{
     font-size:9px;
 
     transition:.2s;
+
+    flex-shrink:0;
 }
 
 .feature-group[open] summary i{
@@ -1042,6 +1133,8 @@ button{
     flex-direction:column;
 
     gap:7px;
+
+    min-width:0;
 }
 
 .feature-list li{
@@ -1055,6 +1148,8 @@ button{
     font-size:9px;
 
     line-height:1.8;
+
+    overflow-wrap:anywhere;
 }
 
 .featured .feature-list li{
@@ -1083,6 +1178,10 @@ button{
 .ux-section{
 
     padding:100px 0;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .ux-card{
@@ -1104,6 +1203,12 @@ button{
     padding:55px;
 
     box-shadow:0 35px 90px rgba(16,17,20,.18);
+
+    width:100%;
+
+    max-width:100%;
+
+    min-width:0;
 }
 
 .ux-card::before{
@@ -1138,6 +1243,8 @@ button{
     gap:55px;
 
     align-items:center;
+
+    min-width:0;
 }
 
 .ux-label{
@@ -1166,6 +1273,8 @@ button{
     font-weight:900;
 
     margin-bottom:12px;
+
+    overflow-wrap:anywhere;
 }
 
 .ux-description{
@@ -1177,6 +1286,8 @@ button{
     font-size:12px;
 
     line-height:2;
+
+    overflow-wrap:anywhere;
 }
 
 .ux-output{
@@ -1188,6 +1299,8 @@ button{
     grid-template-columns:repeat(2,1fr);
 
     gap:9px;
+
+    min-width:0;
 }
 
 .ux-output div{
@@ -1201,11 +1314,15 @@ button{
     color:#d6d9de;
 
     font-size:10px;
+
+    min-width:0;
 }
 
 .ux-output i{
 
     color:var(--gold);
+
+    flex-shrink:0;
 }
 
 .ux-price{
@@ -1219,6 +1336,10 @@ button{
     padding:28px;
 
     backdrop-filter:blur(10px);
+
+    min-width:0;
+
+    max-width:100%;
 }
 
 .ux-price-label{
@@ -1257,6 +1378,8 @@ button{
     font-size:9px;
 
     margin-bottom:19px;
+
+    overflow-wrap:anywhere;
 }
 
 .ux-button{
@@ -1286,6 +1409,8 @@ button{
     transition:.2s;
 
     cursor:pointer;
+
+    max-width:100%;
 }
 
 .ux-button:hover{
@@ -1309,6 +1434,8 @@ button{
     gap:13px;
 
     margin-top:35px;
+
+    min-width:0;
 }
 
 .step{
@@ -1322,6 +1449,8 @@ button{
     padding:22px;
 
     position:relative;
+
+    min-width:0;
 }
 
 .step-number{
@@ -1362,6 +1491,8 @@ button{
     font-size:9px;
 
     line-height:1.9;
+
+    overflow-wrap:anywhere;
 }
 
 
@@ -1372,6 +1503,10 @@ button{
 .comparison-section{
 
     padding:85px 0;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .comparison{
@@ -1382,9 +1517,19 @@ button{
 
     border-radius:25px;
 
-    overflow:hidden;
+    overflow-x:auto;
+
+    overflow-y:hidden;
 
     box-shadow:var(--shadow);
+
+    width:100%;
+
+    max-width:100%;
+
+    -webkit-overflow-scrolling:touch;
+
+    overscroll-behavior-x:contain;
 }
 
 .comparison-row{
@@ -1394,6 +1539,8 @@ button{
     grid-template-columns:1.7fr repeat(3,1fr);
 
     min-height:58px;
+
+    min-width:570px;
 
     border-bottom:1px solid var(--border);
 }
@@ -1416,6 +1563,8 @@ button{
     border-left:1px solid var(--border);
 
     font-size:10px;
+
+    min-width:0;
 }
 
 .comparison-row>div:last-child{
@@ -1465,6 +1614,8 @@ button{
     flex-direction:column;
 
     gap:9px;
+
+    min-width:0;
 }
 
 .faq-item{
@@ -1478,6 +1629,8 @@ button{
     padding:0 18px;
 
     box-shadow:var(--shadow);
+
+    min-width:0;
 }
 
 .faq-item summary{
@@ -1499,6 +1652,8 @@ button{
     font-size:11px;
 
     font-weight:900;
+
+    min-width:0;
 }
 
 .faq-item summary::-webkit-details-marker{
@@ -1529,6 +1684,8 @@ button{
     line-height:2;
 
     padding:0 0 18px;
+
+    overflow-wrap:anywhere;
 }
 
 
@@ -1539,6 +1696,10 @@ button{
 .final-cta{
 
     padding:85px 0 100px;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
 }
 
 .cta-box{
@@ -1556,6 +1717,12 @@ button{
     position:relative;
 
     overflow:hidden;
+
+    width:100%;
+
+    max-width:100%;
+
+    min-width:0;
 }
 
 .cta-box::before{
@@ -1582,6 +1749,8 @@ button{
     position:relative;
 
     z-index:2;
+
+    max-width:100%;
 }
 
 .cta-box h2{
@@ -1591,6 +1760,8 @@ button{
     font-weight:900;
 
     margin-bottom:10px;
+
+    overflow-wrap:anywhere;
 }
 
 .cta-box p{
@@ -1602,6 +1773,8 @@ button{
     color:#a9aeb7;
 
     font-size:11px;
+
+    overflow-wrap:anywhere;
 }
 
 .selected-package{
@@ -1625,6 +1798,8 @@ button{
     color:#dfe2e6;
 
     font-size:10px;
+
+    overflow:hidden;
 }
 
 .selected-package.show{
@@ -1668,6 +1843,8 @@ button{
     border:0;
 
     cursor:pointer;
+
+    max-width:100%;
 }
 
 .cta-button:hover{
@@ -1698,6 +1875,12 @@ footer{
     font-size:9px;
 
     border-top:1px solid var(--border);
+
+    width:100%;
+
+    max-width:100%;
+
+    overflow:hidden;
 }
 
 footer strong{
@@ -1763,26 +1946,55 @@ footer strong{
 
 @media(max-width:700px){
 
+    html,
+    body{
+
+        width:100%;
+
+        max-width:100%;
+
+        min-width:0;
+
+        overflow-x:hidden !important;
+    }
+
     .container{
 
         width:calc(100% - 28px);
 
-        max-width:560px;
+        max-width:100%;
+
+        min-width:0;
     }
 
 
     /* HEADER */
+
+    .header{
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow:hidden;
+    }
 
     .header-inner{
 
         min-height:62px;
 
         gap:8px;
+
+        width:100%;
+
+        min-width:0;
     }
 
     .logo{
 
         min-width:0;
+
+        max-width:calc(100% - 105px);
 
         gap:8px;
     }
@@ -1802,6 +2014,10 @@ footer strong{
         line-height:1.4;
 
         white-space:nowrap;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
     }
 
     .logo-text small{
@@ -1836,6 +2052,8 @@ footer strong{
     .hero{
 
         padding:55px 0 48px;
+
+        overflow:hidden;
     }
 
     .badge{
@@ -1845,6 +2063,8 @@ footer strong{
         padding:6px 10px;
 
         margin-bottom:16px;
+
+        max-width:100%;
     }
 
     .hero h1{
@@ -1856,6 +2076,8 @@ footer strong{
         line-height:1.35;
 
         margin-bottom:17px;
+
+        overflow-wrap:anywhere;
     }
 
     .hero h1 span::after{
@@ -1872,6 +2094,8 @@ footer strong{
         line-height:2;
 
         padding:0 3px;
+
+        max-width:100%;
     }
 
     .hero-actions{
@@ -1904,6 +2128,10 @@ footer strong{
         margin-top:35px;
 
         border-radius:17px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .stat{
@@ -1919,6 +2147,8 @@ footer strong{
         justify-content:center;
 
         padding:12px 8px;
+
+        min-width:0;
     }
 
     .stat:nth-child(2){
@@ -1947,11 +2177,15 @@ footer strong{
     .section{
 
         padding:60px 0;
+
+        overflow:hidden;
     }
 
     .section-header{
 
         margin-bottom:28px;
+
+        max-width:100%;
     }
 
     .section-kicker{
@@ -1983,6 +2217,8 @@ footer strong{
         grid-template-columns:1fr;
 
         gap:10px;
+
+        width:100%;
     }
 
     .service-card{
@@ -1990,6 +2226,10 @@ footer strong{
         padding:19px;
 
         border-radius:17px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .service-icon{
@@ -2020,26 +2260,36 @@ footer strong{
     .pricing{
 
         padding:65px 0;
+
+        overflow:hidden;
     }
 
     .pricing-grid{
 
         width:100%;
 
+        max-width:100%;
+
         display:flex;
 
         flex-direction:column;
 
         gap:19px;
+
+        min-width:0;
     }
 
     .plan{
 
         width:100%;
 
+        max-width:100%;
+
         padding:21px 17px;
 
         border-radius:21px;
+
+        min-width:0;
     }
 
     .plan.featured{
@@ -2068,6 +2318,8 @@ footer strong{
     .plan-top{
 
         padding-bottom:16px;
+
+        min-width:0;
     }
 
     .plan h3{
@@ -2160,6 +2412,8 @@ footer strong{
         line-height:1.9;
 
         padding-right:15px;
+
+        overflow-wrap:anywhere;
     }
 
 
@@ -2168,6 +2422,8 @@ footer strong{
     .ux-section{
 
         padding:65px 0;
+
+        overflow:hidden;
     }
 
     .ux-card{
@@ -2175,11 +2431,23 @@ footer strong{
         padding:28px 18px;
 
         border-radius:23px;
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow:hidden;
     }
 
     .ux-grid{
 
         gap:27px;
+
+        width:100%;
+
+        max-width:100%;
+
+        min-width:0;
     }
 
     .ux-label{
@@ -2210,11 +2478,15 @@ footer strong{
         gap:8px;
 
         margin-top:18px;
+
+        width:100%;
     }
 
     .ux-output div{
 
         font-size:9px;
+
+        min-width:0;
     }
 
     .ux-price{
@@ -2224,6 +2496,8 @@ footer strong{
         border-radius:19px;
 
         width:100%;
+
+        max-width:100%;
     }
 
     .ux-price-label{
@@ -2265,6 +2539,8 @@ footer strong{
         gap:9px;
 
         margin-top:22px;
+
+        width:100%;
     }
 
     .step{
@@ -2272,6 +2548,10 @@ footer strong{
         padding:18px;
 
         border-radius:16px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .step-number{
@@ -2293,25 +2573,46 @@ footer strong{
     }
 
 
-    /* COMPARISON */
+    /* =====================================================
+       COMPARISON MOBILE
+       فقط خود جدول اسکرول افقی دارد
+    ===================================================== */
 
     .comparison-section{
 
         padding:60px 0;
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow:hidden;
     }
 
     .comparison{
 
-        border-radius:18px;
+        width:100%;
+
+        max-width:100%;
 
         overflow-x:auto;
 
+        overflow-y:hidden;
+
         -webkit-overflow-scrolling:touch;
+
+        overscroll-behavior-x:contain;
+
+        touch-action:pan-x;
+
+        border-radius:18px;
     }
 
     .comparison-row{
 
         min-width:570px;
+
+        width:570px;
 
         min-height:51px;
     }
@@ -2339,6 +2640,10 @@ footer strong{
     .faq-grid{
 
         gap:8px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .faq-item{
@@ -2346,6 +2651,10 @@ footer strong{
         padding:0 14px;
 
         border-radius:14px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .faq-item summary{
@@ -2370,6 +2679,8 @@ footer strong{
     .final-cta{
 
         padding:60px 0 70px;
+
+        overflow:hidden;
     }
 
     .cta-box{
@@ -2377,6 +2688,10 @@ footer strong{
         padding:38px 18px;
 
         border-radius:23px;
+
+        width:100%;
+
+        max-width:100%;
     }
 
     .cta-box h2{
@@ -2397,16 +2712,22 @@ footer strong{
 
         width:100%;
 
+        max-width:100%;
+
         font-size:8px;
 
         line-height:1.8;
 
         padding:8px 11px;
+
+        overflow:hidden;
     }
 
     .cta-button{
 
         width:100%;
+
+        max-width:100%;
 
         min-height:47px;
 
@@ -2423,6 +2744,8 @@ footer strong{
         font-size:8px;
 
         line-height:2;
+
+        overflow:hidden;
     }
 }
 
@@ -2436,6 +2759,8 @@ footer strong{
     .container{
 
         width:calc(100% - 22px);
+
+        max-width:100%;
     }
 
     .logo-text{
@@ -3969,7 +4294,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     packageButtons.forEach(function(button){
 
-        button.addEventListener("click", function(e){
+        button.addEventListener("click", function(){
 
             selectedPackage =
                 button.getAttribute("data-package") || "";
@@ -3977,8 +4302,6 @@ document.addEventListener("DOMContentLoaded", function(){
             selectedPrice =
                 button.getAttribute("data-price") || "";
 
-
-            /* تغییر وضعیت تمام دکمه‌ها */
 
             packageButtons.forEach(function(item){
 
@@ -3996,15 +4319,11 @@ document.addEventListener("DOMContentLoaded", function(){
             });
 
 
-            /* دکمه انتخاب‌شده */
-
             button.classList.add("selected");
 
             button.innerHTML =
                 'پکیج انتخاب شد <i class="fa-solid fa-check"></i>';
 
-
-            /* نمایش پکیج در CTA */
 
             selectedName.textContent =
                 selectedPackage;
@@ -4014,10 +4333,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
             selectedBox.classList.add("show");
 
-
-            /*
-             * اسکرول نرم به CTA
-             */
 
             setTimeout(function(){
 
@@ -4042,7 +4357,6 @@ document.addEventListener("DOMContentLoaded", function(){
     whatsappButton.addEventListener("click", function(e){
 
         e.preventDefault();
-
 
         let message = "";
 
